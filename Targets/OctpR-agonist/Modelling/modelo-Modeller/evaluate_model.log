@@ -1,0 +1,482 @@
+
+                         MODELLER 9.25, 2020/09/03, r11894
+
+     PROTEIN STRUCTURE MODELLING BY SATISFACTION OF SPATIAL RESTRAINTS
+
+
+                     Copyright(c) 1989-2020 Andrej Sali
+                            All Rights Reserved
+
+                             Written by A. Sali
+                               with help from
+              B. Webb, M.S. Madhusudhan, M-Y. Shen, G.Q. Dong,
+          M.A. Marti-Renom, N. Eswar, F. Alber, M. Topf, B. Oliva,
+             A. Fiser, R. Sanchez, B. Yerkovich, A. Badretdinov,
+                     F. Melo, J.P. Overington, E. Feyfant
+                 University of California, San Francisco, USA
+                    Rockefeller University, New York, USA
+                      Harvard University, Cambridge, USA
+                   Imperial Cancer Research Fund, London, UK
+              Birkbeck College, University of London, London, UK
+
+
+Kind, OS, HostName, Kernel, Processor: 4, Windows Vista build 9200, LAPTOP-REA0J2HD, SMP, unknown
+Date and time of compilation         : 2020/09/03 08:23:39
+MODELLER executable type             : x86_64-w64
+Job starting time (YY/MM/DD HH:MM:SS): 2021/08/06 11:01:40
+
+openf___224_> Open           $(LIB)/restyp.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/resgrp.lib
+rdresgr_266_> Number of residue groups:        2
+openf___224_> Open           ${MODINSTALL9v25}/modlib/sstruc.lib
+
+Dynamically allocated memory at   amaxlibraries [B,KiB,MiB]:       191566     187.076     0.183
+
+Dynamically allocated memory at   amaxlibraries [B,KiB,MiB]:       192094     187.592     0.183
+openf___224_> Open           ${MODINSTALL9v25}/modlib/resdih.lib
+
+Dynamically allocated memory at   amaxlibraries [B,KiB,MiB]:       240694     235.053     0.230
+rdrdih__263_> Number of dihedral angle types         :        9
+              Maximal number of dihedral angle optima:        3
+              Dihedral angle names                   :  Alph Phi Psi Omeg chi1 chi2 chi3 chi4 chi5
+openf___224_> Open           ${MODINSTALL9v25}/modlib/radii.lib
+
+Dynamically allocated memory at   amaxlibraries [B,KiB,MiB]:       253994     248.041     0.242
+openf___224_> Open           ${MODINSTALL9v25}/modlib/radii14.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/af_mnchdef.lib
+rdwilmo_274_> Mainchain residue conformation classes:  APBLE
+openf___224_> Open           ${MODINSTALL9v25}/modlib/mnch.lib
+rdclass_257_> Number of classes:        5
+openf___224_> Open           ${MODINSTALL9v25}/modlib/mnch1.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/mnch2.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/mnch3.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/xs4.mat
+rdrrwgh_268_> Number of residue types:       21
+openf___224_> Open           $(LIB)/top_heav.lib
+read_to_681_> topology.submodel read from topology file:        3
+openf___224_> Open           $(LIB)/par.lib
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       393430     384.209     0.375
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       395030     385.771     0.377
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       399010     389.658     0.381
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       401010     391.611     0.382
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       404010     394.541     0.385
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       408510     398.936     0.390
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       414082     404.377     0.395
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       416882     407.111     0.398
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       421082     411.213     0.402
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       427382     417.365     0.408
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       430154     420.072     0.410
+
+Dynamically allocated memory at  amaxparameters [B,KiB,MiB]:       431554     421.439     0.412
+read_pa_232_> parameters    BONDS   ANGLS  DIHEDS IMPROPS    MODE
+                              227     561     661     112       0
+openf___224_> Open           LcOambAGO.B99990001.pdb
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       442565     432.192     0.422
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       442641     432.267     0.422
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       442812     432.434     0.422
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       443662     433.264     0.423
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       444920     434.492     0.424
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       446824     436.352     0.426
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       446864     436.391     0.426
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       446954     436.479     0.426
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       449810     439.268     0.429
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       449870     439.326     0.429
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       450005     439.458     0.429
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       454289     443.642     0.433
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       454377     443.728     0.433
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       454575     443.921     0.434
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       461001     450.196     0.440
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       461133     450.325     0.440
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       461430     450.615     0.440
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       471052     460.012     0.449
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       471252     460.207     0.449
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       471702     460.646     0.450
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       486152     474.758     0.464
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       486452     475.051     0.464
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       487127     475.710     0.465
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       508785     496.860     0.485
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       509233     497.298     0.486
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       510241     498.282     0.487
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       542745     530.024     0.518
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       543417     530.681     0.518
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       544929     532.157     0.520
+
+Dynamically allocated memory at       amaxmodel [B,KiB,MiB]:       800993     782.220     0.764
+read_mo_297_> Segments, residues, atoms:        1      339     2729
+read_mo_298_> Segment:        1     1   339     2729
+
+Dynamically allocated memory at   amaxalignment [B,KiB,MiB]:       811642     792.619     0.774
+
+Dynamically allocated memory at   amaxstructure [B,KiB,MiB]:      1010547     986.862     0.964
+
+Dynamically allocated memory at   amaxalignment [B,KiB,MiB]:      1014040     990.273     0.967
+
+Dynamically allocated memory at   amaxstructure [B,KiB,MiB]:      1212945    1184.517     1.157
+
+Dynamically allocated memory at       amaxmodel [B,KiB,MiB]:      1255089    1225.673     1.197
+
+mkilst______> segment topology constructed from sequence and RTF:
+              segments residues  atoms  bonds angles dihedrals impropers:
+                     1      339   2728   2810      0         0      1229
+
+Dynamically allocated memory at       amaxmodel [B,KiB,MiB]:      1375133    1342.903     1.311
+
+patch_______> segment topology patched using RTF:     1  ;  MET  ;  NTER
+              segments residues  atoms  bonds angles dihedrals impropers:
+                     1      339   2728   2810   3830      4632      1229
+
+
+Dynamically allocated memory at       amaxmodel [B,KiB,MiB]:      1507709    1472.372     1.438
+patch_______> segment topology patched using RTF:   339  ;  SER  ;  CTER
+              segments residues  atoms  bonds angles dihedrals impropers:
+                     1      339   2729   2811   3832      4634      1230
+
+genseg______> segment topology constructed from sequence and RTF:
+              segments residues  atoms  bonds angles dihedrals impropers:
+                     1      339   2729   2811   3832      4634      1230
+transfe_506_> MODEL is an average of all templates.
+transfe_511_> Number of templates for coordinate transfer:        1
+              After transferring coordinates of the equivalent template atoms,
+              there are defined, undefined atoms in MODEL:     2729        0
+openf___224_> Open           ${LIB}/atmcls-mf.lib
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1096177    1070.485     1.045
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1096241    1070.548     1.045
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1096299    1070.604     1.046
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1096363    1070.667     1.046
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1096429    1070.731     1.046
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1096493    1070.794     1.046
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1096649    1070.946     1.046
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1096777    1071.071     1.046
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1097071    1071.358     1.046
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1097263    1071.546     1.046
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1097767    1072.038     1.047
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1098023    1072.288     1.047
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1099019    1073.261     1.048
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1099403    1073.636     1.048
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1099979    1074.198     1.049
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1102013    1076.185     1.051
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1102909    1077.060     1.052
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1107361    1081.407     1.056
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1108705    1082.720     1.057
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1118323    1092.112     1.067
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1120307    1094.050     1.068
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1140953    1114.212     1.088
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1143961    1117.149     1.091
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1189927    1162.038     1.135
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1194407    1166.413     1.139
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1295627    1265.261     1.236
+openf___224_> Open           ${LIB}/dist-mf.lib
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1296023    1265.647     1.236
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1296819    1266.425     1.237
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1297615    1267.202     1.238
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1298803    1268.362     1.239
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1299203    1268.753     1.239
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1299803    1269.339     1.240
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1300703    1270.218     1.240
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1302051    1271.534     1.242
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1302251    1271.729     1.242
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1304275    1273.706     1.244
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1304575    1273.999     1.244
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1307611    1276.964     1.247
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1308059    1277.401     1.247
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1312611    1281.847     1.252
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1313283    1282.503     1.252
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1320111    1289.171     1.259
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1321119    1290.155     1.260
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1331363    1300.159     1.270
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1331963    1300.745     1.270
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1332363    1301.136     1.271
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1333875    1302.612     1.272
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1349239    1317.616     1.287
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1350139    1318.495     1.288
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1350739    1319.081     1.288
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1353007    1321.296     1.290
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1376055    1343.804     1.312
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1377399    1345.116     1.314
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1378299    1345.995     1.314
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1381703    1349.319     1.318
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1416275    1383.081     1.351
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1418291    1385.050     1.353
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1419639    1386.366     1.354
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1424743    1391.351     1.359
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1476599    1441.991     1.408
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1479623    1444.944     1.411
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1481647    1446.921     1.413
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1489303    1454.397     1.420
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1567087    1530.358     1.494
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1571623    1534.788     1.499
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1574659    1537.753     1.502
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1586143    1548.968     1.513
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1702819    1662.909     1.624
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1709623    1669.554     1.630
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1714175    1673.999     1.635
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1731403    1690.823     1.651
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1906419    1861.737     1.818
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1916631    1871.710     1.828
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1923459    1878.378     1.834
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      1949299    1903.612     1.859
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      2211823    2159.983     2.109
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      2227135    2174.937     2.124
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      2237379    2184.940     2.134
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      2276139    2222.792     2.171
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      2669923    2607.347     2.546
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      2692891    2629.776     2.568
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      2708255    2644.780     2.583
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      2766395    2701.558     2.638
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      3357071    3278.390     3.202
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      3391523    3312.034     3.234
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      3414571    3334.542     3.256
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      3501783    3419.710     3.340
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      4387799    4284.960     4.185
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      4439483    4335.433     4.234
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      4474055    4369.194     4.267
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      4604871    4496.944     4.392
+
+Dynamically allocated memory at amaxgroup_restr [B,KiB,MiB]:      5933895    5794.819     5.659
+read_pa_232_> parameters    BONDS   ANGLS  DIHEDS IMPROPS    MODE
+                                0       0       0       0   12561
+>> Model assessment by DOPE potential
+iatmcls_286W> MODEL atom not classified:  SER:OXT  SER
+preppdf_453W> No fixed restraints selected; there may be some dynamic ones.
+preppdf_454W> Restraints file was probably not read; use restraints.append().
+
+Dynamically allocated memory at amaxhash_contac [B,KiB,MiB]:      6719971    6562.472     6.409
+
+Dynamically allocated memory at  amaxrestraints [B,KiB,MiB]:      7078071    6912.179     6.750
+
+Dynamically allocated memory at  amaxrestraints [B,KiB,MiB]:      7143567    6976.140     6.813
+
+Dynamically allocated memory at  amaxrestraints [B,KiB,MiB]:      7274559    7104.062     6.938
+
+Dynamically allocated memory at  amaxrestraints [B,KiB,MiB]:      7536543    7359.905     7.187
+
+Dynamically allocated memory at  amaxrestraints [B,KiB,MiB]:      8060511    7871.593     7.687
+
+Dynamically allocated memory at  amaxrestraints [B,KiB,MiB]:      9108447    8894.968     8.686
+
+Dynamically allocated memory at  amaxrestraints [B,KiB,MiB]:     11204319   10941.718    10.685
+
+
+>> ENERGY; Differences between the model's features and restraints:
+Number of all residues in MODEL                   :      339
+Number of all, selected real atoms                :     2729    2729
+Number of all, selected pseudo atoms              :        0       0
+Number of all static, selected restraints         :        0       0
+COVALENT_CYS                                      :        F
+NONBONDED_SEL_ATOMS                               :        1
+Number of non-bonded pairs (excluding 1-2,1-3,1-4):   501592
+Dynamic pairs routine                             : 1, NATM x NATM double loop
+Atomic shift for contacts update (UPDATE_DYNAMIC) :    0.390
+LENNARD_JONES_SWITCH                              :    6.500   7.500
+COULOMB_JONES_SWITCH                              :    6.500   7.500
+RESIDUE_SPAN_RANGE                                :        1    9999
+NLOGN_USE                                         :       15
+CONTACT_SHELL                                     :   15.000
+DYNAMIC_PAIRS,_SPHERE,_COULOMB,_LENNARD,_MODELLER :        T       F       F       F       T
+SPHERE_STDV                                       :    0.050
+RADII_FACTOR                                      :    0.820
+Current energy                                    :      -43990.7969
+
+
+
+
+
+Summary of the restraint violations: 
+
+   NUM     ... number of restraints.
+   NUMVI   ... number of restraints with RVIOL > VIOL_REPORT_CUT[i].
+   RVIOL   ... relative difference from the best value.
+   NUMVP   ... number of restraints with -Ln(pdf) > VIOL_REPORT_CUT2[i].
+   RMS_1   ... RMS(feature, minimally_violated_basis_restraint, NUMB).
+   RMS_2   ... RMS(feature, best_value, NUMB).
+   MOL.PDF ... scaled contribution to -Ln(Molecular pdf).
+
+ #                     RESTRAINT_GROUP      NUM   NUMVI  NUMVP   RMS_1   RMS_2         MOL.PDF     S_i
+------------------------------------------------------------------------------------------------------
+ 1 Bond length potential              :       0       0      0   0.000   0.000      0.0000       0.000
+ 2 Bond angle potential               :       0       0      0   0.000   0.000      0.0000       0.000
+ 3 Stereochemical cosine torsion poten:       0       0      0   0.000   0.000      0.0000       0.000
+ 4 Stereochemical improper torsion pot:       0       0      0   0.000   0.000      0.0000       0.000
+ 5 Soft-sphere overlap restraints     :       0       0      0   0.000   0.000      0.0000       0.000
+ 6 Lennard-Jones 6-12 potential       :       0       0      0   0.000   0.000      0.0000       0.000
+ 7 Coulomb point-point electrostatic p:       0       0      0   0.000   0.000      0.0000       0.000
+ 8 H-bonding potential                :       0       0      0   0.000   0.000      0.0000       0.000
+ 9 Distance restraints 1 (CA-CA)      :       0       0      0   0.000   0.000      0.0000       0.000
+10 Distance restraints 2 (N-O)        :       0       0      0   0.000   0.000      0.0000       0.000
+11 Mainchain Phi dihedral restraints  :       0       0      0   0.000   0.000      0.0000       0.000
+12 Mainchain Psi dihedral restraints  :       0       0      0   0.000   0.000      0.0000       0.000
+13 Mainchain Omega dihedral restraints:       0       0      0   0.000   0.000      0.0000       0.000
+14 Sidechain Chi_1 dihedral restraints:       0       0      0   0.000   0.000      0.0000       0.000
+15 Sidechain Chi_2 dihedral restraints:       0       0      0   0.000   0.000      0.0000       0.000
+16 Sidechain Chi_3 dihedral restraints:       0       0      0   0.000   0.000      0.0000       0.000
+17 Sidechain Chi_4 dihedral restraints:       0       0      0   0.000   0.000      0.0000       0.000
+18 Disulfide distance restraints      :       0       0      0   0.000   0.000      0.0000       0.000
+19 Disulfide angle restraints         :       0       0      0   0.000   0.000      0.0000       0.000
+20 Disulfide dihedral angle restraints:       0       0      0   0.000   0.000      0.0000       0.000
+21 Lower bound distance restraints    :       0       0      0   0.000   0.000      0.0000       0.000
+22 Upper bound distance restraints    :       0       0      0   0.000   0.000      0.0000       0.000
+23 Distance restraints 3 (SDCH-MNCH)  :       0       0      0   0.000   0.000      0.0000       0.000
+24 Sidechain Chi_5 dihedral restraints:       0       0      0   0.000   0.000      0.0000       0.000
+25 Phi/Psi pair of dihedral restraints:       0       0      0   0.000   0.000      0.0000       0.000
+26 Distance restraints 4 (SDCH-SDCH)  :       0       0      0   0.000   0.000      0.0000       0.000
+27 Distance restraints 5 (X-Y)        :       0       0      0   0.000   0.000      0.0000       0.000
+28 NMR distance restraints 6 (X-Y)    :       0       0      0   0.000   0.000      0.0000       0.000
+29 NMR distance restraints 7 (X-Y)    :       0       0      0   0.000   0.000      0.0000       0.000
+30 Minimal distance restraints        :       0       0      0   0.000   0.000      0.0000       0.000
+31 Non-bonded restraints              :  501426       0    747   6.680   6.680     -43991.       1.000
+32 Atomic accessibility restraints    :       0       0      0   0.000   0.000      0.0000       0.000
+33 Atomic density restraints          :       0       0      0   0.000   0.000      0.0000       0.000
+34 Absolute position restraints       :       0       0      0   0.000   0.000      0.0000       0.000
+35 Dihedral angle difference restraint:       0       0      0   0.000   0.000      0.0000       0.000
+36 GBSA implicit solvent potential    :       0       0      0   0.000   0.000      0.0000       0.000
+37 EM density fitting potential       :       0       0      0   0.000   0.000      0.0000       0.000
+38 SAXS restraints                    :       0       0      0   0.000   0.000      0.0000       0.000
+39 Symmetry restraints                :       0       0      0   0.000   0.000      0.0000       0.000
+do_prof_492W> Are you sure you want to calculate a normalized energy profile!
+
+
+
+openf___224_> Open           LcOambAGO-01.profile
+# Energy of each residue is written to: LcOambAGO-01.profile
+# The profile IS normalized by the number of restraints.
+# The profiles are smoothed over a window of residues:   13
+# The sum of all numbers in the file:     -14.6209
+
+<< end of ENERGY.
+DOPE score               : -43990.796875
+
+Dynamically allocated memory at          finish [B,KiB,MiB]:     10911547   10655.808    10.406
+Starting time                                            : 2021/08/06 11:01:40
+Closing time                                             : 2021/08/06 11:01:43
+Total CPU time [seconds]                                 :       2.92
