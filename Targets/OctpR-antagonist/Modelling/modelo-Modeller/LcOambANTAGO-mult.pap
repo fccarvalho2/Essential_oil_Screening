@@ -1,0 +1,41 @@
+ _aln.pos                       10        20        30        40        50
+antagoinstaAnophellesA  MNESECASLLASVQWTDPTNLVSLAVLAFINVLVIVGNCLVIAAVLCSHKLRSV 
+2rh1templateA           ---------------DEVWVVGMGIVMSLIVLAIVFGNVLVITAIAKFERLQTV 
+LcOambANTAGO            MNETECDNLIKSVKWTEPSNLISLAILEFINVLVIGGNLLVIAAVFCSNKLRSV 
+ _consrvd                                            *      ** *** *      *  *
+
+ _aln.pos                   60        70        80        90       100
+antagoinstaAnophellesA  TNFFIVSLAVADLLVGLAVLPFSATWEVFKVWIFGDVWCRIWLAVDVWMCTASI 
+2rh1templateA           TNYFITSLACADLVMGLAVVPFGAAHILMKMWTFGNFWCEFWTSIDVLCVTASI 
+LcOambANTAGO            TNFFIVNLAVADLLVGLAVLPFSATWEVFKVWIFGDVWCRIWLAVDVWMCTASI 
+ _consrvd               ** **  ** ***  **** ** *     * * **  **  *   **   ****
+
+ _aln.pos              110       120       130       140       150       160
+antagoinstaAnophellesA  LNLCAISLDRYVAVTRPVTYPSIMSTRRAKSLIAGLWVLSFVICFPPLVGWKEQ 
+2rh1templateA           ETLCVIAVDRYFAITSPFKYQSLLTKNKARVIILMVWIVSGLTSFLPIQMHWYR 
+LcOambANTAGO            LNLCAISLDRYVAVTRPVTYPSIMSTKKAKSLIAGIWVLSFVICFPPLVGWKDQ 
+ _consrvd                 ** *  *** * * *  * *      *   *   *  *    * *
+
+ _aln.pos                    170       180       190       200       210
+antagoinstaAnophellesA  KVKENVYYQYGNYTLVSVTPSPAPPLPCPWTCELTNDAGYVVYSALGSFYIPMF 
+2rh1templateA           ------------ATHQEAINCYAEE----TCCDFFTNQAYAIASSIVSFYVPLV 
+LcOambANTAGO            KPMIQPTYTRGNYTLYSMSSYATPPPPCPWKCELTNDRGYVLYSALGSFYIPMF 
+ _consrvd                            *                 *       *   *   *** *
+
+ _aln.pos                220       230       240       250       260       270
+antagoinstaAnophellesA  VMLFFYWRIYRAAVRT----K----KLGKKHLKVQVKRFRMETKAAKTLGIIVG 
+2rh1templateA           IMVFVYSRVFQEAKRQLKFC-------------------LKEHKALKTLGIIMG 
+LcOambANTAGO            VMLFFYWRIYRAAVRTTRAINQGFKTTGKRSVKFQVKRFKVETKAAKTLAIIVG 
+ _consrvd                * * * *    * *                          * ** *** ** *
+
+ _aln.pos                      280       290       300       310       320
+antagoinstaAnophellesA  GFIFCWLPFFTMYLTRAFCAECINSLLFSVLFWLGYCNSAVNPFIYALFSKDFR 
+2rh1templateA           TFTLCWLPFFIVNIVHVIQDNLIRKEVYILLNWIGYVNSGFNPLIYC-RSPDFR 
+LcOambANTAGO            GFIFCWLPFFTMYLIRAFCDHCIQPTVFSVLFWLGYCNSAINPLIYALFSHEFR 
+ _consrvd                *  ******            *       * * ** **  ** **   *  **
+
+ _aln.pos                  330       340
+antagoinstaAnophellesA  QAFKRIILR-CLCSKR 
+2rh1templateA           IAFQELLCLV------ 
+LcOambANTAGO            IAFKRIVCR-CVCTRS 
+ _consrvd                **

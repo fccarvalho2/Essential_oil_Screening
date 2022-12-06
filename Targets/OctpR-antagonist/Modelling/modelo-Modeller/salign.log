@@ -1,0 +1,1960 @@
+
+                         MODELLER 9.25, 2020/09/03, r11894
+
+     PROTEIN STRUCTURE MODELLING BY SATISFACTION OF SPATIAL RESTRAINTS
+
+
+                     Copyright(c) 1989-2020 Andrej Sali
+                            All Rights Reserved
+
+                             Written by A. Sali
+                               with help from
+              B. Webb, M.S. Madhusudhan, M-Y. Shen, G.Q. Dong,
+          M.A. Marti-Renom, N. Eswar, F. Alber, M. Topf, B. Oliva,
+             A. Fiser, R. Sanchez, B. Yerkovich, A. Badretdinov,
+                     F. Melo, J.P. Overington, E. Feyfant
+                 University of California, San Francisco, USA
+                    Rockefeller University, New York, USA
+                      Harvard University, Cambridge, USA
+                   Imperial Cancer Research Fund, London, UK
+              Birkbeck College, University of London, London, UK
+
+
+Kind, OS, HostName, Kernel, Processor: 4, Windows Vista build 9200, LAPTOP-REA0J2HD, SMP, unknown
+Date and time of compilation         : 2020/09/03 08:23:39
+MODELLER executable type             : x86_64-w64
+Job starting time (YY/MM/DD HH:MM:SS): 2021/08/06 13:15:06
+
+openf___224_> Open           $(LIB)/restyp.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/resgrp.lib
+rdresgr_266_> Number of residue groups:        2
+openf___224_> Open           ${MODINSTALL9v25}/modlib/sstruc.lib
+
+Dynamically allocated memory at   amaxlibraries [B,KiB,MiB]:       191566     187.076     0.183
+
+Dynamically allocated memory at   amaxlibraries [B,KiB,MiB]:       192094     187.592     0.183
+openf___224_> Open           ${MODINSTALL9v25}/modlib/resdih.lib
+
+Dynamically allocated memory at   amaxlibraries [B,KiB,MiB]:       240694     235.053     0.230
+rdrdih__263_> Number of dihedral angle types         :        9
+              Maximal number of dihedral angle optima:        3
+              Dihedral angle names                   :  Alph Phi Psi Omeg chi1 chi2 chi3 chi4 chi5
+openf___224_> Open           ${MODINSTALL9v25}/modlib/radii.lib
+
+Dynamically allocated memory at   amaxlibraries [B,KiB,MiB]:       253994     248.041     0.242
+openf___224_> Open           ${MODINSTALL9v25}/modlib/radii14.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/af_mnchdef.lib
+rdwilmo_274_> Mainchain residue conformation classes:  APBLE
+openf___224_> Open           ${MODINSTALL9v25}/modlib/mnch.lib
+rdclass_257_> Number of classes:        5
+openf___224_> Open           ${MODINSTALL9v25}/modlib/mnch1.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/mnch2.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/mnch3.lib
+openf___224_> Open           ${MODINSTALL9v25}/modlib/xs4.mat
+rdrrwgh_268_> Number of residue types:       21
+openf___224_> Open           .\antagoinstaAnophelles.pdb
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       266036     259.801     0.254
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       266112     259.875     0.254
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       266283     260.042     0.254
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       267133     260.872     0.255
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       268391     262.101     0.256
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       270295     263.960     0.258
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       270335     263.999     0.258
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       270425     264.087     0.258
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       273281     266.876     0.261
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       273341     266.935     0.261
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       273476     267.066     0.261
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       277760     271.250     0.265
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       277848     271.336     0.265
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       278046     271.529     0.265
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       284472     277.805     0.271
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       284604     277.934     0.271
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       284901     278.224     0.272
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       294523     287.620     0.281
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       294723     287.815     0.281
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       295173     288.255     0.281
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       309623     302.366     0.295
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       309923     302.659     0.296
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       310598     303.318     0.296
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       332256     324.469     0.317
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       332704     324.906     0.317
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       333712     325.891     0.318
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       366216     357.633     0.349
+
+Dynamically allocated memory at       amaxmodel [B,KiB,MiB]:       598088     584.070     0.570
+read_mo_297_> Segments, residues, atoms:        1      331     2649
+read_mo_298_> Segment:        1     1 A   542 A     2649
+
+Dynamically allocated memory at   amaxalignment [B,KiB,MiB]:       607658     593.416     0.580
+
+Dynamically allocated memory at   amaxstructure [B,KiB,MiB]:       801339     782.558     0.764
+openf___224_> Open           .\2rh1template.pdb
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       812350     793.311     0.775
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       812426     793.385     0.775
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       812597     793.552     0.775
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       813447     794.382     0.776
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       814705     795.610     0.777
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       816609     797.470     0.779
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       816649     797.509     0.779
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       816739     797.597     0.779
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       819595     800.386     0.782
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       819655     800.444     0.782
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       819790     800.576     0.782
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       824074     804.760     0.786
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       824162     804.846     0.786
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       824360     805.039     0.786
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       830786     811.314     0.792
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       830918     811.443     0.792
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       831215     811.733     0.793
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       840837     821.130     0.802
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       841037     821.325     0.802
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       841487     821.765     0.803
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       855937     835.876     0.816
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       856237     836.169     0.817
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       856912     836.828     0.817
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       878570     857.979     0.838
+
+Dynamically allocated memory at    amaxsequence [B,KiB,MiB]:       879018     858.416     0.838
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       880026     859.400     0.839
+
+Dynamically allocated memory at amaxcoordinates [B,KiB,MiB]:       912530     891.143     0.870
+
+Dynamically allocated memory at       amaxmodel [B,KiB,MiB]:      1144402    1117.580     1.091
+read_mo_297_> Segments, residues, atoms:        1      283     2275
+read_mo_298_> Segment:        1    29 A  1094 A     2275
+
+Dynamically allocated memory at   amaxalignment [B,KiB,MiB]:       804760     785.898     0.767
+
+Dynamically allocated memory at   amaxstructure [B,KiB,MiB]:       970701     947.950     0.926
+  ALIGN_CODES                                   : antagoinstaAnophellesA 2rh1templateA 
+  Atom type for alignment (FIT_ATOMS)           : CA
+  FIT                                           :         T
+  IMPROVE_ALIGNMENT                             :         T
+  WATER_IO, HETATM_IO, HYDROGEN_IO              :         F        F        F
+  NO_TER                                        :         F
+  OUTPUT                                        : ALIGNMENT QUALITY
+  FIT_ON_FIRST                                  :         F
+  WRITE_FIT                                     :         F
+  FIT_PDBNAM                                    :         T
+  WRITE_WHOLE_PDB                               :         T
+  CURRENT_DIRECTORY                             :         T
+  Feature weights (FEATURE_WEIGHTS)             :    1.0000   0.0000   0.0000   0.0000   1.0000   0.0000
+  NORMALIZE_PP_SCORES                           :         F
+  Gap initiation penalty (GAP_PENALTIES[1])     :  -450.0000
+  Gap extension penalty (GAP_PENALTIES[2])      :   -50.0000
+  Break-break bonus                             : 10000.0000
+  Gap_function (align2d flag)                    :         F
+  2-D Gap penalties                             :  3.50  3.50  3.50  0.20  4.00  6.50  2.00  0.00
+  GAP-GAP_SCORE                                 :    0.0000
+  GAP-RESIDUE_SCORE                             :    0.0000
+  Perform gap-residue and gap-gap correction    :         T
+  Residue type - residue type file (RR_FILE)    : $(LIB)/as1.sim.mat
+  OFF_DIAGONAL                                  :       100
+  OVERHANG                                      :        30
+  LOCAL_ALIGNMENT                               :         F
+  MATRIX_OFFSET                                 :    0.0000
+  N_SUBOPT                                      :         0
+  SUBOPT_OFFSET                                 :    0.0000
+  Gap introduction penalty (GAP_PENALTIES_3D_1) :    0.0000
+  Gap extension penalty (GAP_PENALTIES_3D_2)    :    3.0000
+  Max dist for equiv (2 * GAP_PENALTIES_3D_2)   :    6.0000
+  ALIGN3D_TRF                                   :         F
+  RMS_CUTOFF                                    :    3.5
+
+
+
+salign__276_> 'align_block' changed to 1.
+openf___224_> Open           $(LIB)/as1.sim.mat
+rdrrwgh_268_> Number of residue types:       20
+
+SALIGN______> Matrix of pairwise protein distances for the initial tree:
+
+         antagoin2rh1temp
+antagoin    0.000   0.339
+2rh1temp    0.339   0.000
+
+SALIGN____> Matrix of pairwise equivalences: 
+
+         antagoin2rh1temp
+antagoin        0     222
+2rh1temp        0       0
+
+
+
+SALIGN_____> adding the next group to the alignment; iteration    1
+
+Current alignment total score:        112.1
+
+pos_scr ... position-position dissimilarity from the dynamic programming matrix
+avr_avr ... distance between the two averages
+avr_dst ... for all aligned structures, average distance to the average structure
+std_dev ... for all aligned structures, standard deviation of distance to ave str
+
+group:                                 1       2       
+   N pos_scr avr_ave avr_dst std_dev   antagoi 2rh1tem 
+------------------------------------------------------
+   1    0.00    0.00    0.00    0.00   M   1 A -       
+   2    0.00    0.00    0.00    0.00   N   2 A -       
+   3    0.00    0.00    0.00    0.00   E   3 A -       
+   4    0.00    0.00    0.00    0.00   S   4 A -       
+   5    0.00    0.00    0.00    0.00   E   5 A -       
+   6    0.00    0.00    0.00    0.00   C   6 A -       
+   7    0.00    0.00    0.00    0.00   A   7 A -       
+   8    0.00    0.00    0.00    0.00   S   8 A -       
+   9    0.00    0.00    0.00    0.00   L   9 A -       
+  10    0.00    0.00    0.00    0.00   L  10 A -       
+  11    0.00    0.00    0.00    0.00   A  11 A -       
+  12    0.00    0.00    0.00    0.00   S  12 A -       
+  13    0.00    0.00    0.00    0.00   V  13 A -       
+  14    0.00    0.00    0.00    0.00   Q  14 A -       
+  15    0.00    0.00    0.00    0.00   W  15 A -       
+  16    0.27    3.72    1.86    0.00   T  16 A D  29 A 
+  17    0.21    2.63    1.31    0.00   D  17 A E  30 A 
+  18    0.33    1.34    0.67    0.00   P  18 A V  31 A 
+  19    0.44    1.87    0.93    0.00   T  19 A W  32 A 
+  20    0.34    1.42    0.71    0.00   N  20 A V  33 A 
+  21    0.18    0.93    0.46    0.00   L  21 A V  34 A 
+  22    0.34    1.44    0.72    0.00   V  22 A G  35 A 
+  23    0.36    1.48    0.74    0.00   S  23 A M  36 A 
+  24    0.36    1.41    0.70    0.00   L  24 A G  37 A 
+  25    0.29    1.07    0.53    0.00   A  25 A I  38 A 
+  26    0.06    1.13    0.57    0.00 * V  26 A V  39 A 
+  27    0.18    1.28    0.64    0.00   L  27 A M  40 A 
+  28    0.20    1.11    0.55    0.00   A  28 A S  41 A 
+  29    0.21    0.93    0.47    0.00   F  29 A L  42 A 
+  30    0.07    1.05    0.53    0.00 * I  30 A I  43 A 
+  31    0.34    1.10    0.55    0.00   N  31 A V  44 A 
+  32    0.18    1.24    0.62    0.00   V  32 A L  45 A 
+  33    0.27    1.19    0.60    0.00   L  33 A A  46 A 
+  34    0.15    1.08    0.54    0.00   V  34 A I  47 A 
+  35    0.15    1.40    0.70    0.00   I  35 A V  48 A 
+  36    0.27    1.64    0.82    0.00   V  36 A F  49 A 
+  37    0.02    1.64    0.82    0.00 * G  37 A G  50 A 
+  38    0.09    1.68    0.84    0.00 * N  38 A N  51 A 
+  39    0.36    1.88    0.94    0.00   C  39 A V  52 A 
+  40    0.05    1.75    0.88    0.00 * L  40 A L  53 A 
+  41    0.06    1.97    0.98    0.00 * V  41 A V  54 A 
+  42    0.07    2.33    1.16    0.00 * I  42 A I  55 A 
+  43    0.23    2.85    1.42    0.00   A  43 A T  56 A 
+  44    0.07    3.09    1.54    0.00 * A  44 A A  57 A 
+  45    0.15    3.07    1.53    0.00   V  45 A I  58 A 
+  46    0.27    3.64    1.82    0.00   L  46 A A  59 A 
+  47    0.44    4.33    2.17    0.00   C  47 A K  60 A 
+  48    0.35    4.72    2.36    0.00   S  48 A F  61 A 
+  49    0.32    4.80    2.40    0.00   H  49 A E  62 A 
+  50    0.19    4.65    2.33    0.00   K  50 A R  63 A 
+  51    0.05    3.29    1.65    0.00 * L  51 A L  64 A 
+  52    0.27    2.52    1.26    0.00   R  52 A Q  65 A 
+  53    0.17    1.74    0.87    0.00   S  53 A T  66 A 
+  54    0.06    0.96    0.48    0.00 * V  54 A V  67 A 
+  55    0.06    2.19    1.09    0.00 * T  55 A T  68 A 
+  56    0.10    2.32    1.16    0.00 * N  56 A N  69 A 
+  57    0.19    1.20    0.60    0.00   F  57 A Y  70 A 
+  58    0.05    0.84    0.42    0.00 * F  58 A F  71 A 
+  59    0.07    1.04    0.52    0.00 * I  59 A I  72 A 
+  60    0.25    1.08    0.54    0.00   V  60 A T  73 A 
+  61    0.06    0.81    0.40    0.00 * S  61 A S  74 A 
+  62    0.05    0.82    0.41    0.00 * L  62 A L  75 A 
+  63    0.07    0.94    0.47    0.00 * A  63 A A  76 A 
+  64    0.36    0.84    0.42    0.00   V  64 A C  77 A 
+  65    0.07    0.71    0.35    0.00 * A  65 A A  78 A 
+  66    0.06    0.82    0.41    0.00 * D  66 A D  79 A 
+  67    0.05    0.89    0.44    0.00 * L  67 A L  80 A 
+  68    0.18    0.81    0.41    0.00   L  68 A V  81 A 
+  69    0.27    0.50    0.25    0.00   V  69 A M  82 A 
+  70    0.02    0.78    0.39    0.00 * G  70 A G  83 A 
+  71    0.05    0.78    0.39    0.00 * L  71 A L  84 A 
+  72    0.07    0.55    0.28    0.00 * A  72 A A  85 A 
+  73    0.06    0.24    0.12    0.00 * V  73 A V  86 A 
+  74    0.18    0.25    0.12    0.00   L  74 A V  87 A 
+  75    0.04    0.67    0.33    0.00 * P  75 A P  88 A 
+  76    0.05    0.78    0.39    0.00 * F  76 A F  89 A 
+  77    0.24    0.60    0.30    0.00   S  77 A G  90 A 
+  78    0.07    0.79    0.40    0.00 * A  78 A A  91 A 
+  79    0.23    0.75    0.38    0.00   T  79 A A  92 A 
+  80    0.41    0.82    0.41    0.00   W  80 A H  93 A 
+  81    0.35    0.75    0.37    0.00   E  81 A I  94 A 
+  82    0.18    1.12    0.56    0.00   V  82 A L  95 A 
+  83    0.31    1.33    0.67    0.00   F  83 A M  96 A 
+  84    0.08    1.91    0.95    0.00 * K  84 A K  97 A 
+  85    0.27    1.43    0.71    0.00   V  85 A M  98 A 
+  86    0.03    0.90    0.45    0.00 * W  86 A W  99 A 
+  87    0.29    0.45    0.23    0.00   I  87 A T 100 A 
+  88    0.05    0.44    0.22    0.00 * F  88 A F 101 A 
+  89    0.02    1.09    0.55    0.00 * G  89 A G 102 A 
+  90    0.20    1.35    0.68    0.00   D  90 A N 103 A 
+  91    0.27    1.45    0.73    0.00   V  91 A F 104 A 
+  92    0.02    0.86    0.43    0.00 * W  92 A W 105 A 
+  93    0.00    0.74    0.37    0.00 * C  93 A C 106 A 
+  94    0.29    1.23    0.62    0.00   R  94 A E 107 A 
+  95    0.25    0.99    0.50    0.00   I  95 A F 108 A 
+  96    0.03    0.57    0.29    0.00 * W  96 A W 109 A 
+  97    0.30    0.55    0.27    0.00   L  97 A T 110 A 
+  98    0.20    0.43    0.21    0.00   A  98 A S 111 A 
+  99    0.15    0.61    0.30    0.00   V  99 A I 112 A 
+ 100    0.06    0.45    0.22    0.00 * D 100 A D 113 A 
+ 101    0.06    0.66    0.33    0.00 * V 101 A V 114 A 
+ 102    0.33    0.82    0.41    0.00   W 102 A L 115 A 
+ 103    0.42    0.59    0.29    0.00   M 103 A C 116 A 
+ 104    0.36    0.72    0.36    0.00   C 104 A V 117 A 
+ 105    0.07    1.01    0.51    0.00 * T 105 A T 118 A 
+ 106    0.07    1.08    0.54    0.00 * A 106 A A 119 A 
+ 107    0.06    1.14    0.57    0.00 * S 107 A S 120 A 
+ 108    0.07    1.22    0.61    0.00 * I 108 A I 121 A 
+ 109    0.34    0.93    0.46    0.00   L 109 A E 122 A 
+ 110    0.25    1.19    0.59    0.00   N 110 A T 123 A 
+ 111    0.05    1.32    0.66    0.00 * L 111 A L 124 A 
+ 112    0.00    1.11    0.55    0.00 * C 112 A C 125 A 
+ 113    0.22    0.97    0.49    0.00   A 113 A V 126 A 
+ 114    0.07    0.93    0.47    0.00 * I 114 A I 127 A 
+ 115    0.20    1.06    0.53    0.00   S 115 A A 128 A 
+ 116    0.18    1.15    0.57    0.00   L 116 A V 129 A 
+ 117    0.06    1.31    0.66    0.00 * D 117 A D 130 A 
+ 118    0.07    1.77    0.88    0.00 * R 118 A R 131 A 
+ 119    0.04    1.67    0.84    0.00 * Y 119 A Y 132 A 
+ 120    0.27    1.60    0.80    0.00   V 120 A F 133 A 
+ 121    0.07    2.02    1.01    0.00 * A 121 A A 134 A 
+ 122    0.15    2.55    1.27    0.00   V 122 A I 135 A 
+ 123    0.08    2.93    1.46    0.00 * T 123 A T 136 A 
+ 124    0.28    3.66    1.83    0.00   R 124 A S 137 A 
+ 125    0.05    3.57    1.78    0.00 * P 125 A P 138 A 
+ 126    0.29    3.43    1.72    0.00   V 126 A F 139 A 
+ 127    0.25    8.38    4.19    0.00   T 127 A K 140 A 
+ 128    0.05    8.87    4.44    0.00 * Y 128 A Y 141 A 
+ 129    0.35    4.09    2.04    0.00   P 129 A Q 142 A 
+ 130    0.09    6.50    3.25    0.00 * S 130 A S 143 A 
+ 131    0.20    2.33    1.16    0.00   I 131 A L 144 A 
+ 132    0.19    2.45    1.23    0.00   M 132 A L 145 A 
+ 133    0.18    1.26    0.63    0.00   S 133 A T 146 A 
+ 134    0.24    0.79    0.40    0.00   T 134 A K 147 A 
+ 135    0.28    1.49    0.75    0.00   R 135 A N 148 A 
+ 136    0.19    1.89    0.94    0.00   R 136 A K 149 A 
+ 137    0.07    1.34    0.67    0.00 * A 137 A A 150 A 
+ 138    0.19    1.33    0.67    0.00   K 138 A R 151 A 
+ 139    0.30    1.56    0.78    0.00   S 139 A V 152 A 
+ 140    0.18    1.39    0.70    0.00   L 140 A I 153 A 
+ 141    0.07    1.08    0.54    0.00 * I 141 A I 154 A 
+ 142    0.27    1.64    0.82    0.00   A 142 A L 155 A 
+ 143    0.39    2.04    1.02    0.00   G 143 A M 156 A 
+ 144    0.18    1.81    0.90    0.00   L 144 A V 157 A 
+ 145    0.02    1.77    0.88    0.00 * W 145 A W 158 A 
+ 146    0.15    2.03    1.01    0.00   V 146 A I 159 A 
+ 147    0.18    2.20    1.10    0.00   L 147 A V 160 A 
+ 148    0.06    1.29    0.65    0.00 * S 148 A S 161 A 
+ 149    0.40    1.81    0.91    0.00   F 149 A G 162 A 
+ 150    0.18    2.62    1.31    0.00   V 150 A L 163 A 
+ 151    0.29    2.70    1.35    0.00   I 151 A T 164 A 
+ 152    0.41    2.80    1.40    0.00   C 152 A S 165 A 
+ 153    0.08    3.64    1.82    0.00 * F 153 A F 166 A 
+ 154    0.35    1.95    0.97    0.00   P 154 A L 167 A 
+ 155    0.04    4.58    2.29    0.00 * P 155 A P 168 A 
+ 156    0.20    2.45    1.23    0.00   L 156 A I 169 A 
+ 157    0.32    5.47    2.74    0.00   V 157 A Q 170 A 
+ 158    0.40    7.23    3.61    0.00   G 158 A M 171 A 
+ 159    0.42    3.61    1.80    0.00   W 159 A H 172 A 
+ 160    0.40    9.34    4.67    0.00   K 160 A W 173 A 
+ 161    0.36   11.46    5.73    0.00   E 161 A Y 174 A 
+ 162    0.30    9.03    4.51    0.00   Q 162 A R 175 A 
+ 163    0.27    9.39    4.69    0.00   K 163 A A 176 A 
+ 164    0.27   11.06    5.53    0.00   V 164 A T 177 A 
+ 165    0.29   10.18    5.09    0.00   K 165 A H 178 A 
+ 166    0.24   10.96    5.48    0.00   E 166 A Q 179 A 
+ 167    0.29    8.29    4.15    0.00   N 167 A E 180 A 
+ 168    0.25    6.48    3.24    0.00   V 168 A A 181 A 
+ 169    0.34    5.79    2.89    0.00   Y 169 A I 182 A 
+ 170    0.32    5.61    2.81    0.00   Y 170 A N 183 A 
+ 171    0.46    5.46    2.73    0.00   Q 171 A C 184 A 
+ 172    0.06    6.75    3.37    0.00 * Y 172 A Y 185 A 
+ 173    0.22    6.45    3.22    0.00   G 173 A A 186 A 
+ 174    0.30    7.53    3.76    0.00   N 174 A E 187 A 
+ 175    0.37   13.56    6.78    0.00   Y 175 A E 188 A 
+ 176    0.09   11.50    5.75    0.00 * T 176 A T 189 A 
+ 177    0.00    0.00    0.00    0.00   L 177 A -       
+ 178    0.00    0.00    0.00    0.00   V 178 A -       
+ 179    0.00    0.00    0.00    0.00   S 179 A -       
+ 180    0.00    0.00    0.00    0.00   V 180 A -       
+ 181    0.00    0.00    0.00    0.00   T 181 A -       
+ 182    0.00    0.00    0.00    0.00   P 182 A -       
+ 183    0.00    0.00    0.00    0.00   S 183 A -       
+ 184    0.00    0.00    0.00    0.00   P 184 A -       
+ 185    0.00    0.00    0.00    0.00   A 185 A -       
+ 186    0.00    0.00    0.00    0.00   P 186 A -       
+ 187    0.00    0.00    0.00    0.00   P 187 A -       
+ 188    0.00    0.00    0.00    0.00   L 188 A -       
+ 189    0.00    0.00    0.00    0.00   P 189 A -       
+ 190    0.00    0.00    0.00    0.00   C 190 A -       
+ 191    0.00    0.00    0.00    0.00   P 191 A -       
+ 192    0.00    0.00    0.00    0.00   W 192 A -       
+ 193    0.40    1.64    0.82    0.00   T 193 A C 190 A 
+ 194    0.01    1.52    0.76    0.00 * C 194 A C 191 A 
+ 195    0.22    2.84    1.42    0.00   E 195 A D 192 A 
+ 196    0.21    2.86    1.43    0.00   L 196 A F 193 A 
+ 197    0.37    4.60    2.30    0.00   T 197 A F 194 A 
+ 198    0.25    1.98    0.99    0.00   N 198 A T 195 A 
+ 199    0.21    0.58    0.29    0.00   D 199 A N 196 A 
+ 200    0.26    0.85    0.42    0.00   A 200 A Q 197 A 
+ 201    0.21    0.72    0.36    0.00   G 201 A A 198 A 
+ 202    0.04    0.64    0.32    0.00 * Y 202 A Y 199 A 
+ 203    0.22    0.86    0.43    0.00   V 203 A A 200 A 
+ 204    0.15    1.17    0.59    0.00   V 204 A I 201 A 
+ 205    0.32    1.18    0.59    0.00   Y 205 A A 202 A 
+ 206    0.06    1.60    0.80    0.00 * S 206 A S 203 A 
+ 207    0.20    1.69    0.84    0.00   A 207 A S 204 A 
+ 208    0.18    1.10    0.55    0.00   L 208 A I 205 A 
+ 209    0.33    1.52    0.76    0.00   G 209 A V 206 A 
+ 210    0.06    2.14    1.07    0.00 * S 210 A S 207 A 
+ 211    0.05    2.11    1.06    0.00 * F 211 A F 208 A 
+ 212    0.04    1.89    0.95    0.00 * Y 212 A Y 209 A 
+ 213    0.15    2.05    1.02    0.00   I 213 A V 210 A 
+ 214    0.04    2.02    1.01    0.00 * P 214 A P 211 A 
+ 215    0.19    1.90    0.95    0.00   M 215 A L 212 A 
+ 216    0.27    1.46    0.73    0.00   F 216 A V 213 A 
+ 217    0.15    1.39    0.70    0.00   V 217 A I 214 A 
+ 218    0.11    1.66    0.83    0.00 * M 218 A M 215 A 
+ 219    0.18    1.89    0.95    0.00   L 219 A V 216 A 
+ 220    0.05    1.53    0.77    0.00 * F 220 A F 217 A 
+ 221    0.27    1.28    0.64    0.00   F 221 A V 218 A 
+ 222    0.04    2.87    1.43    0.00 * Y 222 A Y 219 A 
+ 223    0.40    3.31    1.66    0.00   W 223 A S 220 A 
+ 224    0.07    2.40    1.20    0.00 * R 224 A R 221 A 
+ 225    0.15    2.63    1.31    0.00   I 225 A V 222 A 
+ 226    0.19    3.68    1.84    0.00   Y 226 A F 223 A 
+ 227    0.27    3.54    1.77    0.00   R 227 A Q 224 A 
+ 228    0.25    3.24    1.62    0.00   A 228 A E 225 A 
+ 229    0.07    3.51    1.75    0.00 * A 229 A A 226 A 
+ 230    0.00    0.00    0.00    0.00   V 230 A -       
+ 231    0.00    0.00    0.00    0.00   R 231 A -       
+ 232    0.00    0.00    0.00    0.00   T 232 A -       
+ 233    0.00    0.00    0.00    0.00   K 444 A -       
+ 234    0.00    0.00    0.00    0.00   K 445 A -       
+ 235    0.00    0.00    0.00    0.00   L 446 A -       
+ 236    0.00    0.00    0.00    0.00   G 447 A -       
+ 237    0.00    0.00    0.00    0.00   K 448 A -       
+ 238    0.00    0.00    0.00    0.00   K 449 A -       
+ 239    0.00    0.00    0.00    0.00   H 450 A -       
+ 240    0.00    0.00    0.00    0.00   L 451 A -       
+ 241    0.07   17.38    8.69    0.00 * K 452 A K 227 A 
+ 242    0.33   17.27    8.64    0.00   V 453 A R 228 A 
+ 243    0.10   10.12    5.06    0.00 * Q 454 A Q 229 A 
+ 244    0.24    8.35    4.18    0.00   V 455 A L 230 A 
+ 245    0.13   12.75    6.38    0.00 * K 456 A K 263 A 
+ 246    0.42   12.23    6.11    0.00   R 457 A F 264 A 
+ 247    0.42   10.38    5.19    0.00   F 458 A C 265 A 
+ 248    0.32    3.36    1.68    0.00   R 459 A L 266 A 
+ 249    0.35    3.16    1.58    0.00   M 460 A K 267 A 
+ 250    0.07    3.03    1.52    0.00 * E 461 A E 268 A 
+ 251    0.33    2.54    1.27    0.00   T 462 A H 269 A 
+ 252    0.07    2.45    1.22    0.00 * K 463 A K 270 A 
+ 253    0.07    2.39    1.19    0.00 * A 464 A A 271 A 
+ 254    0.27    2.18    1.09    0.00   A 465 A L 272 A 
+ 255    0.07    1.90    0.95    0.00 * K 466 A K 273 A 
+ 256    0.06    1.79    0.89    0.00 * T 467 A T 274 A 
+ 257    0.05    1.76    0.88    0.00 * L 468 A L 275 A 
+ 258    0.02    1.59    0.80    0.00 * G 469 A G 276 A 
+ 259    0.07    1.18    0.59    0.00 * I 470 A I 277 A 
+ 260    0.07    1.35    0.68    0.00 * I 471 A I 278 A 
+ 261    0.27    1.40    0.70    0.00   V 472 A M 279 A 
+ 262    0.02    1.17    0.58    0.00 * G 473 A G 280 A 
+ 263    0.30    0.92    0.46    0.00   G 474 A T 281 A 
+ 264    0.05    1.06    0.53    0.00 * F 475 A F 282 A 
+ 265    0.28    1.15    0.58    0.00   I 476 A T 283 A 
+ 266    0.21    0.88    0.44    0.00   F 477 A L 284 A 
+ 267    0.00    0.94    0.47    0.00 * C 478 A C 285 A 
+ 268    0.03    0.81    0.40    0.00 * W 479 A W 286 A 
+ 269    0.05    1.46    0.73    0.00 * L 480 A L 287 A 
+ 270    0.04    1.49    0.74    0.00 * P 481 A P 288 A 
+ 271    0.05    0.89    0.45    0.00 * F 482 A F 289 A 
+ 272    0.05    0.99    0.50    0.00 * F 483 A F 290 A 
+ 273    0.28    1.43    0.71    0.00   T 484 A I 291 A 
+ 274    0.27    1.52    0.76    0.00   M 485 A V 292 A 
+ 275    0.30    1.67    0.84    0.00   Y 486 A N 293 A 
+ 276    0.18    1.38    0.69    0.00   L 487 A I 294 A 
+ 277    0.25    1.33    0.67    0.00   T 488 A V 295 A 
+ 278    0.30    1.55    0.78    0.00   R 489 A H 296 A 
+ 279    0.22    1.89    0.94    0.00   A 490 A V 297 A 
+ 280    0.26    1.83    0.91    0.00   F 491 A I 298 A 
+ 281    0.44    1.12    0.56    0.00   C 492 A Q 299 A 
+ 282    0.25    1.88    0.94    0.00   A 493 A D 300 A 
+ 283    0.27    2.17    1.08    0.00   E 494 A N 301 A 
+ 284    0.41    1.45    0.73    0.00   C 495 A L 302 A 
+ 285    0.08    1.71    0.85    0.00 * I 496 A I 303 A 
+ 286    0.29    0.63    0.31    0.00   N 497 A R 304 A 
+ 287    0.25    1.31    0.66    0.00   S 498 A K 305 A 
+ 288    0.34    1.12    0.56    0.00   L 499 A E 306 A 
+ 289    0.18    0.56    0.28    0.00   L 500 A V 307 A 
+ 290    0.19    1.06    0.53    0.00   F 501 A Y 308 A 
+ 291    0.32    1.21    0.61    0.00   S 502 A I 309 A 
+ 292    0.18    0.83    0.41    0.00   V 503 A L 310 A 
+ 293    0.05    0.52    0.26    0.00 * L 504 A L 311 A 
+ 294    0.36    0.49    0.25    0.00   F 505 A N 312 A 
+ 295    0.02    0.57    0.29    0.00 * W 506 A W 313 A 
+ 296    0.18    0.35    0.18    0.00   L 507 A I 314 A 
+ 297    0.02    0.31    0.15    0.00 * G 508 A G 315 A 
+ 298    0.04    0.66    0.33    0.00 * Y 509 A Y 316 A 
+ 299    0.36    1.11    0.55    0.00   C 510 A V 317 A 
+ 300    0.09    0.84    0.42    0.00 * N 511 A N 318 A 
+ 301    0.06    0.82    0.41    0.00 * S 512 A S 319 A 
+ 302    0.22    0.98    0.49    0.00   A 513 A G 320 A 
+ 303    0.27    1.51    0.75    0.00   V 514 A F 321 A 
+ 304    0.09    1.43    0.71    0.00 * N 515 A N 322 A 
+ 305    0.04    1.63    0.82    0.00 * P 516 A P 323 A 
+ 306    0.21    2.00    1.00    0.00   F 517 A L 324 A 
+ 307    0.07    1.99    1.00    0.00 * I 518 A I 325 A 
+ 308    0.05    1.92    0.96    0.00 * Y 519 A Y 326 A 
+ 309    0.35    1.41    0.70    0.00   A 520 A C 327 A 
+ 310    0.00    0.00    0.00    0.00   L 521 A -       
+ 311    0.00    0.00    0.00    0.00   F 522 A -       
+ 312    0.00    0.00    0.00    0.00   S 523 A -       
+ 313    0.00    0.00    0.00    0.00   K 524 A -       
+ 314    0.00    0.00    0.00    0.00   D 525 A -       
+ 315    0.00    0.00    0.00    0.00   F 526 A -       
+ 316    0.08    4.76    2.38    0.00 * R 527 A R 328 A 
+ 317    0.29    6.42    3.21    0.00   Q 528 A S 329 A 
+ 318    0.26    6.38    3.19    0.00   A 529 A P 330 A 
+ 319    0.39    7.82    3.91    0.00   F 530 A D 331 A 
+ 320    0.37    7.68    3.84    0.00   K 531 A F 332 A 
+ 321    0.07    6.07    3.04    0.00 * R 532 A R 333 A 
+ 322    0.07    6.87    3.44    0.00 * I 533 A I 334 A 
+ 323    0.29    8.34    4.17    0.00   I 534 A A 335 A 
+ 324    0.21    7.49    3.75    0.00   L 535 A F 336 A 
+ 325    0.27    5.59    2.79    0.00   R 536 A Q 337 A 
+ 326    0.45    7.03    3.52    0.00   C 537 A E 338 A 
+ 327    0.06    8.77    4.38    0.00 * L 538 A L 339 A 
+ 328    0.42    7.16    3.58    0.00   C 539 A L 340 A 
+ 329    0.72    7.38    3.69    0.00   S 540 A C 341 A 
+ 330    0.68    4.77    2.39    0.00   K 541 A L 342 A 
+ 331    0.80   49.27   24.63    0.00   R 542 A V1094 A 
+------------------------------------------------------
+
+
+
+
+SALIGN______> Raw QUALITY_SCORE of the multiple alignment:     222.0
+              QUALITY_SCORE (percentage)                 :      78.4
+              Number of unique protein pairs             :         1
+              QUALITY_SCORE_min                          :       222
+              RMS_CUTOFF                                 :    3.5000
+              QS is the average number of structurally equivalent residue pairs.
+              Two residues are equivalent when closer than RMS_CUTOFF upon
+              pairwise least-squares superposition given current alignment.
+
+
+SALIGN______> Matrix of pairwise equivalences from individual pairwise alignments:
+
+         antagoin2rh1temp
+antagoin        0     222
+2rh1temp        0       0
+SALIGN______> Matrix of pairwise equivalences: 
+
+         antagoin2rh1temp
+antagoin        0     222
+2rh1temp        0       0
+
+
+
+SALIGN______> Matrix of differences in pairwise equivalences inferred from the tree and individually: 
+
+         antagoin2rh1temp
+antagoin        0       0
+2rh1temp        0       0
+
+
+
+SALIGN______> Matrix of %differences in pairwise equivalences inferred from the tree and individually: 
+
+         antagoin2rh1temp
+antagoin        0       0
+2rh1temp        0       0
+
+
+
+  ALIGN_CODES                                   : antagoinstaAnophellesA 2rh1templateA 
+  Atom type for alignment (FIT_ATOMS)           : CA
+  FIT                                           :         T
+  IMPROVE_ALIGNMENT                             :         T
+  WATER_IO, HETATM_IO, HYDROGEN_IO              :         F        F        F
+  NO_TER                                        :         F
+  OUTPUT                                        : ALIGNMENT QUALITY
+  FIT_ON_FIRST                                  :         F
+  WRITE_FIT                                     :         F
+  FIT_PDBNAM                                    :         T
+  WRITE_WHOLE_PDB                               :         T
+  CURRENT_DIRECTORY                             :         T
+  Feature weights (FEATURE_WEIGHTS)             :    1.0000   0.5000   1.0000   1.0000   1.0000   0.0000
+  NORMALIZE_PP_SCORES                           :         F
+  Gap initiation penalty (GAP_PENALTIES[1])     :  -450.0000
+  Gap extension penalty (GAP_PENALTIES[2])      :   -50.0000
+  Break-break bonus                             : 10000.0000
+  Gap_function (align2d flag)                    :         F
+  2-D Gap penalties                             :  3.50  3.50  3.50  0.20  4.00  6.50  2.00  0.00
+  GAP-GAP_SCORE                                 :    0.0000
+  GAP-RESIDUE_SCORE                             :    0.0000
+  Perform gap-residue and gap-gap correction    :         T
+  Residue type - residue type file (RR_FILE)    : $(LIB)/as1.sim.mat
+  OFF_DIAGONAL                                  :       100
+  OVERHANG                                      :        30
+  LOCAL_ALIGNMENT                               :         F
+  MATRIX_OFFSET                                 :    0.0000
+  N_SUBOPT                                      :         0
+  SUBOPT_OFFSET                                 :    0.0000
+  Gap introduction penalty (GAP_PENALTIES_3D_1) :    0.0000
+  Gap extension penalty (GAP_PENALTIES_3D_2)    :    3.0000
+  Max dist for equiv (2 * GAP_PENALTIES_3D_2)   :    6.0000
+  ALIGN3D_TRF                                   :         F
+  RMS_CUTOFF                                    :    3.5
+
+
+
+salign__276_> 'align_block' changed to 1.
+mkapsa__637W> No residue topology library is in memory.
+              Better radii would be used if topology.read() is called first.
+iup2crm_280W> No topology library in memory or assigning a BLK residue.
+              Default CHARMM atom type assigned:  N -->  N
+              This message is written only for the first such atom.
+iup2crm_280W> No topology library in memory or assigning a BLK residue.
+              Default CHARMM atom type assigned:  N -->  N
+              This message is written only for the first such atom.
+openf___224_> Open           $(LIB)/as1.sim.mat
+rdrrwgh_268_> Number of residue types:       20
+
+Dynamically allocated memory at   amaxalignment [B,KiB,MiB]:       971423     948.655     0.926
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        1      263      264        1.4690        1.5134        0.0055
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        2      265      265        1.4634        1.4634        0.0001
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        3      265      265        1.4634        1.4634        0.0000
+
+SALIGN______> Matrix of pairwise protein distances for the initial tree:
+
+         antagoin2rh1temp
+antagoin    0.000   0.460
+2rh1temp    0.460   0.000
+
+SALIGN____> Matrix of pairwise equivalences: 
+
+         antagoin2rh1temp
+antagoin        0     256
+2rh1temp        0       0
+
+
+
+SALIGN_____> adding the next group to the alignment; iteration    1
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        1      263      264        1.4690        1.5134        0.0055
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        2      265      265        1.4634        1.4634        0.0001
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        3      265      265        1.4634        1.4634        0.0000
+
+Current alignment total score:        152.8
+
+pos_scr ... position-position dissimilarity from the dynamic programming matrix
+avr_avr ... distance between the two averages
+avr_dst ... for all aligned structures, average distance to the average structure
+std_dev ... for all aligned structures, standard deviation of distance to ave str
+
+group:                                 1       2       
+   N pos_scr avr_ave avr_dst std_dev   antagoi 2rh1tem 
+------------------------------------------------------
+   1    0.00    0.00    0.00    0.00   M   1 A -       
+   2    0.00    0.00    0.00    0.00   N   2 A -       
+   3    0.00    0.00    0.00    0.00   E   3 A -       
+   4    0.00    0.00    0.00    0.00   S   4 A -       
+   5    0.00    0.00    0.00    0.00   E   5 A -       
+   6    0.00    0.00    0.00    0.00   C   6 A -       
+   7    0.00    0.00    0.00    0.00   A   7 A -       
+   8    0.00    0.00    0.00    0.00   S   8 A -       
+   9    0.00    0.00    0.00    0.00   L   9 A -       
+  10    0.00    0.00    0.00    0.00   L  10 A -       
+  11    0.00    0.00    0.00    0.00   A  11 A -       
+  12    0.00    0.00    0.00    0.00   S  12 A -       
+  13    0.00    0.00    0.00    0.00   V  13 A -       
+  14    0.00    0.00    0.00    0.00   Q  14 A -       
+  15    0.00    0.00    0.00    0.00   W  15 A -       
+  16    0.74    3.56    1.78    0.00   T  16 A D  29 A 
+  17    0.56    2.24    1.12    0.00   D  17 A E  30 A 
+  18    0.28    1.20    0.60    0.00   P  18 A V  31 A 
+  19    0.41    1.93    0.96    0.00   T  19 A W  32 A 
+  20    0.30    1.34    0.67    0.00   N  20 A V  33 A 
+  21    0.13    0.42    0.21    0.00   L  21 A V  34 A 
+  22    0.29    1.26    0.63    0.00   V  22 A G  35 A 
+  23    0.32    1.49    0.74    0.00   S  23 A M  36 A 
+  24    0.30    1.30    0.65    0.00   L  24 A G  37 A 
+  25    0.20    0.68    0.34    0.00   A  25 A I  38 A 
+  26    0.11    0.75    0.37    0.00 * V  26 A V  39 A 
+  27    0.19    0.96    0.48    0.00   L  27 A M  40 A 
+  28    0.15    0.56    0.28    0.00   A  28 A S  41 A 
+  29    0.11    0.19    0.10    0.00   F  29 A L  42 A 
+  30    0.10    0.65    0.32    0.00 * I  30 A I  43 A 
+  31    0.21    0.59    0.29    0.00   N  31 A V  44 A 
+  32    0.14    0.53    0.27    0.00   V  32 A L  45 A 
+  33    0.19    0.61    0.31    0.00   L  33 A A  46 A 
+  34    0.13    0.55    0.28    0.00   V  34 A I  47 A 
+  35    0.14    0.65    0.33    0.00   I  35 A V  48 A 
+  36    0.19    0.66    0.33    0.00   V  36 A F  49 A 
+  37    0.06    0.47    0.24    0.00 * G  37 A G  50 A 
+  38    0.10    0.51    0.26    0.00 * N  38 A N  51 A 
+  39    0.22    0.57    0.28    0.00   C  39 A V  52 A 
+  40    0.07    0.41    0.20    0.00 * L  40 A L  53 A 
+  41    0.09    0.54    0.27    0.00 * V  41 A V  54 A 
+  42    0.13    0.89    0.44    0.00 * I  42 A I  55 A 
+  43    0.24    1.22    0.61    0.00   A  43 A T  56 A 
+  44    0.18    1.29    0.65    0.00 * A  44 A A  57 A 
+  45    0.21    1.29    0.64    0.00   V  45 A I  58 A 
+  46    0.34    2.03    1.01    0.00   L  46 A A  59 A 
+  47    0.47    2.50    1.25    0.00   C  47 A K  60 A 
+  48    0.47    2.86    1.43    0.00   S  48 A F  61 A 
+  49    0.49    3.15    1.58    0.00   H  49 A E  62 A 
+  50    0.38    2.63    1.31    0.00   K  50 A R  63 A 
+  51    0.17    1.35    0.68    0.00 * L  51 A L  64 A 
+  52    0.27    1.36    0.68    0.00   R  52 A Q  65 A 
+  53    0.19    1.02    0.51    0.00   S  53 A T  66 A 
+  54    0.28    2.31    1.15    0.00 * V  54 A V  67 A 
+  55    0.38    2.21    1.11    0.00 * T  55 A T  68 A 
+  56    0.14    0.87    0.44    0.00 * N  56 A N  69 A 
+  57    0.17    0.80    0.40    0.00   F  57 A Y  70 A 
+  58    0.10    0.72    0.36    0.00 * F  58 A F  71 A 
+  59    0.08    0.45    0.23    0.00 * I  59 A I  72 A 
+  60    0.19    0.74    0.37    0.00   V  60 A T  73 A 
+  61    0.12    0.81    0.40    0.00 * S  61 A S  74 A 
+  62    0.08    0.54    0.27    0.00 * L  62 A L  75 A 
+  63    0.08    0.48    0.24    0.00 * A  63 A A  76 A 
+  64    0.25    0.76    0.38    0.00   V  64 A C  77 A 
+  65    0.09    0.55    0.27    0.00 * A  65 A A  78 A 
+  66    0.07    0.42    0.21    0.00 * D  66 A D  79 A 
+  67    0.08    0.52    0.26    0.00 * L  67 A L  80 A 
+  68    0.12    0.38    0.19    0.00   L  68 A V  81 A 
+  69    0.16    0.36    0.18    0.00   V  69 A M  82 A 
+  70    0.06    0.48    0.24    0.00 * G  70 A G  83 A 
+  71    0.09    0.61    0.31    0.00 * L  71 A L  84 A 
+  72    0.07    0.33    0.17    0.00 * A  72 A A  85 A 
+  73    0.08    0.51    0.26    0.00 * V  73 A V  86 A 
+  74    0.14    0.51    0.26    0.00   L  74 A V  87 A 
+  75    0.13    1.01    0.50    0.00 * P  75 A P  88 A 
+  76    0.34    0.87    0.43    0.00 * F  76 A F  89 A 
+  77    0.17    0.57    0.28    0.00   S  77 A G  90 A 
+  78    0.14    1.01    0.51    0.00 * A  78 A A  91 A 
+  79    0.23    1.12    0.56    0.00   T  79 A A  92 A 
+  80    0.31    1.12    0.56    0.00   W  80 A H  93 A 
+  81    0.26    0.92    0.46    0.00   E  81 A I  94 A 
+  82    0.24    1.41    0.71    0.00   V  82 A L  95 A 
+  83    0.33    1.72    0.86    0.00   F  83 A M  96 A 
+  84    0.49    2.10    1.05    0.00 * K  84 A K  97 A 
+  85    0.51    1.50    0.75    0.00   V  85 A M  98 A 
+  86    0.12    0.97    0.49    0.00 * W  86 A W  99 A 
+  87    0.19    0.60    0.30    0.00   I  87 A T 100 A 
+  88    0.09    0.56    0.28    0.00 * F  88 A F 101 A 
+  89    0.09    0.76    0.38    0.00 * G  89 A G 102 A 
+  90    0.20    0.99    0.49    0.00   D  90 A N 103 A 
+  91    0.22    0.86    0.43    0.00   V  91 A F 104 A 
+  92    0.05    0.33    0.16    0.00 * W  92 A W 105 A 
+  93    0.08    0.68    0.34    0.00 * C  93 A C 106 A 
+  94    0.25    1.07    0.53    0.00   R  94 A E 107 A 
+  95    0.18    0.61    0.31    0.00   I  95 A F 108 A 
+  96    0.05    0.37    0.19    0.00 * W  96 A W 109 A 
+  97    0.19    0.47    0.24    0.00   L  97 A T 110 A 
+  98    0.13    0.37    0.18    0.00   A  98 A S 111 A 
+  99    0.10    0.32    0.16    0.00   V  99 A I 112 A 
+ 100    0.06    0.32    0.16    0.00 * D 100 A D 113 A 
+ 101    0.08    0.47    0.24    0.00 * V 101 A V 114 A 
+ 102    0.18    0.36    0.18    0.00   W 102 A L 115 A 
+ 103    0.22    0.29    0.14    0.00   M 103 A C 116 A 
+ 104    0.21    0.43    0.22    0.00   C 104 A V 117 A 
+ 105    0.09    0.51    0.25    0.00 * T 105 A T 118 A 
+ 106    0.10    0.63    0.32    0.00 * A 106 A A 119 A 
+ 107    0.08    0.46    0.23    0.00 * S 107 A S 120 A 
+ 108    0.08    0.44    0.22    0.00 * I 108 A I 121 A 
+ 109    0.18    0.24    0.12    0.00   L 109 A E 122 A 
+ 110    0.17    0.58    0.29    0.00   N 110 A T 123 A 
+ 111    0.03    0.10    0.05    0.00 * L 111 A L 124 A 
+ 112    0.26    0.36    0.18    0.00 * C 112 A C 125 A 
+ 113    0.16    0.52    0.26    0.00   A 113 A V 126 A 
+ 114    0.11    0.74    0.37    0.00 * I 114 A I 127 A 
+ 115    0.18    0.82    0.41    0.00   S 115 A A 128 A 
+ 116    0.17    0.83    0.42    0.00   L 116 A V 129 A 
+ 117    0.13    0.93    0.47    0.00 * D 117 A D 130 A 
+ 118    0.09    0.57    0.28    0.00 * R 118 A R 131 A 
+ 119    0.06    0.41    0.20    0.00 * Y 119 A Y 132 A 
+ 120    0.19    0.60    0.30    0.00   V 120 A F 133 A 
+ 121    0.08    0.46    0.23    0.00 * A 121 A A 134 A 
+ 122    0.36    0.66    0.33    0.00   V 122 A I 135 A 
+ 123    0.37    1.01    0.51    0.00 * T 123 A T 136 A 
+ 124    0.79    1.95    0.98    0.00   R 124 A S 137 A 
+ 125    0.63    3.43    1.72    0.00 * P 125 A P 138 A 
+ 126    0.60    2.25    1.13    0.00   V 126 A F 139 A 
+ 127    1.26    8.33    4.16    0.00   T 127 A K 140 A 
+ 128    1.20    8.57    4.28    0.00 * Y 128 A Y 141 A 
+ 129    0.78    3.65    1.83    0.00   P 129 A Q 142 A 
+ 130    1.26    6.99    3.50    0.00 * S 130 A S 143 A 
+ 131    0.70    3.55    1.78    0.00   I 131 A L 144 A 
+ 132    0.60    2.60    1.30    0.00   M 132 A L 145 A 
+ 133    0.47    1.47    0.73    0.00   S 133 A T 146 A 
+ 134    0.25    1.24    0.62    0.00   T 134 A K 147 A 
+ 135    0.16    0.34    0.17    0.00   R 135 A N 148 A 
+ 136    0.17    0.81    0.41    0.00   R 136 A K 149 A 
+ 137    0.13    0.86    0.43    0.00 * A 137 A A 150 A 
+ 138    0.11    0.22    0.11    0.00   K 138 A R 151 A 
+ 139    0.16    0.26    0.13    0.00   S 139 A V 152 A 
+ 140    0.17    0.78    0.39    0.00   L 140 A I 153 A 
+ 141    0.10    0.61    0.31    0.00 * I 141 A I 154 A 
+ 142    0.17    0.47    0.23    0.00   A 142 A L 155 A 
+ 143    0.29    1.09    0.55    0.00   G 143 A M 156 A 
+ 144    0.18    0.93    0.47    0.00   L 144 A V 157 A 
+ 145    0.11    0.91    0.46    0.00 * W 145 A W 158 A 
+ 146    0.21    1.24    0.62    0.00   V 146 A I 159 A 
+ 147    0.26    1.64    0.82    0.00   L 147 A V 160 A 
+ 148    0.12    0.81    0.41    0.00 * S 148 A S 161 A 
+ 149    0.32    1.25    0.63    0.00   F 149 A G 162 A 
+ 150    0.32    2.16    1.08    0.00   V 150 A L 163 A 
+ 151    0.40    2.43    1.21    0.00   I 151 A T 164 A 
+ 152    0.68    2.50    1.25    0.00   C 152 A S 165 A 
+ 153    0.64    3.40    1.70    0.00 * F 153 A F 166 A 
+ 154    0.60    2.02    1.01    0.00   P 154 A L 167 A 
+ 155    0.97    4.59    2.29    0.00 * P 155 A P 168 A 
+ 156    0.81    2.47    1.23    0.00   L 156 A I 169 A 
+ 157    0.98    5.49    2.75    0.00   V 157 A Q 170 A 
+ 158    1.20    7.19    3.60    0.00   G 158 A M 171 A 
+ 159    0.80    3.50    1.75    0.00   W 159 A H 172 A 
+ 160    1.40    9.00    4.50    0.00   K 160 A W 173 A 
+ 161    1.62   11.17    5.58    0.00   E 161 A Y 174 A 
+ 162    1.11    8.77    4.39    0.00   Q 162 A R 175 A 
+ 163    0.00    0.00    0.00    0.00   K 163 A -       
+ 164    0.00    0.00    0.00    0.00   V 164 A -       
+ 165    0.00    0.00    0.00    0.00   K 165 A -       
+ 166    0.00    0.00    0.00    0.00   E 166 A -       
+ 167    0.00    0.00    0.00    0.00   N 167 A -       
+ 168    0.00    0.00    0.00    0.00   V 168 A -       
+ 169    0.00    0.00    0.00    0.00   Y 169 A -       
+ 170    0.00    0.00    0.00    0.00   Y 170 A -       
+ 171    0.00    0.00    0.00    0.00   Q 171 A -       
+ 172    0.00    0.00    0.00    0.00   Y 172 A -       
+ 173    0.00    0.00    0.00    0.00   G 173 A -       
+ 174    0.00    0.00    0.00    0.00   N 174 A -       
+ 175    0.00    0.00    0.00    0.00   Y 175 A -       
+ 176    1.10    8.77    4.38    0.00   T 176 A A 176 A 
+ 177    0.75    5.35    2.68    0.00   L 177 A T 177 A 
+ 178    0.72    2.95    1.48    0.00   V 178 A H 178 A 
+ 179    0.74    3.44    1.72    0.00   S 179 A Q 179 A 
+ 180    0.98    5.52    2.76    0.00   V 180 A E 180 A 
+ 181    1.41    7.73    3.86    0.00   T 181 A A 181 A 
+ 182    1.21    5.47    2.74    0.00   P 182 A I 182 A 
+ 183    0.76    4.00    2.00    0.00   S 183 A N 183 A 
+ 184    1.09    5.92    2.96    0.00   P 184 A C 184 A 
+ 185    0.71    3.08    1.54    0.00   A 185 A Y 185 A 
+ 186    0.68    3.04    1.52    0.00   P 186 A A 186 A 
+ 187    0.82    2.17    1.09    0.00   P 187 A E 187 A 
+ 188    0.85    6.24    3.12    0.00   L 188 A E 188 A 
+ 189    0.00    0.00    0.00    0.00   P 189 A -       
+ 190    0.00    0.00    0.00    0.00   C 190 A -       
+ 191    0.00    0.00    0.00    0.00   P 191 A -       
+ 192    0.38    1.56    0.78    0.00   W 192 A T 189 A 
+ 193    0.34    1.46    0.73    0.00   T 193 A C 190 A 
+ 194    0.17    1.50    0.75    0.00 * C 194 A C 191 A 
+ 195    0.63    2.85    1.42    0.00   E 195 A D 192 A 
+ 196    0.64    2.89    1.44    0.00   L 196 A F 193 A 
+ 197    0.91    4.68    2.34    0.00   T 197 A F 194 A 
+ 198    0.51    1.62    0.81    0.00   N 198 A T 195 A 
+ 199    0.14    0.38    0.19    0.00   D 199 A N 196 A 
+ 200    0.17    0.47    0.23    0.00   A 200 A Q 197 A 
+ 201    0.17    0.67    0.33    0.00   G 201 A A 198 A 
+ 202    0.07    0.42    0.21    0.00 * Y 202 A Y 199 A 
+ 203    0.17    0.65    0.33    0.00   V 203 A A 200 A 
+ 204    0.18    0.96    0.48    0.00   V 204 A I 201 A 
+ 205    0.27    1.15    0.57    0.00   Y 205 A A 202 A 
+ 206    0.21    1.62    0.81    0.00 * S 206 A S 203 A 
+ 207    0.25    1.41    0.71    0.00   A 207 A S 204 A 
+ 208    0.16    0.73    0.37    0.00   L 208 A I 205 A 
+ 209    0.32    1.52    0.76    0.00   G 209 A V 206 A 
+ 210    0.25    1.98    0.99    0.00 * S 210 A S 207 A 
+ 211    0.21    1.71    0.86    0.00 * F 211 A F 208 A 
+ 212    0.16    1.28    0.64    0.00 * Y 212 A Y 209 A 
+ 213    0.21    1.28    0.64    0.00   I 213 A V 210 A 
+ 214    0.15    1.23    0.61    0.00 * P 214 A P 211 A 
+ 215    0.20    1.09    0.55    0.00   M 215 A L 212 A 
+ 216    0.17    0.41    0.21    0.00   F 216 A V 213 A 
+ 217    0.09    0.19    0.09    0.00   V 217 A I 214 A 
+ 218    0.09    0.40    0.20    0.00 * M 218 A M 215 A 
+ 219    0.14    0.55    0.27    0.00   L 219 A V 216 A 
+ 220    0.09    0.62    0.31    0.00 * F 220 A F 217 A 
+ 221    0.23    0.98    0.49    0.00   F 221 A V 218 A 
+ 222    0.40    1.40    0.70    0.00 * Y 222 A Y 219 A 
+ 223    0.37    1.74    0.87    0.00   W 223 A S 220 A 
+ 224    0.15    1.11    0.56    0.00 * R 224 A R 221 A 
+ 225    0.15    0.70    0.35    0.00   I 225 A V 222 A 
+ 226    0.27    1.67    0.84    0.00   Y 226 A F 223 A 
+ 227    0.31    1.73    0.86    0.00   R 227 A Q 224 A 
+ 228    0.25    1.28    0.64    0.00   A 228 A E 225 A 
+ 229    0.18    1.32    0.66    0.00 * A 229 A A 226 A 
+ 230    0.28    1.35    0.68    0.00   V 230 A K 227 A 
+ 231    0.27    1.39    0.70    0.00 * R 231 A R 228 A 
+ 232    0.38    1.39    0.69    0.00   T 232 A Q 229 A 
+ 233    0.00    0.00    0.00    0.00   K 444 A -       
+ 234    0.00    0.00    0.00    0.00   K 445 A -       
+ 235    0.00    0.00    0.00    0.00   L 446 A -       
+ 236    0.00    0.00    0.00    0.00   G 447 A -       
+ 237    0.00    0.00    0.00    0.00   K 448 A -       
+ 238    0.00    0.00    0.00    0.00   K 449 A -       
+ 239    0.00    0.00    0.00    0.00   H 450 A -       
+ 240    0.00    0.00    0.00    0.00   L 451 A -       
+ 241    0.00    0.00    0.00    0.00   K 452 A -       
+ 242    0.00    0.00    0.00    0.00   V 453 A -       
+ 243    0.00    0.00    0.00    0.00   Q 454 A -       
+ 244    1.34   11.10    5.55    0.00   V 455 A L 230 A 
+ 245    1.94   14.93    7.46    0.00 * K 456 A K 263 A 
+ 246    1.94   13.76    6.88    0.00   R 457 A F 264 A 
+ 247    1.62   10.94    5.47    0.00   F 458 A C 265 A 
+ 248    0.56    3.73    1.86    0.00   R 459 A L 266 A 
+ 249    0.54    3.42    1.71    0.00   M 460 A K 267 A 
+ 250    0.36    2.90    1.45    0.00 * E 461 A E 268 A 
+ 251    0.64    2.40    1.20    0.00   T 462 A H 269 A 
+ 252    0.30    2.43    1.21    0.00 * K 463 A K 270 A 
+ 253    0.26    2.10    1.05    0.00 * A 464 A A 271 A 
+ 254    0.29    1.57    0.78    0.00   A 465 A L 272 A 
+ 255    0.18    1.36    0.68    0.00 * K 466 A K 273 A 
+ 256    0.14    0.99    0.49    0.00 * T 467 A T 274 A 
+ 257    0.11    0.75    0.38    0.00 * L 468 A L 275 A 
+ 258    0.06    0.46    0.23    0.00 * G 469 A G 276 A 
+ 259    0.09    0.56    0.28    0.00 * I 470 A I 277 A 
+ 260    0.05    0.14    0.07    0.00 * I 471 A I 278 A 
+ 261    0.13    0.13    0.06    0.00   V 472 A M 279 A 
+ 262    0.05    0.38    0.19    0.00 * G 473 A G 280 A 
+ 263    0.18    0.38    0.19    0.00   G 474 A T 281 A 
+ 264    0.03    0.10    0.05    0.00 * F 475 A F 282 A 
+ 265    0.14    0.12    0.06    0.00   I 476 A T 283 A 
+ 266    0.14    0.41    0.20    0.00   F 477 A L 284 A 
+ 267    0.04    0.33    0.16    0.00 * C 478 A C 285 A 
+ 268    0.06    0.41    0.21    0.00 * W 479 A W 286 A 
+ 269    0.36    1.05    0.53    0.00 * L 480 A L 287 A 
+ 270    0.17    1.42    0.71    0.00 * P 481 A P 288 A 
+ 271    0.13    0.95    0.47    0.00 * F 482 A F 289 A 
+ 272    0.12    0.87    0.44    0.00 * F 483 A F 290 A 
+ 273    0.25    1.15    0.57    0.00   T 484 A I 291 A 
+ 274    0.27    1.37    0.69    0.00   M 485 A V 292 A 
+ 275    0.31    1.60    0.80    0.00   Y 486 A N 293 A 
+ 276    0.25    1.55    0.78    0.00   L 487 A I 294 A 
+ 277    0.21    0.87    0.43    0.00   T 488 A V 295 A 
+ 278    0.27    1.24    0.62    0.00   R 489 A H 296 A 
+ 279    0.30    1.86    0.93    0.00   A 490 A V 297 A 
+ 280    0.30    1.72    0.86    0.00   F 491 A I 298 A 
+ 281    0.52    0.93    0.47    0.00   C 492 A Q 299 A 
+ 282    0.22    0.94    0.47    0.00   A 493 A D 300 A 
+ 283    0.29    1.49    0.74    0.00   E 494 A N 301 A 
+ 284    0.30    1.05    0.53    0.00   C 495 A L 302 A 
+ 285    0.18    1.28    0.64    0.00 * I 496 A I 303 A 
+ 286    0.20    0.63    0.32    0.00   N 497 A R 304 A 
+ 287    0.24    1.20    0.60    0.00   S 498 A K 305 A 
+ 288    0.28    1.21    0.60    0.00   L 499 A E 306 A 
+ 289    0.16    0.71    0.35    0.00   L 500 A V 307 A 
+ 290    0.41    0.96    0.48    0.00   F 501 A Y 308 A 
+ 291    0.29    1.28    0.64    0.00   S 502 A I 309 A 
+ 292    0.20    1.05    0.52    0.00   V 503 A L 310 A 
+ 293    0.10    0.69    0.34    0.00 * L 504 A L 311 A 
+ 294    0.24    0.69    0.35    0.00   F 505 A N 312 A 
+ 295    0.08    0.65    0.33    0.00 * W 506 A W 313 A 
+ 296    0.14    0.52    0.26    0.00   L 507 A I 314 A 
+ 297    0.06    0.46    0.23    0.00 * G 508 A G 315 A 
+ 298    0.10    0.74    0.37    0.00 * Y 509 A Y 316 A 
+ 299    0.24    0.74    0.37    0.00   C 510 A V 317 A 
+ 300    0.08    0.32    0.16    0.00 * N 511 A N 318 A 
+ 301    0.06    0.31    0.16    0.00 * S 512 A S 319 A 
+ 302    0.13    0.26    0.13    0.00   A 513 A G 320 A 
+ 303    0.17    0.43    0.21    0.00   V 514 A F 321 A 
+ 304    0.07    0.29    0.15    0.00 * N 515 A N 322 A 
+ 305    0.04    0.25    0.12    0.00 * P 516 A P 323 A 
+ 306    0.15    0.56    0.28    0.00   F 517 A L 324 A 
+ 307    0.09    0.54    0.27    0.00 * I 518 A I 325 A 
+ 308    0.05    0.26    0.13    0.00 * Y 519 A Y 326 A 
+ 309    0.26    0.93    0.46    0.00   A 520 A C 327 A 
+ 310    0.00    0.00    0.00    0.00   L 521 A -       
+ 311    0.56    1.47    0.73    0.00   F 522 A R 328 A 
+ 312    0.34    0.79    0.39    0.00 * S 523 A S 329 A 
+ 313    0.23    0.86    0.43    0.00   K 524 A P 330 A 
+ 314    0.09    0.57    0.28    0.00 * D 525 A D 331 A 
+ 315    0.09    0.58    0.29    0.00 * F 526 A F 332 A 
+ 316    0.13    0.90    0.45    0.00 * R 527 A R 333 A 
+ 317    0.30    1.16    0.58    0.00   Q 528 A I 334 A 
+ 318    0.15    1.05    0.53    0.00 * A 529 A A 335 A 
+ 319    0.15    1.13    0.57    0.00 * F 530 A F 336 A 
+ 320    0.23    1.17    0.59    0.00   K 531 A Q 337 A 
+ 321    0.25    1.12    0.56    0.00   R 532 A E 338 A 
+ 322    0.22    1.22    0.61    0.00   I 533 A L 339 A 
+ 323    0.22    1.25    0.62    0.00   I 534 A L 340 A 
+ 324    0.62    2.66    1.33    0.00   L 535 A C 341 A 
+ 325    0.00    0.00    0.00    0.00   R 536 A -       
+ 326    0.00    0.00    0.00    0.00   C 537 A -       
+ 327    0.00    0.00    0.00    0.00   L 538 A -       
+ 328    0.00    0.00    0.00    0.00   C 539 A -       
+ 329    0.00    0.00    0.00    0.00   S 540 A -       
+ 330    0.00    0.00    0.00    0.00   K 541 A -       
+ 331    0.97    7.51    3.75    0.00   R 542 A L 342 A 
+ 332    0.00    0.00    0.00    0.00   -       V1094 A 
+------------------------------------------------------
+
+
+
+
+SALIGN______> Raw QUALITY_SCORE of the multiple alignment:     256.0
+              QUALITY_SCORE (percentage)                 :      90.5
+              Number of unique protein pairs             :         1
+              QUALITY_SCORE_min                          :       256
+              RMS_CUTOFF                                 :    3.5000
+              QS is the average number of structurally equivalent residue pairs.
+              Two residues are equivalent when closer than RMS_CUTOFF upon
+              pairwise least-squares superposition given current alignment.
+
+
+SALIGN______> Matrix of pairwise equivalences from individual pairwise alignments:
+
+         antagoin2rh1temp
+antagoin        0     256
+2rh1temp        0       0
+SALIGN______> Matrix of pairwise equivalences: 
+
+         antagoin2rh1temp
+antagoin        0     256
+2rh1temp        0       0
+
+
+
+SALIGN______> Matrix of differences in pairwise equivalences inferred from the tree and individually: 
+
+         antagoin2rh1temp
+antagoin        0       0
+2rh1temp        0       0
+
+
+
+SALIGN______> Matrix of %differences in pairwise equivalences inferred from the tree and individually: 
+
+         antagoin2rh1temp
+antagoin        0       0
+2rh1temp        0       0
+
+
+
+  ALIGN_CODES                                   : antagoinstaAnophellesA 2rh1templateA 
+  Atom type for alignment (FIT_ATOMS)           : CA
+  FIT                                           :         T
+  IMPROVE_ALIGNMENT                             :         T
+  WATER_IO, HETATM_IO, HYDROGEN_IO              :         F        F        F
+  NO_TER                                        :         F
+  OUTPUT                                        : ALIGNMENT QUALITY
+  FIT_ON_FIRST                                  :         F
+  WRITE_FIT                                     :         T
+  FIT_PDBNAM                                    :         T
+  WRITE_WHOLE_PDB                               :         F
+  CURRENT_DIRECTORY                             :         T
+  Feature weights (FEATURE_WEIGHTS)             :    1.0000   1.0000   1.0000   1.0000   1.0000   0.0000
+  NORMALIZE_PP_SCORES                           :         F
+  Gap initiation penalty (GAP_PENALTIES[1])     :  -450.0000
+  Gap extension penalty (GAP_PENALTIES[2])      :   -50.0000
+  Break-break bonus                             : 10000.0000
+  Gap_function (align2d flag)                    :         F
+  2-D Gap penalties                             :  3.50  3.50  3.50  0.20  4.00  6.50  2.00  0.00
+  GAP-GAP_SCORE                                 :    0.0000
+  GAP-RESIDUE_SCORE                             :    0.0000
+  Perform gap-residue and gap-gap correction    :         T
+  Residue type - residue type file (RR_FILE)    : $(LIB)/as1.sim.mat
+  OFF_DIAGONAL                                  :       100
+  OVERHANG                                      :        30
+  LOCAL_ALIGNMENT                               :         F
+  MATRIX_OFFSET                                 :    0.0000
+  N_SUBOPT                                      :         0
+  SUBOPT_OFFSET                                 :    0.0000
+  Gap introduction penalty (GAP_PENALTIES_3D_1) :    0.0000
+  Gap extension penalty (GAP_PENALTIES_3D_2)    :    3.0000
+  Max dist for equiv (2 * GAP_PENALTIES_3D_2)   :    6.0000
+  ALIGN3D_TRF                                   :         F
+  RMS_CUTOFF                                    :    3.5
+
+
+
+salign__276_> 'align_block' changed to 1.
+mkapsa__637W> No residue topology library is in memory.
+              Better radii would be used if topology.read() is called first.
+openf___224_> Open           $(LIB)/as1.sim.mat
+rdrrwgh_268_> Number of residue types:       20
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        1      264      265        1.4228        1.4709        0.0007
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        2      265      265        1.4600        1.4600        0.0000
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        3      265      265        1.4600        1.4600        0.0000
+
+SALIGN______> Matrix of pairwise protein distances for the initial tree:
+
+         antagoin2rh1temp
+antagoin    0.000   0.562
+2rh1temp    0.562   0.000
+
+SALIGN____> Matrix of pairwise equivalences: 
+
+         antagoin2rh1temp
+antagoin        0     255
+2rh1temp        0       0
+
+
+
+SALIGN_____> adding the next group to the alignment; iteration    1
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        1      264      265        1.4228        1.4709        0.0007
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        2      265      265        1.4600        1.4600        0.0000
+rr_dist_318_> I,NEQVCUT,NEQV,RMSCUT,RMS,RMSROT:        3      265      265        1.4600        1.4600        0.0000
+
+Current alignment total score:          189
+
+pos_scr ... position-position dissimilarity from the dynamic programming matrix
+avr_avr ... distance between the two averages
+avr_dst ... for all aligned structures, average distance to the average structure
+std_dev ... for all aligned structures, standard deviation of distance to ave str
+
+group:                                 1       2       
+   N pos_scr avr_ave avr_dst std_dev   antagoi 2rh1tem 
+------------------------------------------------------
+   1    0.00    0.00    0.00    0.00   M   1 A -       
+   2    0.00    0.00    0.00    0.00   N   2 A -       
+   3    0.00    0.00    0.00    0.00   E   3 A -       
+   4    0.00    0.00    0.00    0.00   S   4 A -       
+   5    0.00    0.00    0.00    0.00   E   5 A -       
+   6    0.00    0.00    0.00    0.00   C   6 A -       
+   7    0.00    0.00    0.00    0.00   A   7 A -       
+   8    0.00    0.00    0.00    0.00   S   8 A -       
+   9    0.00    0.00    0.00    0.00   L   9 A -       
+  10    0.00    0.00    0.00    0.00   L  10 A -       
+  11    0.00    0.00    0.00    0.00   A  11 A -       
+  12    0.00    0.00    0.00    0.00   S  12 A -       
+  13    0.00    0.00    0.00    0.00   V  13 A -       
+  14    0.00    0.00    0.00    0.00   Q  14 A -       
+  15    0.00    0.00    0.00    0.00   W  15 A -       
+  16    1.01    3.51    1.75    0.00   T  16 A D  29 A 
+  17    0.72    2.19    1.10    0.00   D  17 A E  30 A 
+  18    0.37    1.19    0.59    0.00   P  18 A V  31 A 
+  19    0.56    1.90    0.95    0.00   T  19 A W  32 A 
+  20    0.40    1.31    0.65    0.00   N  20 A V  33 A 
+  21    0.15    0.41    0.21    0.00   L  21 A V  34 A 
+  22    0.38    1.25    0.62    0.00   V  22 A G  35 A 
+  23    0.44    1.46    0.73    0.00   S  23 A M  36 A 
+  24    0.40    1.28    0.64    0.00   L  24 A G  37 A 
+  25    0.25    0.67    0.34    0.00   A  25 A I  38 A 
+  26    0.17    0.74    0.37    0.00 * V  26 A V  39 A 
+  27    0.26    0.94    0.47    0.00   L  27 A M  40 A 
+  28    0.19    0.54    0.27    0.00   A  28 A S  41 A 
+  29    0.12    0.18    0.09    0.00   F  29 A L  42 A 
+  30    0.15    0.63    0.32    0.00 * I  30 A I  43 A 
+  31    0.25    0.56    0.28    0.00   N  31 A V  44 A 
+  32    0.17    0.51    0.25    0.00   V  32 A L  45 A 
+  33    0.23    0.59    0.30    0.00   L  33 A A  46 A 
+  34    0.17    0.53    0.26    0.00   V  34 A I  47 A 
+  35    0.18    0.61    0.31    0.00   I  35 A V  48 A 
+  36    0.23    0.63    0.31    0.00   V  36 A F  49 A 
+  37    0.10    0.44    0.22    0.00 * G  37 A G  50 A 
+  38    0.13    0.48    0.24    0.00 * N  38 A N  51 A 
+  39    0.25    0.54    0.27    0.00   C  39 A V  52 A 
+  40    0.09    0.37    0.18    0.00 * L  40 A L  53 A 
+  41    0.12    0.50    0.25    0.00 * V  41 A V  54 A 
+  42    0.20    0.84    0.42    0.00 * I  42 A I  55 A 
+  43    0.33    1.17    0.58    0.00   A  43 A T  56 A 
+  44    0.28    1.25    0.62    0.00 * A  44 A A  57 A 
+  45    0.31    1.25    0.63    0.00   V  45 A I  58 A 
+  46    0.50    1.96    0.98    0.00   L  46 A A  59 A 
+  47    0.66    2.43    1.21    0.00   C  47 A K  60 A 
+  48    0.70    2.79    1.40    0.00   S  48 A F  61 A 
+  49    0.74    3.07    1.54    0.00   H  49 A E  62 A 
+  50    0.59    2.57    1.28    0.00   K  50 A R  63 A 
+  51    0.28    1.31    0.65    0.00 * L  51 A L  64 A 
+  52    0.37    1.30    0.65    0.00   R  52 A Q  65 A 
+  53    0.26    0.99    0.49    0.00   S  53 A T  66 A 
+  54    0.48    2.30    1.15    0.00 * V  54 A V  67 A 
+  55    0.57    2.22    1.11    0.00 * T  55 A T  68 A 
+  56    0.21    0.87    0.43    0.00 * N  56 A N  69 A 
+  57    0.23    0.76    0.38    0.00   F  57 A Y  70 A 
+  58    0.16    0.70    0.35    0.00 * F  58 A F  71 A 
+  59    0.12    0.45    0.22    0.00 * I  59 A I  72 A 
+  60    0.24    0.70    0.35    0.00   V  60 A T  73 A 
+  61    0.18    0.78    0.39    0.00 * S  61 A S  74 A 
+  62    0.12    0.52    0.26    0.00 * L  62 A L  75 A 
+  63    0.12    0.46    0.23    0.00 * A  63 A A  76 A 
+  64    0.29    0.73    0.37    0.00   V  64 A C  77 A 
+  65    0.13    0.51    0.25    0.00 * A  65 A A  78 A 
+  66    0.10    0.40    0.20    0.00 * D  66 A D  79 A 
+  67    0.12    0.50    0.25    0.00 * L  67 A L  80 A 
+  68    0.14    0.36    0.18    0.00   L  68 A V  81 A 
+  69    0.18    0.38    0.19    0.00   V  69 A M  82 A 
+  70    0.11    0.52    0.26    0.00 * G  70 A G  83 A 
+  71    0.15    0.63    0.32    0.00 * L  71 A L  84 A 
+  72    0.10    0.34    0.17    0.00 * A  72 A A  85 A 
+  73    0.13    0.53    0.27    0.00 * V  73 A V  86 A 
+  74    0.18    0.52    0.26    0.00   L  74 A V  87 A 
+  75    0.22    1.05    0.52    0.00 * P  75 A P  88 A 
+  76    0.40    0.92    0.46    0.00 * F  76 A F  89 A 
+  77    0.22    0.62    0.31    0.00   S  77 A G  90 A 
+  78    0.24    1.04    0.52    0.00 * A  78 A A  91 A 
+  79    0.32    1.15    0.57    0.00   T  79 A A  92 A 
+  80    0.39    1.14    0.57    0.00   W  80 A H  93 A 
+  81    0.32    0.92    0.46    0.00   E  81 A I  94 A 
+  82    0.36    1.42    0.71    0.00   V  82 A L  95 A 
+  83    0.47    1.74    0.87    0.00   F  83 A M  96 A 
+  84    0.65    2.09    1.05    0.00 * K  84 A K  97 A 
+  85    0.60    1.48    0.74    0.00   V  85 A M  98 A 
+  86    0.21    0.97    0.49    0.00 * W  86 A W  99 A 
+  87    0.25    0.66    0.33    0.00   I  87 A T 100 A 
+  88    0.14    0.61    0.30    0.00 * F  88 A F 101 A 
+  89    0.15    0.71    0.36    0.00 * G  89 A G 102 A 
+  90    0.26    0.91    0.45    0.00   D  90 A N 103 A 
+  91    0.26    0.75    0.37    0.00   V  91 A F 104 A 
+  92    0.07    0.28    0.14    0.00 * W  92 A W 105 A 
+  93    0.13    0.66    0.33    0.00 * C  93 A C 106 A 
+  94    0.31    0.98    0.49    0.00   R  94 A E 107 A 
+  95    0.21    0.55    0.28    0.00   I  95 A F 108 A 
+  96    0.10    0.45    0.22    0.00 * W  96 A W 109 A 
+  97    0.22    0.50    0.25    0.00   L  97 A T 110 A 
+  98    0.16    0.37    0.18    0.00   A  98 A S 111 A 
+  99    0.14    0.40    0.20    0.00   V  99 A I 112 A 
+ 100    0.09    0.34    0.17    0.00 * D 100 A D 113 A 
+ 101    0.13    0.52    0.26    0.00 * V 101 A V 114 A 
+ 102    0.22    0.43    0.21    0.00   W 102 A L 115 A 
+ 103    0.23    0.31    0.15    0.00   M 103 A C 116 A 
+ 104    0.23    0.45    0.22    0.00   C 104 A V 117 A 
+ 105    0.13    0.54    0.27    0.00 * T 105 A T 118 A 
+ 106    0.16    0.65    0.33    0.00 * A 106 A A 119 A 
+ 107    0.12    0.46    0.23    0.00 * S 107 A S 120 A 
+ 108    0.12    0.45    0.23    0.00 * I 108 A I 121 A 
+ 109    0.18    0.22    0.11    0.00   L 109 A E 122 A 
+ 110    0.22    0.59    0.29    0.00   N 110 A T 123 A 
+ 111    0.04    0.11    0.06    0.00 * L 111 A L 124 A 
+ 112    0.27    0.33    0.16    0.00 * C 112 A C 125 A 
+ 113    0.19    0.50    0.25    0.00   A 113 A V 126 A 
+ 114    0.17    0.73    0.37    0.00 * I 114 A I 127 A 
+ 115    0.24    0.81    0.41    0.00   S 115 A A 128 A 
+ 116    0.23    0.82    0.41    0.00   L 116 A V 129 A 
+ 117    0.20    0.91    0.45    0.00 * D 117 A D 130 A 
+ 118    0.14    0.56    0.28    0.00 * R 118 A R 131 A 
+ 119    0.10    0.40    0.20    0.00 * Y 119 A Y 132 A 
+ 120    0.23    0.59    0.30    0.00   V 120 A F 133 A 
+ 121    0.12    0.45    0.22    0.00 * A 121 A A 134 A 
+ 122    0.39    0.66    0.33    0.00   V 122 A I 135 A 
+ 123    0.44    1.03    0.51    0.00 * T 123 A T 136 A 
+ 124    0.91    1.98    0.99    0.00   R 124 A S 137 A 
+ 125    0.91    3.45    1.72    0.00 * P 125 A P 138 A 
+ 126    0.77    2.28    1.14    0.00   V 126 A F 139 A 
+ 127    1.97    8.36    4.18    0.00   T 127 A K 140 A 
+ 128    1.94    8.59    4.30    0.00 * Y 128 A Y 141 A 
+ 129    1.08    3.69    1.84    0.00   P 129 A Q 142 A 
+ 130    1.83    6.99    3.49    0.00 * S 130 A S 143 A 
+ 131    0.99    3.56    1.78    0.00   I 131 A L 144 A 
+ 132    0.79    2.55    1.27    0.00   M 132 A L 145 A 
+ 133    0.56    1.43    0.72    0.00   S 133 A T 146 A 
+ 134    0.35    1.25    0.63    0.00   T 134 A K 147 A 
+ 135    0.19    0.36    0.18    0.00   R 135 A N 148 A 
+ 136    0.23    0.76    0.38    0.00   R 136 A K 149 A 
+ 137    0.19    0.82    0.41    0.00 * A 137 A A 150 A 
+ 138    0.11    0.20    0.10    0.00   K 138 A R 151 A 
+ 139    0.17    0.23    0.11    0.00   S 139 A V 152 A 
+ 140    0.22    0.74    0.37    0.00   L 140 A I 153 A 
+ 141    0.14    0.58    0.29    0.00 * I 141 A I 154 A 
+ 142    0.21    0.51    0.25    0.00   A 142 A L 155 A 
+ 143    0.38    1.10    0.55    0.00   G 143 A M 156 A 
+ 144    0.26    0.94    0.47    0.00   L 144 A V 157 A 
+ 145    0.20    0.93    0.47    0.00 * W 145 A W 158 A 
+ 146    0.32    1.28    0.64    0.00   V 146 A I 159 A 
+ 147    0.41    1.66    0.83    0.00   L 147 A V 160 A 
+ 148    0.19    0.83    0.41    0.00 * S 148 A S 161 A 
+ 149    0.42    1.32    0.66    0.00   F 149 A G 162 A 
+ 150    0.52    2.22    1.11    0.00   V 150 A L 163 A 
+ 151    0.61    2.48    1.24    0.00   I 151 A T 164 A 
+ 152    0.87    2.55    1.28    0.00   C 152 A S 165 A 
+ 153    0.93    3.48    1.74    0.00 * F 153 A F 166 A 
+ 154    0.74    1.99    1.00    0.00   P 154 A L 167 A 
+ 155    1.32    4.50    2.25    0.00 * P 155 A P 168 A 
+ 156    0.98    2.50    1.25    0.00   L 156 A I 169 A 
+ 157    1.44    5.58    2.79    0.00   V 157 A Q 170 A 
+ 158    1.81    7.24    3.62    0.00   G 158 A M 171 A 
+ 159    1.08    3.56    1.78    0.00   W 159 A H 172 A 
+ 160    2.15    8.96    4.48    0.00   K 160 A W 173 A 
+ 161    2.56   11.08    5.54    0.00   E 161 A Y 174 A 
+ 162    1.85    8.67    4.33    0.00   Q 162 A R 175 A 
+ 163    0.00    0.00    0.00    0.00   K 163 A -       
+ 164    0.00    0.00    0.00    0.00   V 164 A -       
+ 165    0.00    0.00    0.00    0.00   K 165 A -       
+ 166    0.00    0.00    0.00    0.00   E 166 A -       
+ 167    0.00    0.00    0.00    0.00   N 167 A -       
+ 168    0.00    0.00    0.00    0.00   V 168 A -       
+ 169    0.00    0.00    0.00    0.00   Y 169 A -       
+ 170    0.00    0.00    0.00    0.00   Y 170 A -       
+ 171    0.00    0.00    0.00    0.00   Q 171 A -       
+ 172    0.00    0.00    0.00    0.00   Y 172 A -       
+ 173    0.00    0.00    0.00    0.00   G 173 A -       
+ 174    0.00    0.00    0.00    0.00   N 174 A -       
+ 175    1.88    7.69    3.85    0.00   Y 175 A A 176 A 
+ 176    1.91    8.34    4.17    0.00 * T 176 A T 177 A 
+ 177    1.23    4.41    2.21    0.00   L 177 A H 178 A 
+ 178    0.60    1.32    0.66    0.00   V 178 A Q 179 A 
+ 179    1.02    3.55    1.78    0.00   S 179 A E 180 A 
+ 180    1.94    7.25    3.63    0.00   V 180 A A 181 A 
+ 181    1.27    4.73    2.37    0.00   T 181 A I 182 A 
+ 182    0.95    2.13    1.06    0.00   P 182 A N 183 A 
+ 183    1.86    6.50    3.25    0.00   S 183 A C 184 A 
+ 184    1.36    5.02    2.51    0.00   P 184 A Y 185 A 
+ 185    0.66    1.11    0.55    0.00 * A 185 A A 186 A 
+ 186    1.02    3.49    1.74    0.00   P 186 A E 187 A 
+ 187    1.06    3.68    1.84    0.00   P 187 A E 188 A 
+ 188    0.00    0.00    0.00    0.00   L 188 A -       
+ 189    0.00    0.00    0.00    0.00   P 189 A -       
+ 190    0.00    0.00    0.00    0.00   C 190 A -       
+ 191    0.00    0.00    0.00    0.00   P 191 A -       
+ 192    0.51    1.64    0.82    0.00   W 192 A T 189 A 
+ 193    0.45    1.45    0.73    0.00   T 193 A C 190 A 
+ 194    0.29    1.46    0.73    0.00 * C 194 A C 191 A 
+ 195    0.84    2.79    1.39    0.00   E 195 A D 192 A 
+ 196    0.85    2.83    1.41    0.00   L 196 A F 193 A 
+ 197    1.27    4.61    2.30    0.00   T 197 A F 194 A 
+ 198    0.64    1.70    0.85    0.00   N 198 A T 195 A 
+ 199    0.18    0.46    0.23    0.00   D 199 A N 196 A 
+ 200    0.22    0.58    0.29    0.00   A 200 A Q 197 A 
+ 201    0.24    0.75    0.38    0.00   G 201 A A 198 A 
+ 202    0.12    0.50    0.25    0.00 * Y 202 A Y 199 A 
+ 203    0.22    0.67    0.33    0.00   V 203 A A 200 A 
+ 204    0.26    1.01    0.51    0.00   V 204 A I 201 A 
+ 205    0.36    1.18    0.59    0.00   Y 205 A A 202 A 
+ 206    0.36    1.67    0.83    0.00 * S 206 A S 203 A 
+ 207    0.38    1.49    0.74    0.00   A 207 A S 204 A 
+ 208    0.23    0.79    0.40    0.00   L 208 A I 205 A 
+ 209    0.44    1.54    0.77    0.00   G 209 A V 206 A 
+ 210    0.43    2.02    1.01    0.00 * S 210 A S 207 A 
+ 211    0.37    1.76    0.88    0.00 * F 211 A F 208 A 
+ 212    0.28    1.34    0.67    0.00 * Y 212 A Y 209 A 
+ 213    0.33    1.34    0.67    0.00   I 213 A V 210 A 
+ 214    0.27    1.27    0.64    0.00 * P 214 A P 211 A 
+ 215    0.30    1.14    0.57    0.00   M 215 A L 212 A 
+ 216    0.20    0.46    0.23    0.00   F 216 A V 213 A 
+ 217    0.10    0.20    0.10    0.00   V 217 A I 214 A 
+ 218    0.13    0.43    0.21    0.00 * M 218 A M 215 A 
+ 219    0.19    0.57    0.28    0.00   L 219 A V 216 A 
+ 220    0.14    0.60    0.30    0.00 * F 220 A F 217 A 
+ 221    0.31    0.98    0.49    0.00   F 221 A V 218 A 
+ 222    0.50    1.42    0.71    0.00 * Y 222 A Y 219 A 
+ 223    0.51    1.72    0.86    0.00   W 223 A S 220 A 
+ 224    0.24    1.09    0.55    0.00 * R 224 A R 221 A 
+ 225    0.20    0.70    0.35    0.00   I 225 A V 222 A 
+ 226    0.41    1.66    0.83    0.00   Y 226 A F 223 A 
+ 227    0.45    1.71    0.85    0.00   R 227 A Q 224 A 
+ 228    0.35    1.27    0.64    0.00   A 228 A E 225 A 
+ 229    0.29    1.30    0.65    0.00 * A 229 A A 226 A 
+ 230    0.38    1.33    0.66    0.00   V 230 A K 227 A 
+ 231    0.38    1.37    0.68    0.00 * R 231 A R 228 A 
+ 232    0.48    1.37    0.68    0.00   T 232 A Q 229 A 
+ 233    0.00    0.00    0.00    0.00   -       L 230 A 
+ 234    0.00    0.00    0.00    0.00   -       K 263 A 
+ 235    0.00    0.00    0.00    0.00   -       F 264 A 
+ 236    0.00    0.00    0.00    0.00   -       C 265 A 
+ 237    0.00    0.00    0.00    0.00   K 444 A -       
+ 238    0.00    0.00    0.00    0.00   K 445 A -       
+ 239    0.00    0.00    0.00    0.00   L 446 A -       
+ 240    0.00    0.00    0.00    0.00   G 447 A -       
+ 241    0.00    0.00    0.00    0.00   K 448 A -       
+ 242    0.00    0.00    0.00    0.00   K 449 A -       
+ 243    0.00    0.00    0.00    0.00   H 450 A -       
+ 244    0.00    0.00    0.00    0.00   L 451 A -       
+ 245    0.00    0.00    0.00    0.00   K 452 A -       
+ 246    0.00    0.00    0.00    0.00   V 453 A -       
+ 247    0.00    0.00    0.00    0.00   Q 454 A -       
+ 248    0.00    0.00    0.00    0.00   V 455 A -       
+ 249    0.00    0.00    0.00    0.00   K 456 A -       
+ 250    0.00    0.00    0.00    0.00   R 457 A -       
+ 251    0.00    0.00    0.00    0.00   F 458 A -       
+ 252    0.88    3.77    1.89    0.00   R 459 A L 266 A 
+ 253    0.83    3.46    1.73    0.00   M 460 A K 267 A 
+ 254    0.62    2.94    1.47    0.00 * E 461 A E 268 A 
+ 255    0.82    2.42    1.21    0.00   T 462 A H 269 A 
+ 256    0.52    2.46    1.23    0.00 * K 463 A K 270 A 
+ 257    0.45    2.12    1.06    0.00 * A 464 A A 271 A 
+ 258    0.42    1.58    0.79    0.00   A 465 A L 272 A 
+ 259    0.30    1.37    0.69    0.00 * K 466 A K 273 A 
+ 260    0.22    0.99    0.50    0.00 * T 467 A T 274 A 
+ 261    0.17    0.76    0.38    0.00 * L 468 A L 275 A 
+ 262    0.10    0.45    0.23    0.00 * G 469 A G 276 A 
+ 263    0.14    0.57    0.28    0.00 * I 470 A I 277 A 
+ 264    0.06    0.15    0.07    0.00 * I 471 A I 278 A 
+ 265    0.13    0.12    0.06    0.00   V 472 A M 279 A 
+ 266    0.09    0.39    0.20    0.00 * G 473 A G 280 A 
+ 267    0.20    0.39    0.19    0.00   G 474 A T 281 A 
+ 268    0.04    0.10    0.05    0.00 * F 475 A F 282 A 
+ 269    0.14    0.14    0.07    0.00   I 476 A T 283 A 
+ 270    0.17    0.43    0.22    0.00   F 477 A L 284 A 
+ 271    0.07    0.36    0.18    0.00 * C 478 A C 285 A 
+ 272    0.10    0.43    0.22    0.00 * W 479 A W 286 A 
+ 273    0.44    1.09    0.55    0.00 * L 480 A L 287 A 
+ 274    0.30    1.44    0.72    0.00 * P 481 A P 288 A 
+ 275    0.21    0.95    0.47    0.00 * F 482 A F 289 A 
+ 276    0.20    0.90    0.45    0.00 * F 483 A F 290 A 
+ 277    0.35    1.18    0.59    0.00   T 484 A I 291 A 
+ 278    0.39    1.41    0.71    0.00   M 485 A V 292 A 
+ 279    0.45    1.62    0.81    0.00   Y 486 A N 293 A 
+ 280    0.38    1.55    0.78    0.00   L 487 A I 294 A 
+ 281    0.27    0.84    0.42    0.00   T 488 A V 295 A 
+ 282    0.36    1.21    0.61    0.00   R 489 A H 296 A 
+ 283    0.45    1.81    0.91    0.00   A 490 A V 297 A 
+ 284    0.43    1.63    0.82    0.00   F 491 A I 298 A 
+ 285    0.55    0.86    0.43    0.00   C 492 A Q 299 A 
+ 286    0.29    0.94    0.47    0.00   A 493 A D 300 A 
+ 287    0.41    1.51    0.75    0.00   E 494 A N 301 A 
+ 288    0.36    0.96    0.48    0.00   C 495 A L 302 A 
+ 289    0.27    1.19    0.60    0.00 * I 496 A I 303 A 
+ 290    0.25    0.68    0.34    0.00   N 497 A R 304 A 
+ 291    0.35    1.24    0.62    0.00   S 498 A K 305 A 
+ 292    0.39    1.27    0.63    0.00   L 499 A E 306 A 
+ 293    0.22    0.76    0.38    0.00   L 500 A V 307 A 
+ 294    0.47    0.97    0.49    0.00   F 501 A Y 308 A 
+ 295    0.39    1.30    0.65    0.00   S 502 A I 309 A 
+ 296    0.29    1.08    0.54    0.00   V 503 A L 310 A 
+ 297    0.16    0.69    0.34    0.00 * L 504 A L 311 A 
+ 298    0.28    0.68    0.34    0.00   F 505 A N 312 A 
+ 299    0.14    0.67    0.33    0.00 * W 506 A W 313 A 
+ 300    0.18    0.52    0.26    0.00   L 507 A I 314 A 
+ 301    0.10    0.45    0.22    0.00 * G 508 A G 315 A 
+ 302    0.16    0.73    0.37    0.00 * Y 509 A Y 316 A 
+ 303    0.29    0.74    0.37    0.00   C 510 A V 317 A 
+ 304    0.10    0.31    0.15    0.00 * N 511 A N 318 A 
+ 305    0.08    0.29    0.15    0.00 * S 512 A S 319 A 
+ 306    0.14    0.26    0.13    0.00   A 513 A G 320 A 
+ 307    0.20    0.43    0.21    0.00   V 514 A F 321 A 
+ 308    0.10    0.31    0.15    0.00 * N 515 A N 322 A 
+ 309    0.06    0.24    0.12    0.00 * P 516 A P 323 A 
+ 310    0.19    0.55    0.27    0.00   F 517 A L 324 A 
+ 311    0.14    0.53    0.27    0.00 * I 518 A I 325 A 
+ 312    0.07    0.25    0.12    0.00 * Y 519 A Y 326 A 
+ 313    0.33    0.95    0.48    0.00   A 520 A C 327 A 
+ 314    0.00    0.00    0.00    0.00   L 521 A -       
+ 315    0.65    1.44    0.72    0.00   F 522 A R 328 A 
+ 316    0.38    0.76    0.38    0.00 * S 523 A S 329 A 
+ 317    0.29    0.84    0.42    0.00   K 524 A P 330 A 
+ 318    0.13    0.54    0.27    0.00 * D 525 A D 331 A 
+ 319    0.13    0.56    0.28    0.00 * F 526 A F 332 A 
+ 320    0.20    0.86    0.43    0.00 * R 527 A R 333 A 
+ 321    0.37    1.11    0.56    0.00   Q 528 A I 334 A 
+ 322    0.23    1.02    0.51    0.00 * A 529 A A 335 A 
+ 323    0.24    1.10    0.55    0.00 * F 530 A F 336 A 
+ 324    0.31    1.11    0.56    0.00   K 531 A Q 337 A 
+ 325    0.33    1.07    0.53    0.00   R 532 A E 338 A 
+ 326    0.31    1.18    0.59    0.00   I 533 A L 339 A 
+ 327    0.32    1.21    0.61    0.00   I 534 A L 340 A 
+ 328    0.81    2.60    1.30    0.00   L 535 A C 341 A 
+ 329    1.51    5.17    2.58    0.00   R 536 A L 342 A 
+ 330    0.00    0.00    0.00    0.00   -       V1094 A 
+ 331    0.00    0.00    0.00    0.00   C 537 A -       
+ 332    0.00    0.00    0.00    0.00   L 538 A -       
+ 333    0.00    0.00    0.00    0.00   C 539 A -       
+ 334    0.00    0.00    0.00    0.00   S 540 A -       
+ 335    0.00    0.00    0.00    0.00   K 541 A -       
+ 336    0.00    0.00    0.00    0.00   R 542 A -       
+------------------------------------------------------
+
+
+openf___224_> Open           antagoinstaAnophelles_fit.pdb
+wrpdb___568_> Residues, atoms, selected atoms:      331     2649     2649
+openf___224_> Open           2rh1template_fit.pdb
+wrpdb___568_> Residues, atoms, selected atoms:      283     2275     2275
+
+
+SALIGN______> Raw QUALITY_SCORE of the multiple alignment:     255.0
+              QUALITY_SCORE (percentage)                 :      90.1
+              Number of unique protein pairs             :         1
+              QUALITY_SCORE_min                          :       255
+              RMS_CUTOFF                                 :    3.5000
+              QS is the average number of structurally equivalent residue pairs.
+              Two residues are equivalent when closer than RMS_CUTOFF upon
+              pairwise least-squares superposition given current alignment.
+
+
+SALIGN______> Matrix of pairwise equivalences from individual pairwise alignments:
+
+         antagoin2rh1temp
+antagoin        0     255
+2rh1temp        0       0
+SALIGN______> Matrix of pairwise equivalences: 
+
+         antagoin2rh1temp
+antagoin        0     255
+2rh1temp        0       0
+
+
+
+SALIGN______> Matrix of differences in pairwise equivalences inferred from the tree and individually: 
+
+         antagoin2rh1temp
+antagoin        0       0
+2rh1temp        0       0
+
+
+
+SALIGN______> Matrix of %differences in pairwise equivalences inferred from the tree and individually: 
+
+         antagoin2rh1temp
+antagoin        0       0
+2rh1temp        0       0
+
+
+
+openf___224_> Open           fm00495.pap
+openf___224_> Open           fm00495.ali
+  ALIGN_CODES                                   : antagoinstaAnophellesA 2rh1templateA 
+  Atom type for alignment (FIT_ATOMS)           : CA
+  FIT                                           :         F
+  IMPROVE_ALIGNMENT                             :         F
+  WATER_IO, HETATM_IO, HYDROGEN_IO              :         F        F        F
+  NO_TER                                        :         F
+  OUTPUT                                        : QUALITY
+  FIT_ON_FIRST                                  :         F
+  WRITE_FIT                                     :         T
+  FIT_PDBNAM                                    :         T
+  WRITE_WHOLE_PDB                               :         F
+  CURRENT_DIRECTORY                             :         T
+  Feature weights (FEATURE_WEIGHTS)             :    0.0000   0.0000   0.0000   0.0000   0.0000   0.0000
+  NORMALIZE_PP_SCORES                           :         F
+  Gap initiation penalty (GAP_PENALTIES[1])     :  -450.0000
+  Gap extension penalty (GAP_PENALTIES[2])      :   -50.0000
+  Break-break bonus                             : 10000.0000
+  Gap_function (align2d flag)                    :         F
+  2-D Gap penalties                             :  3.50  3.50  3.50  0.20  4.00  6.50  2.00  0.00
+  GAP-GAP_SCORE                                 :    0.0000
+  GAP-RESIDUE_SCORE                             :    0.0000
+  Perform gap-residue and gap-gap correction    :         T
+  Residue type - residue type file (RR_FILE)    : $(LIB)/as1.sim.mat
+  OFF_DIAGONAL                                  :       100
+  OVERHANG                                      :        30
+  LOCAL_ALIGNMENT                               :         F
+  MATRIX_OFFSET                                 :    0.0000
+  N_SUBOPT                                      :         0
+  SUBOPT_OFFSET                                 :    0.0000
+  Gap introduction penalty (GAP_PENALTIES_3D_1) :    0.0000
+  Gap extension penalty (GAP_PENALTIES_3D_2)    :    3.0000
+  Max dist for equiv (2 * GAP_PENALTIES_3D_2)   :    6.0000
+  ALIGN3D_TRF                                   :         F
+  RMS_CUTOFF                                    :    1.0
+
+
+
+salign__276_> 'align_block' changed to 1.
+
+Current alignment total score:            0
+
+pos_scr ... position-position dissimilarity from the dynamic programming matrix
+avr_avr ... distance between the two averages
+avr_dst ... for all aligned structures, average distance to the average structure
+std_dev ... for all aligned structures, standard deviation of distance to ave str
+
+group:                                 1       2       
+   N pos_scr avr_ave avr_dst std_dev   antagoi 2rh1tem 
+------------------------------------------------------
+   1    0.00    0.00    0.00    0.00   M   1 A -       
+   2    0.00    0.00    0.00    0.00   N   2 A -       
+   3    0.00    0.00    0.00    0.00   E   3 A -       
+   4    0.00    0.00    0.00    0.00   S   4 A -       
+   5    0.00    0.00    0.00    0.00   E   5 A -       
+   6    0.00    0.00    0.00    0.00   C   6 A -       
+   7    0.00    0.00    0.00    0.00   A   7 A -       
+   8    0.00    0.00    0.00    0.00   S   8 A -       
+   9    0.00    0.00    0.00    0.00   L   9 A -       
+  10    0.00    0.00    0.00    0.00   L  10 A -       
+  11    0.00    0.00    0.00    0.00   A  11 A -       
+  12    0.00    0.00    0.00    0.00   S  12 A -       
+  13    0.00    0.00    0.00    0.00   V  13 A -       
+  14    0.00    0.00    0.00    0.00   Q  14 A -       
+  15    0.00    0.00    0.00    0.00   W  15 A -       
+  16    0.00    3.51    1.75    0.00   T  16 A D  29 A 
+  17    0.00    2.19    1.10    0.00   D  17 A E  30 A 
+  18    0.00    1.19    0.59    0.00   P  18 A V  31 A 
+  19    0.00    1.90    0.95    0.00   T  19 A W  32 A 
+  20    0.00    1.31    0.65    0.00   N  20 A V  33 A 
+  21    0.00    0.41    0.21    0.00   L  21 A V  34 A 
+  22    0.00    1.25    0.62    0.00   V  22 A G  35 A 
+  23    0.00    1.46    0.73    0.00   S  23 A M  36 A 
+  24    0.00    1.28    0.64    0.00   L  24 A G  37 A 
+  25    0.00    0.67    0.34    0.00   A  25 A I  38 A 
+  26    0.00    0.74    0.37    0.00 * V  26 A V  39 A 
+  27    0.00    0.94    0.47    0.00   L  27 A M  40 A 
+  28    0.00    0.54    0.27    0.00   A  28 A S  41 A 
+  29    0.00    0.18    0.09    0.00   F  29 A L  42 A 
+  30    0.00    0.63    0.32    0.00 * I  30 A I  43 A 
+  31    0.00    0.56    0.28    0.00   N  31 A V  44 A 
+  32    0.00    0.51    0.25    0.00   V  32 A L  45 A 
+  33    0.00    0.59    0.30    0.00   L  33 A A  46 A 
+  34    0.00    0.53    0.26    0.00   V  34 A I  47 A 
+  35    0.00    0.61    0.31    0.00   I  35 A V  48 A 
+  36    0.00    0.63    0.31    0.00   V  36 A F  49 A 
+  37    0.00    0.44    0.22    0.00 * G  37 A G  50 A 
+  38    0.00    0.48    0.24    0.00 * N  38 A N  51 A 
+  39    0.00    0.54    0.27    0.00   C  39 A V  52 A 
+  40    0.00    0.37    0.18    0.00 * L  40 A L  53 A 
+  41    0.00    0.50    0.25    0.00 * V  41 A V  54 A 
+  42    0.00    0.84    0.42    0.00 * I  42 A I  55 A 
+  43    0.00    1.17    0.58    0.00   A  43 A T  56 A 
+  44    0.00    1.25    0.62    0.00 * A  44 A A  57 A 
+  45    0.00    1.25    0.63    0.00   V  45 A I  58 A 
+  46    0.00    1.96    0.98    0.00   L  46 A A  59 A 
+  47    0.00    2.43    1.21    0.00   C  47 A K  60 A 
+  48    0.00    2.79    1.40    0.00   S  48 A F  61 A 
+  49    0.00    3.07    1.54    0.00   H  49 A E  62 A 
+  50    0.00    2.57    1.28    0.00   K  50 A R  63 A 
+  51    0.00    1.31    0.65    0.00 * L  51 A L  64 A 
+  52    0.00    1.30    0.65    0.00   R  52 A Q  65 A 
+  53    0.00    0.99    0.49    0.00   S  53 A T  66 A 
+  54    0.00    2.30    1.15    0.00 * V  54 A V  67 A 
+  55    0.00    2.22    1.11    0.00 * T  55 A T  68 A 
+  56    0.00    0.87    0.43    0.00 * N  56 A N  69 A 
+  57    0.00    0.76    0.38    0.00   F  57 A Y  70 A 
+  58    0.00    0.70    0.35    0.00 * F  58 A F  71 A 
+  59    0.00    0.45    0.22    0.00 * I  59 A I  72 A 
+  60    0.00    0.70    0.35    0.00   V  60 A T  73 A 
+  61    0.00    0.78    0.39    0.00 * S  61 A S  74 A 
+  62    0.00    0.52    0.26    0.00 * L  62 A L  75 A 
+  63    0.00    0.46    0.23    0.00 * A  63 A A  76 A 
+  64    0.00    0.73    0.37    0.00   V  64 A C  77 A 
+  65    0.00    0.51    0.25    0.00 * A  65 A A  78 A 
+  66    0.00    0.40    0.20    0.00 * D  66 A D  79 A 
+  67    0.00    0.50    0.25    0.00 * L  67 A L  80 A 
+  68    0.00    0.36    0.18    0.00   L  68 A V  81 A 
+  69    0.00    0.38    0.19    0.00   V  69 A M  82 A 
+  70    0.00    0.52    0.26    0.00 * G  70 A G  83 A 
+  71    0.00    0.63    0.32    0.00 * L  71 A L  84 A 
+  72    0.00    0.34    0.17    0.00 * A  72 A A  85 A 
+  73    0.00    0.53    0.27    0.00 * V  73 A V  86 A 
+  74    0.00    0.52    0.26    0.00   L  74 A V  87 A 
+  75    0.00    1.05    0.52    0.00 * P  75 A P  88 A 
+  76    0.00    0.92    0.46    0.00 * F  76 A F  89 A 
+  77    0.00    0.62    0.31    0.00   S  77 A G  90 A 
+  78    0.00    1.04    0.52    0.00 * A  78 A A  91 A 
+  79    0.00    1.15    0.57    0.00   T  79 A A  92 A 
+  80    0.00    1.14    0.57    0.00   W  80 A H  93 A 
+  81    0.00    0.92    0.46    0.00   E  81 A I  94 A 
+  82    0.00    1.42    0.71    0.00   V  82 A L  95 A 
+  83    0.00    1.74    0.87    0.00   F  83 A M  96 A 
+  84    0.00    2.09    1.05    0.00 * K  84 A K  97 A 
+  85    0.00    1.48    0.74    0.00   V  85 A M  98 A 
+  86    0.00    0.97    0.49    0.00 * W  86 A W  99 A 
+  87    0.00    0.66    0.33    0.00   I  87 A T 100 A 
+  88    0.00    0.61    0.30    0.00 * F  88 A F 101 A 
+  89    0.00    0.71    0.36    0.00 * G  89 A G 102 A 
+  90    0.00    0.91    0.45    0.00   D  90 A N 103 A 
+  91    0.00    0.75    0.37    0.00   V  91 A F 104 A 
+  92    0.00    0.28    0.14    0.00 * W  92 A W 105 A 
+  93    0.00    0.66    0.33    0.00 * C  93 A C 106 A 
+  94    0.00    0.98    0.49    0.00   R  94 A E 107 A 
+  95    0.00    0.55    0.28    0.00   I  95 A F 108 A 
+  96    0.00    0.45    0.22    0.00 * W  96 A W 109 A 
+  97    0.00    0.50    0.25    0.00   L  97 A T 110 A 
+  98    0.00    0.37    0.18    0.00   A  98 A S 111 A 
+  99    0.00    0.40    0.20    0.00   V  99 A I 112 A 
+ 100    0.00    0.34    0.17    0.00 * D 100 A D 113 A 
+ 101    0.00    0.52    0.26    0.00 * V 101 A V 114 A 
+ 102    0.00    0.43    0.21    0.00   W 102 A L 115 A 
+ 103    0.00    0.31    0.15    0.00   M 103 A C 116 A 
+ 104    0.00    0.45    0.22    0.00   C 104 A V 117 A 
+ 105    0.00    0.54    0.27    0.00 * T 105 A T 118 A 
+ 106    0.00    0.65    0.33    0.00 * A 106 A A 119 A 
+ 107    0.00    0.46    0.23    0.00 * S 107 A S 120 A 
+ 108    0.00    0.45    0.23    0.00 * I 108 A I 121 A 
+ 109    0.00    0.22    0.11    0.00   L 109 A E 122 A 
+ 110    0.00    0.59    0.29    0.00   N 110 A T 123 A 
+ 111    0.00    0.11    0.06    0.00 * L 111 A L 124 A 
+ 112    0.00    0.33    0.16    0.00 * C 112 A C 125 A 
+ 113    0.00    0.50    0.25    0.00   A 113 A V 126 A 
+ 114    0.00    0.73    0.37    0.00 * I 114 A I 127 A 
+ 115    0.00    0.81    0.41    0.00   S 115 A A 128 A 
+ 116    0.00    0.82    0.41    0.00   L 116 A V 129 A 
+ 117    0.00    0.91    0.45    0.00 * D 117 A D 130 A 
+ 118    0.00    0.56    0.28    0.00 * R 118 A R 131 A 
+ 119    0.00    0.40    0.20    0.00 * Y 119 A Y 132 A 
+ 120    0.00    0.59    0.30    0.00   V 120 A F 133 A 
+ 121    0.00    0.45    0.22    0.00 * A 121 A A 134 A 
+ 122    0.00    0.66    0.33    0.00   V 122 A I 135 A 
+ 123    0.00    1.03    0.51    0.00 * T 123 A T 136 A 
+ 124    0.00    1.98    0.99    0.00   R 124 A S 137 A 
+ 125    0.00    3.45    1.72    0.00 * P 125 A P 138 A 
+ 126    0.00    2.28    1.14    0.00   V 126 A F 139 A 
+ 127    0.00    8.36    4.18    0.00   T 127 A K 140 A 
+ 128    0.00    8.59    4.30    0.00 * Y 128 A Y 141 A 
+ 129    0.00    3.69    1.84    0.00   P 129 A Q 142 A 
+ 130    0.00    6.99    3.49    0.00 * S 130 A S 143 A 
+ 131    0.00    3.56    1.78    0.00   I 131 A L 144 A 
+ 132    0.00    2.55    1.27    0.00   M 132 A L 145 A 
+ 133    0.00    1.43    0.72    0.00   S 133 A T 146 A 
+ 134    0.00    1.25    0.63    0.00   T 134 A K 147 A 
+ 135    0.00    0.36    0.18    0.00   R 135 A N 148 A 
+ 136    0.00    0.76    0.38    0.00   R 136 A K 149 A 
+ 137    0.00    0.82    0.41    0.00 * A 137 A A 150 A 
+ 138    0.00    0.20    0.10    0.00   K 138 A R 151 A 
+ 139    0.00    0.23    0.11    0.00   S 139 A V 152 A 
+ 140    0.00    0.74    0.37    0.00   L 140 A I 153 A 
+ 141    0.00    0.58    0.29    0.00 * I 141 A I 154 A 
+ 142    0.00    0.51    0.25    0.00   A 142 A L 155 A 
+ 143    0.00    1.10    0.55    0.00   G 143 A M 156 A 
+ 144    0.00    0.94    0.47    0.00   L 144 A V 157 A 
+ 145    0.00    0.93    0.47    0.00 * W 145 A W 158 A 
+ 146    0.00    1.28    0.64    0.00   V 146 A I 159 A 
+ 147    0.00    1.66    0.83    0.00   L 147 A V 160 A 
+ 148    0.00    0.83    0.41    0.00 * S 148 A S 161 A 
+ 149    0.00    1.32    0.66    0.00   F 149 A G 162 A 
+ 150    0.00    2.22    1.11    0.00   V 150 A L 163 A 
+ 151    0.00    2.48    1.24    0.00   I 151 A T 164 A 
+ 152    0.00    2.55    1.28    0.00   C 152 A S 165 A 
+ 153    0.00    3.48    1.74    0.00 * F 153 A F 166 A 
+ 154    0.00    1.99    1.00    0.00   P 154 A L 167 A 
+ 155    0.00    4.50    2.25    0.00 * P 155 A P 168 A 
+ 156    0.00    2.50    1.25    0.00   L 156 A I 169 A 
+ 157    0.00    5.58    2.79    0.00   V 157 A Q 170 A 
+ 158    0.00    7.24    3.62    0.00   G 158 A M 171 A 
+ 159    0.00    3.56    1.78    0.00   W 159 A H 172 A 
+ 160    0.00    8.96    4.48    0.00   K 160 A W 173 A 
+ 161    0.00   11.08    5.54    0.00   E 161 A Y 174 A 
+ 162    0.00    8.67    4.33    0.00   Q 162 A R 175 A 
+ 163    0.00    0.00    0.00    0.00   K 163 A -       
+ 164    0.00    0.00    0.00    0.00   V 164 A -       
+ 165    0.00    0.00    0.00    0.00   K 165 A -       
+ 166    0.00    0.00    0.00    0.00   E 166 A -       
+ 167    0.00    0.00    0.00    0.00   N 167 A -       
+ 168    0.00    0.00    0.00    0.00   V 168 A -       
+ 169    0.00    0.00    0.00    0.00   Y 169 A -       
+ 170    0.00    0.00    0.00    0.00   Y 170 A -       
+ 171    0.00    0.00    0.00    0.00   Q 171 A -       
+ 172    0.00    0.00    0.00    0.00   Y 172 A -       
+ 173    0.00    0.00    0.00    0.00   G 173 A -       
+ 174    0.00    0.00    0.00    0.00   N 174 A -       
+ 175    0.00    7.69    3.85    0.00   Y 175 A A 176 A 
+ 176    0.00    8.34    4.17    0.00 * T 176 A T 177 A 
+ 177    0.00    4.41    2.21    0.00   L 177 A H 178 A 
+ 178    0.00    1.32    0.66    0.00   V 178 A Q 179 A 
+ 179    0.00    3.55    1.78    0.00   S 179 A E 180 A 
+ 180    0.00    7.25    3.63    0.00   V 180 A A 181 A 
+ 181    0.00    4.73    2.37    0.00   T 181 A I 182 A 
+ 182    0.00    2.13    1.06    0.00   P 182 A N 183 A 
+ 183    0.00    6.50    3.25    0.00   S 183 A C 184 A 
+ 184    0.00    5.02    2.51    0.00   P 184 A Y 185 A 
+ 185    0.00    1.11    0.55    0.00 * A 185 A A 186 A 
+ 186    0.00    3.49    1.74    0.00   P 186 A E 187 A 
+ 187    0.00    3.68    1.84    0.00   P 187 A E 188 A 
+ 188    0.00    0.00    0.00    0.00   L 188 A -       
+ 189    0.00    0.00    0.00    0.00   P 189 A -       
+ 190    0.00    0.00    0.00    0.00   C 190 A -       
+ 191    0.00    0.00    0.00    0.00   P 191 A -       
+ 192    0.00    1.64    0.82    0.00   W 192 A T 189 A 
+ 193    0.00    1.45    0.73    0.00   T 193 A C 190 A 
+ 194    0.00    1.46    0.73    0.00 * C 194 A C 191 A 
+ 195    0.00    2.79    1.39    0.00   E 195 A D 192 A 
+ 196    0.00    2.83    1.41    0.00   L 196 A F 193 A 
+ 197    0.00    4.61    2.30    0.00   T 197 A F 194 A 
+ 198    0.00    1.70    0.85    0.00   N 198 A T 195 A 
+ 199    0.00    0.46    0.23    0.00   D 199 A N 196 A 
+ 200    0.00    0.58    0.29    0.00   A 200 A Q 197 A 
+ 201    0.00    0.75    0.38    0.00   G 201 A A 198 A 
+ 202    0.00    0.50    0.25    0.00 * Y 202 A Y 199 A 
+ 203    0.00    0.67    0.33    0.00   V 203 A A 200 A 
+ 204    0.00    1.01    0.51    0.00   V 204 A I 201 A 
+ 205    0.00    1.18    0.59    0.00   Y 205 A A 202 A 
+ 206    0.00    1.67    0.83    0.00 * S 206 A S 203 A 
+ 207    0.00    1.49    0.74    0.00   A 207 A S 204 A 
+ 208    0.00    0.79    0.40    0.00   L 208 A I 205 A 
+ 209    0.00    1.54    0.77    0.00   G 209 A V 206 A 
+ 210    0.00    2.02    1.01    0.00 * S 210 A S 207 A 
+ 211    0.00    1.76    0.88    0.00 * F 211 A F 208 A 
+ 212    0.00    1.34    0.67    0.00 * Y 212 A Y 209 A 
+ 213    0.00    1.34    0.67    0.00   I 213 A V 210 A 
+ 214    0.00    1.27    0.64    0.00 * P 214 A P 211 A 
+ 215    0.00    1.14    0.57    0.00   M 215 A L 212 A 
+ 216    0.00    0.46    0.23    0.00   F 216 A V 213 A 
+ 217    0.00    0.20    0.10    0.00   V 217 A I 214 A 
+ 218    0.00    0.43    0.21    0.00 * M 218 A M 215 A 
+ 219    0.00    0.57    0.28    0.00   L 219 A V 216 A 
+ 220    0.00    0.60    0.30    0.00 * F 220 A F 217 A 
+ 221    0.00    0.98    0.49    0.00   F 221 A V 218 A 
+ 222    0.00    1.42    0.71    0.00 * Y 222 A Y 219 A 
+ 223    0.00    1.72    0.86    0.00   W 223 A S 220 A 
+ 224    0.00    1.09    0.55    0.00 * R 224 A R 221 A 
+ 225    0.00    0.70    0.35    0.00   I 225 A V 222 A 
+ 226    0.00    1.66    0.83    0.00   Y 226 A F 223 A 
+ 227    0.00    1.71    0.85    0.00   R 227 A Q 224 A 
+ 228    0.00    1.27    0.64    0.00   A 228 A E 225 A 
+ 229    0.00    1.30    0.65    0.00 * A 229 A A 226 A 
+ 230    0.00    1.33    0.66    0.00   V 230 A K 227 A 
+ 231    0.00    1.37    0.68    0.00 * R 231 A R 228 A 
+ 232    0.00    1.37    0.68    0.00   T 232 A Q 229 A 
+ 233    0.00    0.00    0.00    0.00   -       L 230 A 
+ 234    0.00    0.00    0.00    0.00   -       K 263 A 
+ 235    0.00    0.00    0.00    0.00   -       F 264 A 
+ 236    0.00    0.00    0.00    0.00   -       C 265 A 
+ 237    0.00    0.00    0.00    0.00   K 444 A -       
+ 238    0.00    0.00    0.00    0.00   K 445 A -       
+ 239    0.00    0.00    0.00    0.00   L 446 A -       
+ 240    0.00    0.00    0.00    0.00   G 447 A -       
+ 241    0.00    0.00    0.00    0.00   K 448 A -       
+ 242    0.00    0.00    0.00    0.00   K 449 A -       
+ 243    0.00    0.00    0.00    0.00   H 450 A -       
+ 244    0.00    0.00    0.00    0.00   L 451 A -       
+ 245    0.00    0.00    0.00    0.00   K 452 A -       
+ 246    0.00    0.00    0.00    0.00   V 453 A -       
+ 247    0.00    0.00    0.00    0.00   Q 454 A -       
+ 248    0.00    0.00    0.00    0.00   V 455 A -       
+ 249    0.00    0.00    0.00    0.00   K 456 A -       
+ 250    0.00    0.00    0.00    0.00   R 457 A -       
+ 251    0.00    0.00    0.00    0.00   F 458 A -       
+ 252    0.00    3.77    1.89    0.00   R 459 A L 266 A 
+ 253    0.00    3.46    1.73    0.00   M 460 A K 267 A 
+ 254    0.00    2.94    1.47    0.00 * E 461 A E 268 A 
+ 255    0.00    2.42    1.21    0.00   T 462 A H 269 A 
+ 256    0.00    2.46    1.23    0.00 * K 463 A K 270 A 
+ 257    0.00    2.12    1.06    0.00 * A 464 A A 271 A 
+ 258    0.00    1.58    0.79    0.00   A 465 A L 272 A 
+ 259    0.00    1.37    0.69    0.00 * K 466 A K 273 A 
+ 260    0.00    0.99    0.50    0.00 * T 467 A T 274 A 
+ 261    0.00    0.76    0.38    0.00 * L 468 A L 275 A 
+ 262    0.00    0.45    0.23    0.00 * G 469 A G 276 A 
+ 263    0.00    0.57    0.28    0.00 * I 470 A I 277 A 
+ 264    0.00    0.15    0.07    0.00 * I 471 A I 278 A 
+ 265    0.00    0.12    0.06    0.00   V 472 A M 279 A 
+ 266    0.00    0.39    0.20    0.00 * G 473 A G 280 A 
+ 267    0.00    0.39    0.19    0.00   G 474 A T 281 A 
+ 268    0.00    0.10    0.05    0.00 * F 475 A F 282 A 
+ 269    0.00    0.14    0.07    0.00   I 476 A T 283 A 
+ 270    0.00    0.43    0.22    0.00   F 477 A L 284 A 
+ 271    0.00    0.36    0.18    0.00 * C 478 A C 285 A 
+ 272    0.00    0.43    0.22    0.00 * W 479 A W 286 A 
+ 273    0.00    1.09    0.55    0.00 * L 480 A L 287 A 
+ 274    0.00    1.44    0.72    0.00 * P 481 A P 288 A 
+ 275    0.00    0.95    0.47    0.00 * F 482 A F 289 A 
+ 276    0.00    0.90    0.45    0.00 * F 483 A F 290 A 
+ 277    0.00    1.18    0.59    0.00   T 484 A I 291 A 
+ 278    0.00    1.41    0.71    0.00   M 485 A V 292 A 
+ 279    0.00    1.62    0.81    0.00   Y 486 A N 293 A 
+ 280    0.00    1.55    0.78    0.00   L 487 A I 294 A 
+ 281    0.00    0.84    0.42    0.00   T 488 A V 295 A 
+ 282    0.00    1.21    0.61    0.00   R 489 A H 296 A 
+ 283    0.00    1.81    0.91    0.00   A 490 A V 297 A 
+ 284    0.00    1.63    0.82    0.00   F 491 A I 298 A 
+ 285    0.00    0.86    0.43    0.00   C 492 A Q 299 A 
+ 286    0.00    0.94    0.47    0.00   A 493 A D 300 A 
+ 287    0.00    1.51    0.75    0.00   E 494 A N 301 A 
+ 288    0.00    0.96    0.48    0.00   C 495 A L 302 A 
+ 289    0.00    1.19    0.60    0.00 * I 496 A I 303 A 
+ 290    0.00    0.68    0.34    0.00   N 497 A R 304 A 
+ 291    0.00    1.24    0.62    0.00   S 498 A K 305 A 
+ 292    0.00    1.27    0.63    0.00   L 499 A E 306 A 
+ 293    0.00    0.76    0.38    0.00   L 500 A V 307 A 
+ 294    0.00    0.97    0.49    0.00   F 501 A Y 308 A 
+ 295    0.00    1.30    0.65    0.00   S 502 A I 309 A 
+ 296    0.00    1.08    0.54    0.00   V 503 A L 310 A 
+ 297    0.00    0.69    0.34    0.00 * L 504 A L 311 A 
+ 298    0.00    0.68    0.34    0.00   F 505 A N 312 A 
+ 299    0.00    0.67    0.33    0.00 * W 506 A W 313 A 
+ 300    0.00    0.52    0.26    0.00   L 507 A I 314 A 
+ 301    0.00    0.45    0.22    0.00 * G 508 A G 315 A 
+ 302    0.00    0.73    0.37    0.00 * Y 509 A Y 316 A 
+ 303    0.00    0.74    0.37    0.00   C 510 A V 317 A 
+ 304    0.00    0.31    0.15    0.00 * N 511 A N 318 A 
+ 305    0.00    0.29    0.15    0.00 * S 512 A S 319 A 
+ 306    0.00    0.26    0.13    0.00   A 513 A G 320 A 
+ 307    0.00    0.43    0.21    0.00   V 514 A F 321 A 
+ 308    0.00    0.31    0.15    0.00 * N 515 A N 322 A 
+ 309    0.00    0.24    0.12    0.00 * P 516 A P 323 A 
+ 310    0.00    0.55    0.27    0.00   F 517 A L 324 A 
+ 311    0.00    0.53    0.27    0.00 * I 518 A I 325 A 
+ 312    0.00    0.25    0.12    0.00 * Y 519 A Y 326 A 
+ 313    0.00    0.95    0.48    0.00   A 520 A C 327 A 
+ 314    0.00    0.00    0.00    0.00   L 521 A -       
+ 315    0.00    1.44    0.72    0.00   F 522 A R 328 A 
+ 316    0.00    0.76    0.38    0.00 * S 523 A S 329 A 
+ 317    0.00    0.84    0.42    0.00   K 524 A P 330 A 
+ 318    0.00    0.54    0.27    0.00 * D 525 A D 331 A 
+ 319    0.00    0.56    0.28    0.00 * F 526 A F 332 A 
+ 320    0.00    0.86    0.43    0.00 * R 527 A R 333 A 
+ 321    0.00    1.11    0.56    0.00   Q 528 A I 334 A 
+ 322    0.00    1.02    0.51    0.00 * A 529 A A 335 A 
+ 323    0.00    1.10    0.55    0.00 * F 530 A F 336 A 
+ 324    0.00    1.11    0.56    0.00   K 531 A Q 337 A 
+ 325    0.00    1.07    0.53    0.00   R 532 A E 338 A 
+ 326    0.00    1.18    0.59    0.00   I 533 A L 339 A 
+ 327    0.00    1.21    0.61    0.00   I 534 A L 340 A 
+ 328    0.00    2.60    1.30    0.00   L 535 A C 341 A 
+ 329    0.00    5.17    2.58    0.00   R 536 A L 342 A 
+ 330    0.00    0.00    0.00    0.00   -       V1094 A 
+ 331    0.00    0.00    0.00    0.00   C 537 A -       
+ 332    0.00    0.00    0.00    0.00   L 538 A -       
+ 333    0.00    0.00    0.00    0.00   C 539 A -       
+ 334    0.00    0.00    0.00    0.00   S 540 A -       
+ 335    0.00    0.00    0.00    0.00   K 541 A -       
+ 336    0.00    0.00    0.00    0.00   R 542 A -       
+------------------------------------------------------
+
+
+openf___224_> Open           antagoinstaAnophelles_fit.pdb
+wrpdb___568_> Residues, atoms, selected atoms:      331     2649     2649
+openf___224_> Open           2rh1template_fit.pdb
+wrpdb___568_> Residues, atoms, selected atoms:      283     2275     2275
+openf___224_> Open           2rh1template_fit.pdb
+openf___224_> Open           2rh1template_fit.pdb
+
+
+SALIGN______> Raw QUALITY_SCORE of the multiple alignment:     134.0
+              QUALITY_SCORE (percentage)                 :      47.3
+              Number of unique protein pairs             :         1
+              QUALITY_SCORE_min                          :       134
+              RMS_CUTOFF                                 :    1.0000
+              QS is the average number of structurally equivalent residue pairs.
+              Two residues are equivalent when closer than RMS_CUTOFF upon
+              pairwise least-squares superposition given current alignment.
+
+SALIGN______> Matrix of pairwise equivalences: 
+
+         antagoin2rh1temp
+antagoin        0     134
+2rh1temp        0       0
+
+
+
+
+Dynamically allocated memory at          finish [B,KiB,MiB]:       971423     948.655     0.926
+Starting time                                            : 2021/08/06 13:15:06
+Closing time                                             : 2021/08/06 13:15:06
+Total CPU time [seconds]                                 :       0.45
