@@ -1,0 +1,364 @@
+<script type='text/javascript'>
+/*
+Original code from http://kryogenix.org/code/browser/sorttable/ [MIT license]
+Modifications by IWD, March 2006:
+  - If table cells have a 'sv' (Sort Value) property,
+    that is used for sorting in preference to all else.
+    e.g. <td sv='42'>text goes here</td>
+*/
+
+//IWD: This speeds up sorting in Mozilla (supposedly);
+// see http://webfx.eae.net/dhtml/sortabletable/implementation.html
+var REMOVE_BEFORE_SORT = true;
+
+addEvent(window, "load", sortables_init);
+
+var SORT_COLUMN_INDEX;
+
+function sortables_init() {
+    // Find all tables with class sortable and make them sortable
+    if (!document.getElementsByTagName) return;
+    tbls = document.getElementsByTagName("table");
+    for (ti=0;ti<tbls.length;ti++) {
+        thisTbl = tbls[ti];
+        if (((' '+thisTbl.className+' ').indexOf("sortable") != -1) && (thisTbl.id)) {
+            ts_makeSortable(thisTbl);
+        }
+    }
+}
+
+function ts_makeSortable(table) {
+    if (table.rows && table.rows.length > 0) {
+        var firstRow = table.rows[0];
+    }
+    if (!firstRow) return;
+    
+    // We have a first row: assume it's the header, and make its contents clickable links
+    for (var i=0;i<firstRow.cells.length;i++) {
+        var cell = firstRow.cells[i];
+        var txt = ts_getInnerText(cell);
+        cell.innerHTML = '<a href="#" class="sortheader" onclick="ts_resortTable(this, '+i+');return false;">'+txt+'<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a>';
+    }
+    
+    //IWD:
+    // For other rows, look for sv='...' and convert to fsv
+    // (Sort Value [text, attribute] and Float Sort Value [number, property])
+    for(var r = 1; r < table.rows.length; r++)
+    {
+        var row = table.rows[r];
+        for(var c = 0; c < row.cells.length; c++)
+        {
+            var cell = row.cells[c];
+            // This works in Safari *and* Firefox (and hopefully IE)
+            if(hasAttr(cell, 'sv'))
+                cell.fsv = parseFloat(cell.getAttribute('sv'))
+        }
+    }
+}
+
+function ts_getInnerText(el) {
+	if (typeof el == "string") return el;
+	if (typeof el == "undefined") { return el };
+	if (el.innerText) return el.innerText;	//Not needed but it is faster
+	var str = "";
+	
+	var cs = el.childNodes;
+	var l = cs.length;
+	for (var i = 0; i < l; i++) {
+		switch (cs[i].nodeType) {
+			case 1: //ELEMENT_NODE
+				str += ts_getInnerText(cs[i]);
+				break;
+			case 3:	//TEXT_NODE
+				str += cs[i].nodeValue;
+				break;
+		}
+	}
+	return str;
+}
+
+function ts_resortTable(lnk, cellIdx) {
+    // get the span
+    var span;
+    for (var ci=0;ci<lnk.childNodes.length;ci++) {
+        if (lnk.childNodes[ci].tagName && lnk.childNodes[ci].tagName.toLowerCase() == 'span') span = lnk.childNodes[ci];
+    }
+    var spantext = ts_getInnerText(span);
+    var td = lnk.parentNode;
+    var table = getParent(td,'TABLE');
+    var tableLen = table.rows.length; //IWD: supposedly this also helps with speed
+    var column = cellIdx || td.cellIndex; //IWD: cellIndex is always 0 is Safari
+    SORT_COLUMN_INDEX = column;
+    
+    //IWD: we always sort by fsv
+    var firstRow = new Array();
+    var newRows = new Array();
+    for (i=0;i<table.rows[0].length;i++) { firstRow[i] = table.rows[0][i]; }
+    for (j=1;j<tableLen;j++) { newRows[j-1] = table.rows[j]; }
+
+    //IWD: we use different sort functions b/c missing values always sort to the end
+    var sortfn = ts_sort_fsv_up;
+    // Sort determined by column
+    var sortdir = 1;
+    if(hasAttr(td, 'sortdir')) sortdir = parseInt(td.getAttribute('sortdir'));
+    if(sortdir == -1) {
+        ARROW = '&nbsp;&nbsp;&uarr;';
+        sortfn = ts_sort_fsv_down; //IWD
+    } else {
+        ARROW = '&nbsp;&nbsp;&darr;';
+        sortfn = ts_sort_fsv_up; //IWD
+    }
+    /* Alternating sort
+    if (span.getAttribute("sortdir") == 'down') {
+        ARROW = '&nbsp;&nbsp;&uarr;';
+        span.setAttribute('sortdir','up');
+        sortfn = ts_sort_fsv_down; //IWD
+    } else {
+        ARROW = '&nbsp;&nbsp;&darr;';
+        span.setAttribute('sortdir','down');
+        sortfn = ts_sort_fsv_up; //IWD
+    }*/
+    
+    newRows.sort(sortfn);
+    
+    //IWD: This speeds up Mozilla; see top.
+    if(REMOVE_BEFORE_SORT)
+    {
+        var tableNextSib = table.nextSibling;
+        var tableParent = table.parentNode;
+        tableParent.removeChild(table);
+    }
+
+    // We appendChild rows that already exist to the tbody, so it moves them rather than creating new ones
+    //IWD: I prefer sorttop over sortbottom
+    // do sorttop rows only
+    for (i=0;i<newRows.length;i++) { if (newRows[i].className && (newRows[i].className.indexOf('sorttop') != -1)) table.tBodies[0].appendChild(newRows[i]);}
+    // don't do sorttop rows
+    for (i=0;i<newRows.length;i++) { if (!newRows[i].className || (newRows[i].className && (newRows[i].className.indexOf('sorttop') == -1))) table.tBodies[0].appendChild(newRows[i]);}
+    // don't do sortbottom rows
+    //for (i=0;i<newRows.length;i++) { if (!newRows[i].className || (newRows[i].className && (newRows[i].className.indexOf('sortbottom') == -1))) table.tBodies[0].appendChild(newRows[i]);}
+    // do sortbottom rows only
+    //for (i=0;i<newRows.length;i++) { if (newRows[i].className && (newRows[i].className.indexOf('sortbottom') != -1)) table.tBodies[0].appendChild(newRows[i]);}
+    
+    if(REMOVE_BEFORE_SORT)
+    {
+        tableParent.insertBefore(table, tableNextSib)
+    }
+    
+    // Delete any other arrows there may be showing
+    var allspans = document.getElementsByTagName("span");
+    for (var ci=0;ci<allspans.length;ci++) {
+        if (allspans[ci].className == 'sortarrow') {
+            if (getParent(allspans[ci],"table") == getParent(lnk,"table")) { // in the same table as us?
+                allspans[ci].innerHTML = '&nbsp;&nbsp;&nbsp;';
+            }
+        }
+    }
+        
+    span.innerHTML = ARROW;
+}
+
+function getParent(el, pTagName) {
+	if (el == null) return null;
+	else if (el.nodeType == 1 && el.tagName.toLowerCase() == pTagName.toLowerCase())	// Gecko bug, supposed to be uppercase
+		return el;
+	else
+		return getParent(el.parentNode, pTagName);
+}
+
+function ts_sort_fsv_up(a,b) { //IWD
+    aa = a.cells[SORT_COLUMN_INDEX].fsv;
+    bb = b.cells[SORT_COLUMN_INDEX].fsv;
+    if(isNaN(aa))
+    {
+        if(isNaN(bb)) return ts_sort_default(a,b);
+        else return 1;
+    }
+    else if(isNaN(bb)) return -1;
+    else return aa-bb;
+}
+
+function ts_sort_fsv_down(a,b) { //IWD
+    aa = a.cells[SORT_COLUMN_INDEX].fsv;
+    bb = b.cells[SORT_COLUMN_INDEX].fsv;
+    if(isNaN(aa))
+    {
+        if(isNaN(bb)) return ts_sort_default(a,b);
+        else return 1;
+    }
+    else if(isNaN(bb)) return -1;
+    else return bb-aa;
+}
+
+function ts_sort_default(a,b) {
+    aa = ts_getInnerText(a.cells[SORT_COLUMN_INDEX]);
+    bb = ts_getInnerText(b.cells[SORT_COLUMN_INDEX]);
+    if (aa==bb) return 0;
+    if (aa<bb) return -1;
+    return 1;
+}
+
+
+function addEvent(elm, evType, fn, useCapture)
+// addEvent and removeEvent
+// cross-browser event handling for IE5+,  NS6 and Mozilla
+// By Scott Andrew
+{
+  if (elm.addEventListener){
+    elm.addEventListener(evType, fn, useCapture);
+    return true;
+  } else if (elm.attachEvent){
+    var r = elm.attachEvent("on"+evType, fn);
+    return r;
+  } else {
+    alert("Handler could not be removed");
+  }
+}
+
+//IWD: IE6 doesn't support the hasAttribute() method
+function hasAttr(obj, attr)
+{
+    return !!(obj[attr] || attr in obj || (obj.hasAttribute && obj.hasAttribute(attr)));
+}
+
+</script>
+<p><table border='1' width='100%'>
+<tr><td rowspan='8' align='center'>Protein<br>Geometry</td>
+<td>Poor rotamers</td><td bgcolor='#ff9999'>3</td><td bgcolor='#ff9999'>3.26%</td>
+<td>Goal: &lt;0.3%</td></tr>
+<tr><td>Favored rotamers</td><td bgcolor='#ffff99'>88</td><td bgcolor='#ffff99'>95.65%</td>
+<td>Goal: &gt;98%</td></tr>
+<tr><td>Ramachandran outliers</td><td bgcolor='#ffff99'>1</td><td bgcolor='#ffff99'>1.01%</td>
+<td>Goal: &lt;0.05%</td></tr>
+<tr><td>Ramachandran favored</td><td bgcolor='#ff9999'>94</td><td bgcolor='#ff9999'>94.95%</td>
+<td>Goal: &gt;98%</td></tr>
+<td>Rama distribution Z-score</td><td colspan=2 bgcolor='#99ff99'>1.00 &plusmn; 0.87</td>
+<td>Goal: abs(Z score) &lt; 2</td></tr>
+<tr><td>C&beta; deviations &gt;0.25&Aring;</td><td bgcolor='#ffff99'>2</td><td bgcolor='#ffff99'>2.13%</td>
+<td>Goal: 0</td></tr>
+<tr><td>Bad bonds:</td><td bgcolor='#99ff99'>0 / 844</td><td bgcolor='#99ff99'>0.00%</td>
+<td>Goal: 0%</td></tr>
+<tr><td>Bad angles:</td><td bgcolor='#ff9999'>9 / 1139</td><td bgcolor='#ff9999'>0.79%</td>
+<td>Goal: &lt;0.1%</td></tr>
+<tr><td rowspan='2' align='center'>Peptide Omegas</td>
+<td>Cis Prolines:</td><td> 0 / 1</td><td> 0.00% </td>
+<td>Expected: &le;1 per chain, or &le;5%</td></tr>
+<td>Twisted Peptides:</td><td bgcolor='#ff9999'> 1 / 100</td><td bgcolor='#ff9999'> 1.00% </td>
+<td>Goal: 0</td></tr>
+<tr><td rowspan='2' align='center'>Low-resolution Criteria</td>
+<td>CaBLAM outliers</td><td bgcolor='#99ff99'>1</td><td bgcolor='#99ff99'>1.0%</td>
+<td>Goal: &lt;1.0%</td></tr>
+<tr><td>CA Geometry outliers</td><td bgcolor='#99ff99'>0</td><td bgcolor='#99ff99'>0.00%</td>
+<td>Goal: &lt;0.5%</td></tr>
+<tr><td rowspan='1' align='center'>Additional validations</td>
+<td>Chiral volume outliers</td><td colspan=2>0/123</td><td></td></tr></table>
+<small>In the two column results, the left column gives the raw count, right column gives the percentage.</small>
+<br><small>Key to table colors and cutoffs here: <a target='_blank' href='help/validation_options/summary_table_guide.html'><img src='img/helplink.jpg' alt='' title='Guide to summary table'></a></small></p>
+
+<p><i>Live sorting requires JavaScript enabled and Safari 2, Firefox 1.5, or IE 6</i></p>
+<table class='sortable' id='unique_tbl_id' width='100%' cellspacing='1' border='0'>
+<tr align='center' bgcolor='#9999cc' class='sorttop'><td sortdir='1'><b>#</b></td><td sortdir='1'><b>Alt</b></td><td sortdir='1'><b>Res</b></td><td sortdir='-1'><b>High B</b></td><td sortdir='1'><b>Ramachandran</b></td><td sortdir='1'><b>Rotamer</b></td><td sortdir='-1'><b>C&beta; deviation</b></td><td sortdir='1'><b>CaBLAM</b></td><td sortdir='-1'><b>Bond lengths</b></td><td sortdir='-1'><b>Bond angles</b></td><td sortdir='1'><b>Cis Peptides</b></td></tr>
+<tr align='center' bgcolor='#9999cc' class='sorttop'><td sortdir=''></td><td sortdir=''></td><td sortdir=''></td><td sortdir=''>Avg: 0.68</td><td sortdir=''>Outliers: 1 of 99</td><td sortdir=''>Poor rotamers: 3 of 92</td><td sortdir=''>Outliers: 2 of 94</td><td sortdir=''>Outliers: 1 of 97</td><td sortdir=''>Outliers: 0 of 101</td><td sortdir=''>Outliers: 8 of 101</td><td sortdir=''>Non-Trans: 1 of 100</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='0'> A   8 </td><td sv=' '> </td><td sv='TYR'>TYR</td><td sv='0.66'>0.66</td><td sv=''>-</td><td sv='57.6'>Favored (57.6%) <i>p90</i><br><small>chi angles: 63.8,273.5</small></td><td sv='0.131'>0.13&Aring;</td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='1'> A   9 </td><td sv=' '> </td><td sv='LYS'>LYS</td><td sv='0.71'>0.71</td><td sv='28.54'>Favored (28.54%)<br><small>General / -93.4,141.3</small></td><td sv='99.3'>Favored (99.3%) <i>mttt</i><br><small>chi angles: 294.4,177.5,180.3,178.4</small></td><td sv='0.063'>0.06&Aring;</td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='2'> A  10 </td><td sv=' '> </td><td sv='THR'>THR</td><td sv='0.74'>0.74</td><td sv='50.27'>Favored (50.27%)<br><small>General / -136.3,152.0</small></td><td sv='18.1'>Favored (18.1%) <i>p</i><br><small>chi angles: 49.6</small></td><td sv='0.152'>0.15&Aring;</td><td sv='61.79'>Favored (61.79%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='3'> A  11 </td><td sv=' '> </td><td sv='ARG'>ARG</td><td sv='0.69'>0.69</td><td sv='48.39'>Favored (48.39%)<br><small>General / -121.1,144.7</small></td><td sv='56.8'>Favored (56.8%) <i>mtt-85</i><br><small>chi angles: 292.7,179.3,161.2,271.6</small></td><td sv='0.072'>0.07&Aring;</td><td sv='66.935'>Favored (66.935%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='4'> A  12 </td><td sv=' '> </td><td sv='HIS'>HIS</td><td sv='0.71'>0.71</td><td sv='50.85'>Favored (50.85%)<br><small>General / -136.5,154.1</small></td><td sv='8.6'>Favored (8.6%) <i>m-70</i><br><small>chi angles: 309,249.9</small></td><td sv='0.131'>0.13&Aring;</td><td sv='50.489'>Favored (50.489%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='5'> A  13 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.75'>0.75</td><td sv='4.37'>Favored (4.37%)<br><small>General / -71.0,176.5</small></td><td sv='79.8'>Favored (79.8%) <i>mt</i><br><small>chi angles: 298.1,171.1</small></td><td sv='0.105'>0.10&Aring;</td><td sv='37.997'>Favored (37.997%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='6'> A  14 </td><td sv=' '> </td><td sv='ILE'>ILE</td><td sv='0.72'>0.72</td><td sv='20.11'>Favored (20.11%)<br><small>Ile or Val / -68.9,-15.8</small></td><td sv='42.1'>Favored (42.1%) <i>pt</i><br><small>chi angles: 64.2,170.6</small></td><td sv='0.085'>0.09&Aring;</td><td sv='42.227'>Favored (42.227%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='7'> A  15 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.71'>0.71</td><td sv='56.77'>Favored (56.77%)<br><small>General / -91.4,1.9</small></td><td sv='19.6'>Favored (19.6%) <i>p0</i><br><small>chi angles: 52.3,5.3</small></td><td sv='0.074'>0.07&Aring;</td><td sv='55.587'>Favored (55.587%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='8'> A  16 </td><td sv=' '> </td><td sv='GLY'>GLY</td><td sv='0.73'>0.73</td><td sv='64.65'>Favored (64.65%)<br><small>Glycine / 88.5,-12.6</small></td><td sv=''>-</td><td sv=''>-</td><td sv='33.895'>Favored (33.895%)<br><small></small></td><td sv=''>-</td><td bgcolor='#ff76a9' sv='5.641'> OUTLIER(S)<br><small>worst is CA-C-N: 5.6 &sigma;</small></td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='9'> A  17 </td><td sv=' '> </td><td sv='ARG'>ARG</td><td sv='0.67'>0.67</td><td sv='50.98'>Favored (50.98%)<br><small>General / -59.4,131.4</small></td><td sv='97.4'>Favored (97.4%) <i>mtt180</i><br><small>chi angles: 296,172.9,179.5,173.5</small></td><td sv='0.108'>0.11&Aring;</td><td sv='26.155'>Favored (26.155%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='10'> A  18 </td><td sv=' '> </td><td sv='ILE'>ILE</td><td sv='0.73'>0.73</td><td sv='15.57'>Favored (15.57%)<br><small>Ile or Val / -58.2,126.3</small></td><td sv='26.8'>Favored (26.8%) <i>mm</i><br><small>chi angles: 295.8,291.7</small></td><td sv='0.066'>0.07&Aring;</td><td sv='21.821'>Favored (21.821%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='11'> A  19 </td><td sv=' '> </td><td sv='ILE'>ILE</td><td sv='0.72'>0.72</td><td sv='6.88'>Favored (6.88%)<br><small>Ile or Val / -111.5,-19.5</small></td><td sv='23'>Favored (23%) <i>pt</i><br><small>chi angles: 54.7,175.9</small></td><td sv='0.097'>0.10&Aring;</td><td sv='21.874'>Favored (21.874%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='12'> A  20 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.73'>0.73</td><td sv='25.83'>Favored (25.83%)<br><small>General / -156.3,150.9</small></td><td sv='36.5'>Favored (36.5%) <i>t0</i><br><small>chi angles: 194,7.3</small></td><td sv='0.063'>0.06&Aring;</td><td sv='28.436'>Favored (28.436%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='13'> A  21 </td><td sv=' '> </td><td sv='CYS'>CYS</td><td sv='0.74'>0.74</td><td sv='14.07'>Favored (14.07%)<br><small>General / -149.9,130.6</small></td><td sv='55.4'>Favored (55.4%) <i>t</i><br><small>chi angles: 181.6</small></td><td sv='0.07'>0.07&Aring;</td><td sv='14.688'>Favored (14.688%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='14'> A  22 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.71'>0.71</td><td sv='46.95'>Favored (46.95%)<br><small>General / -69.2,150.9</small></td><td bgcolor='#ff76a9' sv='-100'>OUTLIER (0%)<br><small>chi angles: 96.8,65</small></td><td bgcolor='#ff76a9' sv='0.432'>0.43&Aring;</td><td sv='49.627'>Favored (49.627%)<br><small></small></td><td sv=''>-</td><td bgcolor='#ff76a9' sv='7.979'> OUTLIER(S)<br><small>worst is CA-CB-CG: 8.0 &sigma;</small></td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='15'> A  23 </td><td sv=' '> </td><td sv='ASN'>ASN</td><td sv='0.67'>0.67</td><td sv='53.66'>Favored (53.66%)<br><small>General / -67.0,-10.8</small></td><td sv='15.1'>Favored (15.1%) <i>m110</i><br><small>chi angles: 285.2,114.6</small></td><td sv='0.07'>0.07&Aring;</td><td sv='10.984'>Favored (10.984%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='16'> A  24 </td><td sv=' '> </td><td sv='ARG'>ARG</td><td sv='0.62'>0.62</td><td sv='64.71'>Favored (64.71%)<br><small>General / -62.8,-20.1</small></td><td sv='81.7'>Favored (81.7%) <i>mtm180</i><br><small>chi angles: 286.3,182.1,291.2,176.6</small></td><td sv='0.068'>0.07&Aring;</td><td sv='44.574'>Favored (44.574%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='17'> A  25 </td><td sv=' '> </td><td sv='ILE'>ILE</td><td sv='0.63'>0.63</td><td sv='47.48'>Favored (47.48%)<br><small>Ile or Val / -60.0,-31.3</small></td><td sv='6.9'>Favored (6.9%) <i>tt</i><br><small>chi angles: 200.7,175.8</small></td><td sv='0.123'>0.12&Aring;</td><td sv='47.657'>Favored (47.657%)<br><small> three-ten</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='18'> A  26 </td><td sv=' '> </td><td sv='GLY'>GLY</td><td sv='0.67'>0.67</td><td sv='83.74'>Favored (83.74%)<br><small>Glycine / -69.1,-39.5</small></td><td sv=''>-</td><td sv=''>-</td><td sv='81.711'>Favored (81.711%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='19'> A  27 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.62'>0.62</td><td sv='60.08'>Favored (60.08%)<br><small>General / -73.7,-25.0</small></td><td sv='93.5'>Favored (93.5%) <i>mt</i><br><small>chi angles: 293.7,175</small></td><td sv='0.054'>0.05&Aring;</td><td sv='77.728'>Favored (77.728%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='20'> A  28 </td><td sv=' '> </td><td sv='VAL'>VAL</td><td sv='0.64'>0.64</td><td sv='22.28'>Favored (22.28%)<br><small>Ile or Val / -78.8,-48.2</small></td><td sv='85.5'>Favored (85.5%) <i>t</i><br><small>chi angles: 177.6</small></td><td sv='0.054'>0.05&Aring;</td><td sv='13.738'>Favored (13.738%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='21'> A  29 </td><td sv=' '> </td><td sv='ALA'>ALA</td><td sv='0.71'>0.71</td><td bgcolor='#ffb3cc' sv='-48.7'>Allowed (1.3%)<br><small>General / -146.6,17.3</small></td><td sv=''>-</td><td sv='0.058'>0.06&Aring;</td><td bgcolor='#ffb3cc' sv='3.227'> CaBLAM Disfavored   (3.227%)<br><small>                 </small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='22'> A  30 </td><td sv=' '> </td><td sv='GLY'>GLY</td><td sv='0.72'>0.72</td><td sv='36.74'>Favored (36.74%)<br><small>Glycine / 93.1,-22.0</small></td><td sv=''>-</td><td sv=''>-</td><td sv='8.417'>Favored (8.417%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='23'> A  31 </td><td sv=' '> </td><td sv='TYR'>TYR</td><td sv='0.66'>0.66</td><td sv='57.36'>Favored (57.36%)<br><small>General / -64.9,136.9</small></td><td sv='58.2'>Favored (58.2%) <i>m-80</i><br><small>chi angles: 305.7,288.4</small></td><td sv='0.149'>0.15&Aring;</td><td sv='41.414'>Favored (41.414%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='24'> A  32 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.68'>0.68</td><td sv='34'>Favored (34%)<br><small>General / -81.4,141.4</small></td><td sv='88'>Favored (88%) <i>mt</i><br><small>chi angles: 298.2,172.7</small></td><td sv='0.054'>0.05&Aring;</td><td sv='40.645'>Favored (40.645%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='25'> A  33 </td><td sv=' '> </td><td sv='LYS'>LYS</td><td sv='0.68'>0.68</td><td sv='65.82'>Favored (65.82%)<br><small>General / -54.7,-37.4</small></td><td sv='51.2'>Favored (51.2%) <i>pttt</i><br><small>chi angles: 63.9,189.4,175.7,189.5</small></td><td sv='0.013'>0.01&Aring;</td><td sv='61.39'>Favored (61.39%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='26'> A  34 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.66'>0.66</td><td sv='75.77'>Favored (75.77%)<br><small>General / -64.4,-33.4</small></td><td sv='76.8'>Favored (76.8%) <i>m-30</i><br><small>chi angles: 294.5,349.9</small></td><td sv='0.074'>0.07&Aring;</td><td sv='74.279'>Favored (74.279%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='27'> A  35 </td><td sv=' '> </td><td sv='GLU'>GLU</td><td sv='0.62'>0.62</td><td sv='59.48'>Favored (59.48%)<br><small>General / -76.2,-17.6</small></td><td sv='2.4'>Favored (2.4%) <i>pt0</i><br><small>chi angles: 86.6,190.5,284.5</small></td><td sv='0.124'>0.12&Aring;</td><td sv='73.708'>Favored (73.708%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='28'> A  36 </td><td sv=' '> </td><td sv='VAL'>VAL</td><td sv='0.69'>0.69</td><td sv='5.61'>Favored (5.61%)<br><small>Ile or Val / -87.5,-28.4</small></td><td bgcolor='#ff76a9' sv='-99.8'>OUTLIER (0.2%)<br><small>chi angles: 204.9</small></td><td sv='0.039'>0.04&Aring;</td><td sv='19.334'>Favored (19.334%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='29'> A  37 </td><td sv=' '> </td><td sv='ARG'>ARG</td><td sv='0.61'>0.61</td><td sv='50.93'>Favored (50.93%)<br><small>General / -59.3,131.4</small></td><td sv='82.1'>Favored (82.1%) <i>ttt180</i><br><small>chi angles: 185.8,178,178.6,178.6</small></td><td sv='0.042'>0.04&Aring;</td><td sv='12.619'>Favored (12.619%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='30'> A  38 </td><td sv=' '> </td><td sv='ASN'>ASN</td><td sv='0.68'>0.68</td><td bgcolor='#ffb3cc' sv='-49.55'>Allowed (0.45%)<br><small>General / 88.8,-10.1</small></td><td sv='45.4'>Favored (45.4%) <i>m-40</i><br><small>chi angles: 310.6,307.1</small></td><td bgcolor='#ff76a9' sv='0.256'>0.26&Aring;</td><td sv='6.043'>Favored (6.043%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='31'> A  39 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.73'>0.73</td><td sv='32.91'>Favored (32.91%)<br><small>General / -93.8,137.6</small></td><td sv='64.5'>Favored (64.5%) <i>mt</i><br><small>chi angles: 302.6,173.4</small></td><td sv='0.076'>0.08&Aring;</td><td sv='31.445'>Favored (31.445%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='32'> A  40 </td><td sv=' '> </td><td sv='SER'>SER</td><td sv='0.74'>0.74</td><td sv='98.92'>Favored (98.92%)<br><small>Pre-Pro / -65.4,144.3</small></td><td sv='32.1'>Favored (32.1%) <i>t</i><br><small>chi angles: 183.4</small></td><td sv='0.096'>0.10&Aring;</td><td sv='43.885'>Favored (43.885%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='33'> A  41 </td><td sv=' '> </td><td sv='PRO'>PRO</td><td sv='0.67'>0.67</td><td sv='26.77'>Favored (26.77%)<br><small>Trans-Pro / -70.2,-25.1</small></td><td sv='14.2'>Favored (14.2%) <i>Cg_endo</i><br><small>chi angles: 17.2,336.2,22.6</small></td><td sv='0.08'>0.08&Aring;</td><td sv='24.554'>Favored (24.554%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='34'> A  42 </td><td sv=' '> </td><td sv='PHE'>PHE</td><td sv='0.71'>0.71</td><td sv='64.82'>Favored (64.82%)<br><small>General / -56.6,-31.9</small></td><td sv='17.1'>Favored (17.1%) <i>m-80</i><br><small>chi angles: 275.2,294.5</small></td><td sv='0.11'>0.11&Aring;</td><td sv='64.53'>Favored (64.53%)<br><small></small></td><td sv=''>-</td><td bgcolor='#ff76a9' sv='5.57'> OUTLIER(S)<br><small>worst is CA-CB-CG: 5.6 &sigma;</small></td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='35'> A  43 </td><td sv=' '> </td><td sv='SER'>SER</td><td sv='0.71'>0.71</td><td sv='68.12'>Favored (68.12%)<br><small>General / -63.2,-25.0</small></td><td sv='61.9'>Favored (61.9%) <i>m</i><br><small>chi angles: 298.5</small></td><td sv='0.125'>0.12&Aring;</td><td sv='68.95'>Favored (68.95%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='36'> A  44 </td><td sv=' '> </td><td sv='PHE'>PHE</td><td sv='0.66'>0.66</td><td sv='21.49'>Favored (21.49%)<br><small>General / -105.2,-4.7</small></td><td sv='77.3'>Favored (77.3%) <i>m-80</i><br><small>chi angles: 303.2,271</small></td><td sv='0.108'>0.11&Aring;</td><td sv='51.694'>Favored (51.694%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='37'> A  45 </td><td sv=' '> </td><td sv='MET'>MET</td><td sv='0.69'>0.69</td><td sv='40.38'>Favored (40.38%)<br><small>General / -76.8,139.4</small></td><td sv='37.8'>Favored (37.8%) <i>mmp</i><br><small>chi angles: 304.1,297.2,96.3</small></td><td sv='0.085'>0.09&Aring;</td><td sv='32.83'>Favored (32.83%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='38'> A  46 </td><td sv=' '> </td><td sv='HIS'>HIS</td><td sv='0.7'>0.7</td><td sv='56.9'>Favored (56.9%)<br><small>General / -60.9,141.7</small></td><td sv='66.9'>Favored (66.9%) <i>t-90</i><br><small>chi angles: 195.2,287</small></td><td sv='0.088'>0.09&Aring;</td><td sv='49.269'>Favored (49.269%)<br><small></small></td><td sv=''>-</td><td bgcolor='#ff76a9' sv='4.098'> OUTLIER(S)<br><small>worst is ND1-CG-CD2: 4.1 &sigma;</small></td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='39'> A  47 </td><td sv=' '> </td><td sv='GLN'>GLN</td><td sv='0.68'>0.68</td><td sv='44.41'>Favored (44.41%)<br><small>General / -50.1,-39.8</small></td><td sv='91'>Favored (91%) <i>tp40</i><br><small>chi angles: 181.9,65.2,50.9</small></td><td sv='0.028'>0.03&Aring;</td><td sv='58.82'>Favored (58.82%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='40'> A  48 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.71'>0.71</td><td sv='60.94'>Favored (60.94%)<br><small>General / -74.2,-16.7</small></td><td sv='87.7'>Favored (87.7%) <i>m-30</i><br><small>chi angles: 293.3,336.2</small></td><td sv='0.048'>0.05&Aring;</td><td sv='65.159'>Favored (65.159%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='41'> A  49 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.71'>0.71</td><td sv='22.17'>Favored (22.17%)<br><small>General / -101.9,-7.7</small></td><td sv='39.3'>Favored (39.3%) <i>m-30</i><br><small>chi angles: 305.3,322.7</small></td><td sv='0.056'>0.06&Aring;</td><td sv='43.143'>Favored (43.143%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='42'> A  50 </td><td sv=' '> </td><td sv='VAL'>VAL</td><td sv='0.72'>0.72</td><td sv='83.62'>Favored (83.62%)<br><small>Ile or Val / -59.1,-49.4</small></td><td sv='81.6'>Favored (81.6%) <i>t</i><br><small>chi angles: 176.4</small></td><td sv='0.106'>0.11&Aring;</td><td sv='52.56'>Favored (52.56%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='43'> A  51 </td><td sv=' '> </td><td sv='ARG'>ARG</td><td sv='0.63'>0.63</td><td sv='98.84'>Favored (98.84%)<br><small>General / -62.5,-41.4</small></td><td sv='98.4'>Favored (98.4%) <i>mtt180</i><br><small>chi angles: 291.9,177,179.6,172.1</small></td><td sv='0.09'>0.09&Aring;</td><td sv='82.173'>Favored (82.173%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='44'> A  52 </td><td sv=' '> </td><td sv='TRP'>TRP</td><td sv='0.65'>0.65</td><td sv='91.67'>Favored (91.67%)<br><small>General / -62.5,-45.7</small></td><td sv='87.2'>Favored (87.2%) <i>m100</i><br><small>chi angles: 287.7,111.2</small></td><td sv='0.074'>0.07&Aring;</td><td sv='90.686'>Favored (90.686%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='45'> A  53 </td><td sv=' '> </td><td sv='VAL'>VAL</td><td sv='0.72'>0.72</td><td sv='78.02'>Favored (78.02%)<br><small>Ile or Val / -61.8,-37.4</small></td><td sv='72.5'>Favored (72.5%) <i>t</i><br><small>chi angles: 178.5</small></td><td sv='0.146'>0.15&Aring;</td><td sv='81.293'>Favored (81.293%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='46'> A  54 </td><td sv=' '> </td><td sv='ILE'>ILE</td><td sv='0.71'>0.71</td><td sv='92.16'>Favored (92.16%)<br><small>Ile or Val / -59.0,-45.7</small></td><td sv='96.7'>Favored (96.7%) <i>mt</i><br><small>chi angles: 293.7,167.2</small></td><td sv='0.055'>0.06&Aring;</td><td sv='89.799'>Favored (89.799%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='47'> A  55 </td><td sv=' '> </td><td sv='VAL'>VAL</td><td sv='0.74'>0.74</td><td sv='99.5'>Favored (99.5%)<br><small>Ile or Val / -62.9,-45.2</small></td><td sv='93.3'>Favored (93.3%) <i>t</i><br><small>chi angles: 174.6</small></td><td sv='0.072'>0.07&Aring;</td><td sv='91.969'>Favored (91.969%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='48'> A  56 </td><td sv=' '> </td><td sv='ALA'>ALA</td><td sv='0.75'>0.75</td><td sv='96.78'>Favored (96.78%)<br><small>General / -61.4,-44.7</small></td><td sv=''>-</td><td sv='0.115'>0.12&Aring;</td><td sv='97.834'>Favored (97.834%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='49'> A  57 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.72'>0.72</td><td sv='84.76'>Favored (84.76%)<br><small>General / -59.1,-40.3</small></td><td sv='58.4'>Favored (58.4%) <i>tp</i><br><small>chi angles: 182.3,62</small></td><td sv='0.01'>0.01&Aring;</td><td sv='83.566'>Favored (83.566%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='50'> A  58 </td><td sv=' '> </td><td sv='ARG'>ARG</td><td sv='0.65'>0.65</td><td sv='81.9'>Favored (81.9%)<br><small>General / -60.3,-48.4</small></td><td sv='98.6'>Favored (98.6%) <i>mtt180</i><br><small>chi angles: 290.9,175.5,179.8,172</small></td><td sv='0.028'>0.03&Aring;</td><td sv='77.19'>Favored (77.19%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='51'> A  59 </td><td sv=' '> </td><td sv='GLN'>GLN</td><td sv='0.69'>0.69</td><td sv='89.07'>Favored (89.07%)<br><small>General / -61.5,-38.9</small></td><td sv='95.2'>Favored (95.2%) <i>mm-40</i><br><small>chi angles: 294.5,294.4,306.8</small></td><td sv='0.063'>0.06&Aring;</td><td sv='81.414'>Favored (81.414%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='52'> A  60 </td><td sv=' '> </td><td sv='MET'>MET</td><td sv='0.69'>0.69</td><td sv='77.68'>Favored (77.68%)<br><small>General / -56.5,-48.2</small></td><td sv='54.6'>Favored (54.6%) <i>mtt</i><br><small>chi angles: 288.6,170.2,187.7</small></td><td sv='0.103'>0.10&Aring;</td><td sv='85.029'>Favored (85.029%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='53'> A  61 </td><td sv=' '> </td><td sv='TYR'>TYR</td><td sv='0.67'>0.67</td><td sv='99.17'>Favored (99.17%)<br><small>General / -62.6,-41.7</small></td><td sv='38.9'>Favored (38.9%) <i>t80</i><br><small>chi angles: 191.7,72</small></td><td sv='0.148'>0.15&Aring;</td><td sv='76.557'>Favored (76.557%)<br><small> alpha helix</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='54'> A  62 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.69'>0.69</td><td sv='75.38'>Favored (75.38%)<br><small>General / -69.9,-40.6</small></td><td sv='79.8'>Favored (79.8%) <i>m-30</i><br><small>chi angles: 296.3,339.2</small></td><td sv='0.076'>0.08&Aring;</td><td sv='46.734'>Favored (46.734%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='55'> A  63 </td><td sv=' '> </td><td sv='CYS'>CYS</td><td sv='0.67'>0.67</td><td sv='28.14'>Favored (28.14%)<br><small>General / -101.8,114.2</small></td><td sv='68.1'>Favored (68.1%) <i>m</i><br><small>chi angles: 299.2</small></td><td sv='0.045'>0.04&Aring;</td><td sv='27.472'>Favored (27.472%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='56'> A  64 </td><td sv=' '> </td><td sv='ASN'>ASN</td><td sv='0.4'>0.4</td><td sv='64.34'>Favored (64.34%)<br><small>General / -67.5,-16.7</small></td><td sv='95.5'>Favored (95.5%) <i>m-40</i><br><small>chi angles: 289.9,333.1</small></td><td sv='0.18'>0.18&Aring;</td><td sv='38.232'>Favored (38.232%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='57'> A  65 </td><td sv=' '> </td><td sv='SER'>SER</td><td sv='0.39'>0.39</td><td sv='14.95'>Favored (14.95%)<br><small>General / -81.5,6.4</small></td><td sv='14'>Favored (14%) <i>p</i><br><small>chi angles: 51.4</small></td><td sv='0.187'>0.19&Aring;</td><td bgcolor='#ffb3cc' sv='1.736'> CaBLAM Disfavored   (1.736%)<br><small>                 </small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='58'> A  66 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.63'>0.63</td><td bgcolor='#ff76a9' sv='-99.98'>OUTLIER (0.02)%)<br><small>General / 82.4,-165.6</small></td><td sv='5.8'>Favored (5.8%) <i>m-30</i><br><small>chi angles: 314.1,318</small></td><td sv='0.164'>0.16&Aring;</td><td bgcolor='#ff76a9' sv='0.579'> CaBLAM Outlier      (0.579%)<br><small>                 </small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='59'> A  67 </td><td sv=' '> </td><td sv='TYR'>TYR</td><td sv='0.63'>0.63</td><td sv='28.95'>Favored (28.95%)<br><small>General / -151.5,149.2</small></td><td sv='19.9'>Favored (19.9%) <i>t80</i><br><small>chi angles: 198.5,79.9</small></td><td sv='0.134'>0.13&Aring;</td><td sv='8.629'>Favored (8.629%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='60'> A  68 </td><td sv=' '> </td><td sv='GLY'>GLY</td><td sv='0.67'>0.67</td><td sv='5.91'>Favored (5.91%)<br><small>Glycine / -107.6,119.8</small></td><td sv=''>-</td><td sv=''>-</td><td sv='21.676'>Favored (21.676%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='61'> A  69 </td><td sv=' '> </td><td sv='GLU'>GLU</td><td sv='0.62'>0.62</td><td sv='9.19'>Favored (9.19%)<br><small>General / -56.3,153.7</small></td><td sv='7.5'>Favored (7.5%) <i>tp30</i><br><small>chi angles: 189.3,60.1,271.6</small></td><td sv='0.078'>0.08&Aring;</td><td sv='20.308'>Favored (20.308%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='62'> A  70 </td><td sv=' '> </td><td sv='SER'>SER</td><td sv='0.65'>0.65</td><td bgcolor='#ffb3cc' sv='-49.9'>Allowed (0.1%)<br><small>General / -56.4,175.8</small></td><td sv='90.5'>Favored (90.5%) <i>p</i><br><small>chi angles: 66.7</small></td><td sv='0.094'>0.09&Aring;</td><td sv='9.075'>Favored (9.075%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='63'> A  71 </td><td sv=' '> </td><td sv='CYS'>CYS</td><td sv='0.67'>0.67</td><td sv='52.13'>Favored (52.13%)<br><small>General / -67.7,135.1</small></td><td sv='15.1'>Favored (15.1%) <i>t</i><br><small>chi angles: 192.7</small></td><td sv='0.024'>0.02&Aring;</td><td sv='8.221'>Favored (8.221%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='64'> A  72 </td><td sv=' '> </td><td sv='TYR'>TYR</td><td sv='0.67'>0.67</td><td sv='20.9'>Favored (20.9%)<br><small>General / -143.4,168.0</small></td><td sv='49.2'>Favored (49.2%) <i>p90</i><br><small>chi angles: 66.9,277.1</small></td><td sv='0.065'>0.07&Aring;</td><td sv='44.619'>Favored (44.619%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='65'> A  73 </td><td sv=' '> </td><td sv='ARG'>ARG</td><td sv='0.65'>0.65</td><td sv='55.05'>Favored (55.05%)<br><small>General / -107.9,130.1</small></td><td sv='28.4'>Favored (28.4%) <i>mtm180</i><br><small>chi angles: 288,156,286.1,198.5</small></td><td sv='0.105'>0.10&Aring;</td><td sv='46.075'>Favored (46.075%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='66'> A  74 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.73'>0.73</td><td sv='55.6'>Favored (55.6%)<br><small>General / -110.0,129.9</small></td><td sv='7.8'>Favored (7.8%) <i>tt</i><br><small>chi angles: 183.4,151.3</small></td><td sv='0.035'>0.04&Aring;</td><td sv='46.588'>Favored (46.588%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='67'> A  75 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.72'>0.72</td><td sv='10.02'>Favored (10.02%)<br><small>General / -60.2,120.6</small></td><td sv='24.4'>Favored (24.4%) <i>tp</i><br><small>chi angles: 179.4,71.5</small></td><td sv='0.066'>0.07&Aring;</td><td sv='45.809'>Favored (45.809%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='68'> A  76 </td><td sv=' '> </td><td sv='SER'>SER</td><td sv='0.72'>0.72</td><td sv='24.91'>Favored (24.91%)<br><small>General / -82.9,153.8</small></td><td sv='46.5'>Favored (46.5%) <i>t</i><br><small>chi angles: 180</small></td><td sv='0.025'>0.03&Aring;</td><td sv='41.198'>Favored (41.198%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='69'> A  77 </td><td sv=' '> </td><td sv='ARG'>ARG</td><td sv='0.68'>0.68</td><td sv='75.73'>Favored (75.73%)<br><small>General / -58.2,-37.9</small></td><td sv='43.5'>Favored (43.5%) <i>ttt-90</i><br><small>chi angles: 184.8,174.4,200.8,274.4</small></td><td sv='0.026'>0.03&Aring;</td><td sv='33.65'>Favored (33.65%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='70'> A  78 </td><td sv=' '> </td><td sv='ASN'>ASN</td><td sv='0.72'>0.72</td><td sv='17.88'>Favored (17.88%)<br><small>General / -102.8,20.2</small></td><td sv='85'>Favored (85%) <i>m-40</i><br><small>chi angles: 294.6,315.1</small></td><td sv='0.041'>0.04&Aring;</td><td sv='5.838'>Favored (5.838%)<br><small></small></td><td sv=''>-</td><td bgcolor='#ff76a9' sv='4.841'> OUTLIER(S)<br><small>worst is CA-CB-CG: 4.8 &sigma;</small></td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='71'> A  79 </td><td sv=' '> </td><td sv='GLY'>GLY</td><td sv='0.73'>0.73</td><td sv='27.6'>Favored (27.6%)<br><small>Glycine / 101.4,166.4</small></td><td sv=''>-</td><td sv=''>-</td><td sv='6.481'>Favored (6.481%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='72'> A  80 </td><td sv=' '> </td><td sv='ASN'>ASN</td><td sv='0.67'>0.67</td><td bgcolor='#ffb3cc' sv='-49.79'>Allowed (0.21%)<br><small>General / 72.8,-179.5</small></td><td sv='49.5'>Favored (49.5%) <i>m-40</i><br><small>chi angles: 309.7,304.1</small></td><td sv='0.205'>0.20&Aring;</td><td sv='13.545'>Favored (13.545%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='73'> A  81 </td><td sv=' '> </td><td sv='PHE'>PHE</td><td sv='0.69'>0.69</td><td sv='49.85'>Favored (49.85%)<br><small>General / -136.5,151.8</small></td><td sv='95.6'>Favored (95.6%) <i>m-80</i><br><small>chi angles: 298.4,90.4</small></td><td sv='0.125'>0.12&Aring;</td><td sv='29.941'>Favored (29.941%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='74'> A  82 </td><td sv=' '> </td><td sv='ILE'>ILE</td><td sv='0.7'>0.7</td><td sv='32.64'>Favored (32.64%)<br><small>Ile or Val / -110.0,139.6</small></td><td sv='34.2'>Favored (34.2%) <i>pt</i><br><small>chi angles: 56.1,172.5</small></td><td sv='0.048'>0.05&Aring;</td><td sv='48.412'>Favored (48.412%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='75'> A  83 </td><td sv=' '> </td><td sv='TYR'>TYR</td><td sv='0.68'>0.68</td><td sv='46.88'>Favored (46.88%)<br><small>General / -73.3,143.4</small></td><td sv='84.9'>Favored (84.9%) <i>m-80</i><br><small>chi angles: 290.4,277.6</small></td><td sv='0.068'>0.07&Aring;</td><td sv='29.695'>Favored (29.695%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='76'> A  84 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.66'>0.66</td><td sv='31.75'>Favored (31.75%)<br><small>General / -160.5,165.0</small></td><td bgcolor='#ff76a9' sv='-100'>OUTLIER (0%)<br><small>chi angles: 42.1,13.9</small></td><td sv='0.204'>0.20&Aring;</td><td sv='35.902'>Favored (35.902%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='77'> A  85 </td><td sv=' '> </td><td sv='ASN'>ASN</td><td sv='0.68'>0.68</td><td sv='50.64'>Favored (50.64%)<br><small>General / -127.4,145.9</small></td><td sv='49'>Favored (49%) <i>m-40</i><br><small>chi angles: 295.6,274.5</small></td><td sv='0.11'>0.11&Aring;</td><td sv='61.134'>Favored (61.134%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='78'> A  86 </td><td sv=' '> </td><td sv='THR'>THR</td><td sv='0.71'>0.71</td><td sv='34.53'>Favored (34.53%)<br><small>General / -131.2,126.0</small></td><td sv='35.4'>Favored (35.4%) <i>m</i><br><small>chi angles: 293.3</small></td><td sv='0.045'>0.04&Aring;</td><td sv='69.216'>Favored (69.216%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='79'> A  87 </td><td sv=' '> </td><td sv='LYS'>LYS</td><td sv='0.68'>0.68</td><td sv='31.34'>Favored (31.34%)<br><small>General / -94.2,118.3</small></td><td sv='86.3'>Favored (86.3%) <i>tttt</i><br><small>chi angles: 185.5,179.1,180.2,180.5</small></td><td sv='0.038'>0.04&Aring;</td><td sv='72.153'>Favored (72.153%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='80'> A  88 </td><td sv=' '> </td><td sv='GLY'>GLY</td><td sv='0.73'>0.73</td><td sv='4.86'>Favored (4.86%)<br><small>Glycine / -118.7,120.9</small></td><td sv=''>-</td><td sv=''>-</td><td sv='70.631'>Favored (70.631%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='81'> A  89 </td><td sv=' '> </td><td sv='TYR'>TYR</td><td sv='0.69'>0.69</td><td sv='50.63'>Favored (50.63%)<br><small>General / -113.1,138.0</small></td><td sv='24.3'>Favored (24.3%) <i>t80</i><br><small>chi angles: 164.2,85.2</small></td><td sv='0.078'>0.08&Aring;</td><td sv='54.492'>Favored (54.492%)<br><small> beta sheet</small></td><td sv=''>-</td><td bgcolor='#ff76a9' sv='4.462'> OUTLIER(S)<br><small>worst is C-N-CA: 4.5 &sigma;</small></td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='82'> A  90 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.74'>0.74</td><td sv='37.91'>Favored (37.91%)<br><small>General / -93.9,124.5</small></td><td sv='5.2'>Favored (5.2%) <i>mp</i><br><small>chi angles: 285.9,67.5</small></td><td sv='0.13'>0.13&Aring;</td><td sv='56.237'>Favored (56.237%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='83'> A  91 </td><td sv=' '> </td><td sv='GLU'>GLU</td><td sv='0.73'>0.73</td><td sv='37.67'>Favored (37.67%)<br><small>General / -92.2,131.2</small></td><td sv='89.7'>Favored (89.7%) <i>tt0</i><br><small>chi angles: 183.8,175.2,354.9</small></td><td sv='0.094'>0.09&Aring;</td><td sv='59.873'>Favored (59.873%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='84'> A  92 </td><td sv=' '> </td><td sv='ILE'>ILE</td><td sv='0.73'>0.73</td><td sv='18.37'>Favored (18.37%)<br><small>Ile or Val / -119.2,161.4</small></td><td sv='36.5'>Favored (36.5%) <i>pt</i><br><small>chi angles: 58.5,168.2</small></td><td sv='0.065'>0.07&Aring;</td><td sv='24.446'>Favored (24.446%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='85'> A  93 </td><td sv=' '> </td><td sv='ASP'>ASP</td><td sv='0.64'>0.64</td><td sv='26.6'>Favored (26.6%)<br><small>General / -68.8,125.4</small></td><td sv='23.6'>Favored (23.6%) <i>t0</i><br><small>chi angles: 182.3,36.7</small></td><td sv='0.032'>0.03&Aring;</td><td sv='40.636'>Favored (40.636%)<br><small> beta sheet</small></td><td sv=''>-</td><td bgcolor='#ff76a9' sv='4.645'> OUTLIER(S)<br><small>worst is CA-CB-CG: 4.6 &sigma;</small></td><td bgcolor='#ff76a9' sv='1'>Twisted nonPRO<br><small>omega= 143.71</small></td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='86'> A  94 </td><td sv=' '> </td><td sv='LYS'>LYS</td><td sv='0.6'>0.6</td><td sv='73.8'>Favored (73.8%)<br><small>General / -64.0,-32.3</small></td><td sv='98.4'>Favored (98.4%) <i>mttt</i><br><small>chi angles: 291.9,175.9,179.2,178.5</small></td><td sv='0.071'>0.07&Aring;</td><td sv='25.788'>Favored (25.788%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='87'> A  95 </td><td sv=' '> </td><td sv='GLY'>GLY</td><td sv='0.67'>0.67</td><td sv='84.16'>Favored (84.16%)<br><small>Glycine / -66.5,-33.3</small></td><td sv=''>-</td><td sv=''>-</td><td sv='16.856'>Favored (16.856%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='88'> A  96 </td><td sv=' '> </td><td sv='THR'>THR</td><td sv='0.58'>0.58</td><td sv='2.64'>Favored (2.64%)<br><small>General / -138.4,8.1</small></td><td sv='62.1'>Favored (62.1%) <i>p</i><br><small>chi angles: 57.6</small></td><td sv='0.049'>0.05&Aring;</td><td sv='9.435'>Favored (9.435%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='89'> A  97 </td><td sv=' '> </td><td sv='ASN'>ASN</td><td sv='0.61'>0.61</td><td sv='15.4'>Favored (15.4%)<br><small>General / 60.2,26.0</small></td><td sv='85.7'>Favored (85.7%) <i>m-40</i><br><small>chi angles: 295.9,314.5</small></td><td sv='0.219'>0.22&Aring;</td><td sv='13.779'>Favored (13.779%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='90'> A  98 </td><td sv=' '> </td><td sv='LYS'>LYS</td><td sv='0.65'>0.65</td><td sv='18.12'>Favored (18.12%)<br><small>General / -72.0,120.8</small></td><td sv='82'>Favored (82%) <i>tttt</i><br><small>chi angles: 187,184.2,178.8,180</small></td><td sv='0.025'>0.03&Aring;</td><td sv='25.151'>Favored (25.151%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='91'> A  99 </td><td sv=' '> </td><td sv='VAL'>VAL</td><td sv='0.71'>0.71</td><td sv='27.53'>Favored (27.53%)<br><small>Ile or Val / -63.9,129.4</small></td><td sv='4'>Favored (4%) <i>t</i><br><small>chi angles: 192.1</small></td><td sv='0.075'>0.07&Aring;</td><td sv='40.488'>Favored (40.488%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='92'> A 100 </td><td sv=' '> </td><td sv='HIS'>HIS</td><td sv='0.7'>0.7</td><td sv='2.51'>Favored (2.51%)<br><small>General / -105.2,-54.3</small></td><td sv='81.8'>Favored (81.8%) <i>t70</i><br><small>chi angles: 182.7,64.9</small></td><td sv='0.052'>0.05&Aring;</td><td sv='11.662'>Favored (11.662%)<br><small></small></td><td sv=''>-</td><td bgcolor='#ff76a9' sv='4.555'> OUTLIER(S)<br><small>worst is ND1-CG-CD2: 4.6 &sigma;</small></td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='93'> A 101 </td><td sv=' '> </td><td sv='SER'>SER</td><td sv='0.77'>0.77</td><td sv='28.02'>Favored (28.02%)<br><small>General / -160.1,167.3</small></td><td sv='75.8'>Favored (75.8%) <i>p</i><br><small>chi angles: 71</small></td><td sv='0.135'>0.14&Aring;</td><td sv='9.895'>Favored (9.895%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='94'> A 102 </td><td sv=' '> </td><td sv='PHE'>PHE</td><td sv='0.74'>0.74</td><td sv='53.85'>Favored (53.85%)<br><small>General / -116.5,126.8</small></td><td bgcolor='#ffb3cc' sv='-48'>Allowed (2%) <i>m-10</i><br><small>chi angles: 287.4,32.6</small></td><td sv='0.093'>0.09&Aring;</td><td sv='45.236'>Favored (45.236%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='95'> A 103 </td><td sv=' '> </td><td sv='VAL'>VAL</td><td sv='0.79'>0.79</td><td sv='50.32'>Favored (50.32%)<br><small>Ile or Val / -109.0,115.8</small></td><td sv='52.4'>Favored (52.4%) <i>t</i><br><small>chi angles: 181.1</small></td><td sv='0.049'>0.05&Aring;</td><td sv='72.143'>Favored (72.143%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='96'> A 104 </td><td sv=' '> </td><td sv='CYS'>CYS</td><td sv='0.76'>0.76</td><td sv='56.8'>Favored (56.8%)<br><small>General / -115.4,131.9</small></td><td sv='98.8'>Favored (98.8%) <i>m</i><br><small>chi angles: 289.6</small></td><td sv='0.059'>0.06&Aring;</td><td sv='66.461'>Favored (66.461%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='97'> A 105 </td><td sv=' '> </td><td sv='VAL'>VAL</td><td sv='0.76'>0.76</td><td sv='40.14'>Favored (40.14%)<br><small>Ile or Val / -107.0,112.5</small></td><td sv='29.5'>Favored (29.5%) <i>t</i><br><small>chi angles: 185.8</small></td><td sv='0.058'>0.06&Aring;</td><td sv='71.481'>Favored (71.481%)<br><small> beta sheet</small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='98'> A 106 </td><td sv=' '> </td><td sv='ASN'>ASN</td><td sv='0.71'>0.71</td><td sv='54.85'>Favored (54.85%)<br><small>General / -112.5,126.0</small></td><td sv='4.8'>Favored (4.8%) <i>m-40</i><br><small>chi angles: 310.6,266.1</small></td><td sv='0.154'>0.15&Aring;</td><td sv='61.392'>Favored (61.392%)<br><small></small></td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#f0f0f0'><td sv='99'> A 107 </td><td sv=' '> </td><td sv='THR'>THR</td><td sv='0.7'>0.7</td><td sv='37.9'>Favored (37.9%)<br><small>General / -133.1,129.3</small></td><td sv='75.6'>Favored (75.6%) <i>m</i><br><small>chi angles: 296.2</small></td><td sv='0.019'>0.02&Aring;</td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+<tr align='center' bgcolor='#ffffff'><td sv='100'> A 108 </td><td sv=' '> </td><td sv='LEU'>LEU</td><td sv='0.65'>0.65</td><td sv=''>-</td><td sv='4.3'>Favored (4.3%) <i>tt</i><br><small>chi angles: 194.9,154.7</small></td><td sv='0.135'>0.14&Aring;</td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td><td sv=''>-</td></tr>
+</table>
+
