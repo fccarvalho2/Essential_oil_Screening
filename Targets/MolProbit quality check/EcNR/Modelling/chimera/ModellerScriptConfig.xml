@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modeller9v8>
+	<key>MODELIRANJE</key>
+	<version>2</version>
+	<numModel>10</numModel>
+	<hetAtom>0</hetAtom>
+	<water>0</water>
+	<allHydrogen>1</allHydrogen>
+	<veryFast>0</veryFast>
+	<loopInfo>None</loopInfo>
+</modeller9v8>
