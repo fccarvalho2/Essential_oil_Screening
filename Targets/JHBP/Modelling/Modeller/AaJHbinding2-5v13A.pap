@@ -1,0 +1,24 @@
+ _aln.pos             10        20        30        40        50        60
+5v13A         -------------------EWQPRTPEQTLYAYVRCLNDSSASIEQKINWVKWHPDTTYESQCY 
+AaJHbinding2  MSAIPCEGQNAEPASAASGEWQPRTPEQTLYAYVRCLNDSSASIEQKINWVKWHPDTTYESQCY 
+ _consrvd                        *********************************************
+
+ _aln.pos         70        80        90       100       110       120
+5v13A         VKCVSEELRLYDPKEKRFRPERFVLQAESFFHADPEQLQALKNNAEPMLAGVLADNSCESVFNK 
+AaJHbinding2  VKCVSEELRLYDPKEKRFRPERFVLQAESFFHADPEQLQALKNNAEPMLAGVLADNSCESVFNK 
+ _consrvd     ****************************************************************
+
+ _aln.pos    130       140       150       160       170       180       190
+5v13A         YATFYATHHSTILRMFHGDYRDIGNTYAKLGNGVKQIGQMFVDFCEKRTDFKWNEDNSCPPEAF 
+AaJHbinding2  YATFYATHHSTILRMFHGDYRDIGNTYAKLGNGVKQIGQMFVDFCEKRTDFKWNEDNSCPPEAF 
+ _consrvd     ****************************************************************
+
+ _aln.pos          200       210       220       230       240       250
+5v13A         LDCVFRGFRWITEEGEVNVNEIRRDYEAAGKGAADMADYCGSV-KGARQLYNCLRDKGADSLVA 
+AaJHbinding2  LDCVFRGFRWITEEGEVNVNEIRRDYEAAGKGAADMADYCGSVKAGARQLYNCLRDKGADSLVA 
+ _consrvd     *******************************************  *******************
+
+ _aln.pos      260       270       280
+5v13A         VIRDRNQKTAFYFDLSSKEEPWKSAVDFANNL 
+AaJHbinding2  VIRDRNQKTAFYFDLSSKEEPWKSAVDFANNL 
+ _consrvd     ********************************
