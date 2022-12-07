@@ -1,0 +1,14 @@
+ _aln.pos               10        20        30        40        50        60
+3f1pA           FKGLDSKTFLSEHSMDMKFTYCDDRITELIGYHPEELLGRSAYEFYHALDSENMTKSHQNL- 
+MetTolLcuprina  LE-ANRLEYKTRHLIDGRIIDCDNRIGLVAGYLKDEVRNLSPFSFMHQDDVRWVIVALRQMY 
+ _consrvd                   *  *     ** **    **   *    *   * *  *
+
+ _aln.pos             70        80        90       100       110       120
+3f1pA           -CTKGQVVSGQYRMLAKHGGYVWLETQGTVIYNPRNLQPQCIMCVNYVLSE----------- 
+MetTolLcuprina  DCNSDYGESC-YRLLSRNGNFIYLNTKGYLEIDKGTNKVHSFVCVNTLLDEEEGKRKVQEMK 
+ _consrvd        *      *  ** *   *    * * *               ***  * *
+
+ _aln.pos          130
+3f1pA           ------IEK 
+MetTolLcuprina  NKFSIIINA 
+ _consrvd             *
