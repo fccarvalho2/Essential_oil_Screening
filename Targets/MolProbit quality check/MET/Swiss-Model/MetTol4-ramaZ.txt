@@ -1,0 +1,143 @@
+Starting mmtbx.rama_z
+on Mon May 23 15:12:52 2022 by www-data
+===============================================================================
+
+Processing files:
+-------------------------------------------------------------------------------
+
+  Found model, /mental-data/rlab/MolProbities/MolProbity20201217_4.5.2/molprobity/public_html/data/mht2j86gfpt63g45sve341rd72/coordinates/MetTol4.pdb
+
+Processing PHIL parameters:
+-------------------------------------------------------------------------------
+
+  No PHIL parameters found
+
+Final processed PHIL parameters:
+-------------------------------------------------------------------------------
+  data_manager {
+    model {
+      file = "/mental-data/rlab/MolProbities/MolProbity20201217_4.5.2/molprobity/public_html/data/mht2j86gfpt63g45sve341rd72/coordinates/MetTol4.pdb"
+    }
+    default_model = "/mental-data/rlab/MolProbities/MolProbity20201217_4.5.2/molprobity/public_html/data/mht2j86gfpt63g45sve341rd72/coordinates/MetTol4.pdb"
+  }
+
+
+Starting job
+===============================================================================
+Validating inputs
+Inputs OK
+Individual residues info:
+Residue name, type, SS, (phi, psi), Z
+ LYS    General S ( -93.38,  141.35) -0.3541
+ THR    General S (-136.30,  152.04)  0.3969
+ ARG    General S (-121.06,  144.72)  0.4388
+ HIS    General S (-136.47,  154.13)  1.1759
+ LEU    General S ( -71.05,  176.48) -1.3743
+ ILE    Ile/Val L ( -68.93,  -15.76)  0.0672
+ ASP    General L ( -91.37,    1.92)  2.1833
+ GLY        Gly L (  88.52,  -12.59)  1.2230
+ ARG    General L ( -59.43,  131.44)  0.8828
+ ILE    Ile/Val L ( -58.24,  126.27) -0.3077
+ ILE    Ile/Val L (-111.49,  -19.49) -1.1959
+ ASP    General L (-156.29,  150.92) -0.8560
+ CYS    General L (-149.92,  130.62) -0.6267
+ ASP    General H ( -69.16,  150.94) -1.0147
+ ASN    General H ( -67.00,  -10.81) -0.8547
+ ARG    General H ( -62.81,  -20.11) -1.1209
+ ILE    Ile/Val H ( -60.02,  -31.30) -1.1315
+ GLY        Gly H ( -69.11,  -39.48)  0.0113
+ LEU    General H ( -73.66,  -25.03) -1.1483
+ VAL    Ile/Val L ( -78.78,  -48.17) -0.8751
+ ALA    General L (-146.57,   17.26) -0.9644
+ GLY        Gly L (  93.11,  -22.04) -0.2998
+ TYR    General L ( -64.86,  136.88)  2.0527
+ LEU    General L ( -81.42,  141.36)  0.4315
+ LYS    General L ( -54.72,  -37.40)  1.4462
+ ASP    General L ( -64.42,  -33.39)  0.4376
+ GLU    General L ( -76.15,  -17.62)  0.3694
+ VAL    Ile/Val L ( -87.54,  -28.40) -1.2431
+ ARG    General L ( -59.26,  131.41)  0.8590
+ ASN    General L (  88.79,  -10.07) -1.0133
+ LEU    General L ( -93.85,  137.60)  0.1192
+ SER    pre-Pro L ( -65.43,  144.29)  2.4410
+ PRO  trans-Pro L ( -70.24,  -25.07) -0.8647
+ PHE    General L ( -56.65,  -31.88)  1.7219
+ SER    General L ( -63.20,  -24.97)  2.4144
+ PHE    General L (-105.16,   -4.69) -0.0165
+ MET    General L ( -76.77,  139.37)  0.9143
+ HIS    General L ( -60.85,  141.67)  1.2108
+ GLN    General L ( -50.14,  -39.83) -0.2154
+ ASP    General L ( -74.25,  -16.73)  0.9991
+ ASP    General H (-101.91,   -7.74) -1.0138
+ VAL    Ile/Val H ( -59.13,  -49.36) -0.0651
+ ARG    General H ( -62.55,  -41.36)  1.6062
+ TRP    General H ( -62.55,  -45.72)  1.6607
+ VAL    Ile/Val H ( -61.77,  -37.41) -0.4867
+ ILE    Ile/Val H ( -59.03,  -45.69)  0.8209
+ VAL    Ile/Val H ( -62.88,  -45.18)  1.4434
+ ALA    General H ( -61.39,  -44.66)  0.9457
+ LEU    General H ( -59.07,  -40.30)  0.2035
+ ARG    General H ( -60.27,  -48.40)  0.0418
+ GLN    General H ( -61.47,  -38.93)  0.8030
+ MET    General H ( -56.53,  -48.24) -0.3303
+ TYR    General H ( -62.63,  -41.69)  0.8713
+ ASP    General H ( -69.94,  -40.64) -0.3562
+ CYS    General H (-101.80,  114.24) -1.1134
+ ASN    General L ( -67.51,  -16.69)  0.9912
+ SER    General L ( -81.49,    6.37) -0.6804
+ ASP    General L (  82.36, -165.63) -1.1356
+ TYR    General L (-151.50,  149.19) -0.6493
+ GLY        Gly L (-107.56,  119.78) -0.8196
+ GLU    General L ( -56.28,  153.68) -0.7319
+ SER    General L ( -56.42,  175.82) -0.8993
+ CYS    General S ( -67.74,  135.08) -0.9802
+ TYR    General S (-143.42,  167.98) -0.5529
+ ARG    General S (-107.94,  130.11)  1.4482
+ LEU    General S (-109.97,  129.91)  1.8235
+ LEU    General S ( -60.21,  120.56) -1.3285
+ SER    General S ( -82.89,  153.85) -0.8540
+ ARG    General L ( -58.24,  -37.87)  2.1277
+ ASN    General L (-102.81,   20.17)  0.3974
+ GLY        Gly L ( 101.38,  166.39) -0.6757
+ ASN    General S (  72.79, -179.51) -1.5275
+ PHE    General S (-136.52,  151.83)  0.8202
+ ILE    Ile/Val S (-110.03,  139.60) -0.6616
+ TYR    General S ( -73.35,  143.42) -1.1159
+ LEU    General S (-160.48,  164.99) -1.2195
+ ASN    General S (-127.39,  145.95)  0.4485
+ THR    General S (-131.16,  126.01)  0.3613
+ LYS    General S ( -94.21,  118.28)  0.4424
+ GLY        Gly S (-118.65,  120.94) -0.6134
+ TYR    General S (-113.10,  137.97)  1.4179
+ LEU    General S ( -93.88,  124.48)  0.2348
+ GLU    General S ( -92.21,  131.15)  0.3721
+ ILE    Ile/Val L (-119.21,  161.41) -0.7733
+ ASP    General L ( -68.83,  125.44) -0.3317
+ LYS    General L ( -64.00,  -32.31)  1.3686
+ GLY        Gly L ( -66.55,  -33.29) -0.5924
+ THR    General L (-138.38,    8.05) -1.4836
+ ASN    General L (  60.24,   25.96)  1.4889
+ LYS    General L ( -71.96,  120.84) -0.5948
+ VAL    Ile/Val L ( -63.85,  129.39)  0.8753
+ HIS    General L (-105.23,  -54.29) -0.9789
+ SER    General S (-160.08,  167.35) -0.1648
+ PHE    General S (-116.46,  126.76)  0.8359
+ VAL    Ile/Val S (-109.03,  115.76) -0.2201
+ CYS    General S (-115.44,  131.86)  1.5584
+ VAL    Ile/Val S (-107.02,  112.48) -0.6032
+ ASN    General S (-112.49,  126.01)  1.3502
+ THR    General S (-133.07,  129.34)  0.7615
+
+Rama-Z (Ramachandran plot Z-score):
+Interpretation: bad |Rama-Z| > 3; suspicious 2 < |Rama-Z| < 3; good |Rama-Z| < 2.
+Scores for whole/helix/sheet/loop are scaled independently;
+therefore, the values are not related in a simple manner.
+  whole:  1.00 (0.87), residues: 99
+  helix:  0.18 (1.08), residues: 21
+  sheet:  0.60 (0.89), residues: 30
+  loop :  1.20 (1.02), residues: 48
+
+===============================================================================
+Job complete
+usr+sys time: 4.37 seconds
+wall clock time: 4.37 seconds
