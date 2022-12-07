@@ -1,0 +1,280 @@
+Starting mmtbx.rama_z
+on Mon May 23 14:21:46 2022 by www-data
+===============================================================================
+
+Processing files:
+-------------------------------------------------------------------------------
+
+  Found model, /mental-data/rlab/MolProbities/MolProbity20201217_4.5.2/molprobity/public_html/data/s0shej29cg7qj5oppmnioddq27/coordinates/EcdRago3.pdb
+
+Processing PHIL parameters:
+-------------------------------------------------------------------------------
+
+  No PHIL parameters found
+
+Final processed PHIL parameters:
+-------------------------------------------------------------------------------
+  data_manager {
+    model {
+      file = "/mental-data/rlab/MolProbities/MolProbity20201217_4.5.2/molprobity/public_html/data/s0shej29cg7qj5oppmnioddq27/coordinates/EcdRago3.pdb"
+    }
+    default_model = "/mental-data/rlab/MolProbities/MolProbity20201217_4.5.2/molprobity/public_html/data/s0shej29cg7qj5oppmnioddq27/coordinates/EcdRago3.pdb"
+  }
+
+
+Starting job
+===============================================================================
+Validating inputs
+Inputs OK
+Individual residues info:
+Residue name, type, SS, (phi, psi), Z
+ LEU    General L ( -73.90,  125.09)  0.4782
+ SER    General H ( -67.10,  153.43) -0.8531
+ TYR    General H ( -56.49,  -42.09) -0.1372
+ ASN    General H ( -60.25,  -46.00)  0.6886
+ GLN    General H ( -62.48,  -40.06)  1.2883
+ LEU    General H ( -60.60,  -43.47)  1.0796
+ ALA    General H ( -60.43,  -42.02)  1.3202
+ VAL    Ile/Val H ( -62.38,  -47.91)  0.7443
+ ILE    Ile/Val H ( -61.30,  -43.54)  1.1239
+ TYR    General H ( -59.20,  -42.30)  0.5426
+ LYS    General H ( -63.84,  -43.02)  1.2269
+ LEU    General H ( -65.07,  -43.42)  1.0054
+ ILE    Ile/Val H ( -62.69,  -43.45)  1.2482
+ TRP    General H ( -61.43,  -46.19)  1.7203
+ TYR    General H ( -65.32,  -38.62)  0.1356
+ GLN    General H ( -63.50,  -48.62) -0.4232
+ ASP    General H ( -62.47,  -40.31)  1.6112
+ GLY        Gly H ( -65.52,  -32.79) -0.1956
+ TYR    General H (-119.23,   25.15) -1.1277
+ GLU    General H ( -70.21,  -45.21) -0.9066
+ GLN    pre-Pro L (-115.99,  141.87) -0.5223
+ PRO  trans-Pro L ( -56.60,  159.30) -1.1088
+ SER    General H ( -61.76,  152.60) -0.9045
+ GLU    General H ( -60.03,  -37.13) -0.1349
+ GLU    General H ( -58.05,  -45.98)  0.3157
+ ASP    General H ( -66.84,  -43.72)  0.2121
+ LEU    General H ( -64.68,  -40.09)  1.1231
+ LYS    General H ( -61.12,  -42.91)  1.4799
+ ARG    General H ( -61.95,  -40.30)  1.3879
+ ILE    Ile/Val H ( -62.38,  -46.40)  1.4661
+ MET    General H ( -68.98,  -25.07) -1.0105
+ SER    General H (-101.30,   19.08) -0.9593
+ SER    pre-Pro H (-121.14,   67.83) -0.6770
+ PRO  trans-Pro L ( -76.79,   38.55) -1.4763
+ ASP    General L (  38.48,  -98.42) -1.1356
+ GLU    General L (-128.96,  159.42) -0.6110
+ ASN    General L ( -37.72,   87.68) -1.0370
+ GLU    General L ( -99.19,  152.77) -0.5800
+ SER    General H ( -85.27,  167.73) -0.9023
+ GLN    General H ( -51.97,  -35.13) -1.1353
+ HIS    General H ( -64.26,  -42.84)  1.3120
+ ASP    General H ( -68.49,  -42.06)  0.0437
+ VAL    Ile/Val H ( -56.08,  -47.85) -0.2753
+ SER    General H ( -66.76,  -44.36)  0.4285
+ PHE    General H ( -59.06,  -48.21)  1.1678
+ ARG    General H ( -61.91,  -45.88)  1.0292
+ HIS    General H ( -63.70,  -42.62)  1.4559
+ ILE    Ile/Val H ( -61.98,  -51.31) -0.4042
+ THR    General H ( -69.58,  -45.26) -0.2167
+ GLU    General H ( -65.75,  -41.02)  1.1246
+ ILE    Ile/Val H ( -65.74,  -39.77)  0.2314
+ THR    General H ( -57.61,  -33.93) -0.8195
+ ILE    Ile/Val H ( -57.02,  -48.94) -0.2644
+ LEU    General H ( -61.60,  -42.65)  1.5213
+ THR    General H ( -56.12,  -45.09)  0.2345
+ VAL    Ile/Val H ( -62.44,  -41.59)  0.9728
+ GLN    General H ( -60.43,  -43.71)  0.9440
+ LEU    General H ( -61.08,  -36.70)  0.0147
+ ILE    Ile/Val H ( -61.42,  -44.52)  1.3270
+ VAL    Ile/Val H ( -61.76,  -46.09)  1.6552
+ GLU    General H ( -60.34,  -42.91)  1.0503
+ PHE    General H ( -61.90,  -48.94)  1.0681
+ ALA    General H ( -63.45,  -40.83)  1.1730
+ LYS    General H ( -73.13,  -12.54) -1.1213
+ GLY        Gly H ( -95.75,   -7.44) -0.7928
+ LEU    pre-Pro L ( -63.35,  124.53)  1.3194
+ PRO  trans-Pro L ( -47.08,  126.46) -1.1705
+ ALA    General L ( 102.95,  -24.19) -0.9839
+ PHE    General L ( -61.66,  -36.52)  0.9786
+ THR    General L ( -77.98,    3.93) -0.9016
+ LYS    General L ( -96.29,   -8.57)  0.1053
+ ILE    pre-Pro L ( -91.91,  141.94) -0.5980
+ PRO  trans-Pro H ( -43.49,  149.37) -1.2953
+ GLN    General H ( -58.41,  -37.01) -0.5195
+ GLU    General H ( -58.51,  -51.19) -0.8653
+ ASP    General H ( -64.76,  -38.32)  0.9671
+ GLN    General H ( -58.63,  -46.12)  0.3138
+ ILE    Ile/Val H ( -63.59,  -44.93)  1.2493
+ THR    General H ( -60.13,  -44.60)  1.3164
+ LEU    General H ( -62.53,  -47.77)  0.3238
+ LEU    General H ( -63.27,  -41.89)  1.5815
+ LYS    General H ( -60.56,  -43.29)  1.2432
+ ALA    General H ( -81.66,  -17.45) -1.2038
+ CYS    General H (-112.10,  -15.41) -1.0971
+ SER    General H ( -60.96,  -39.17)  1.0847
+ SER    General H ( -62.87,  -43.41)  1.7051
+ GLU    General H ( -67.17,  -41.89)  0.6784
+ VAL    Ile/Val H ( -63.72,  -38.90)  0.0406
+ MET    General H ( -59.22,  -40.11)  0.2773
+ MET    General H ( -60.92,  -42.58)  1.3794
+ LEU    General H ( -62.37,  -45.03)  1.2042
+ ARG    General H ( -60.84,  -40.46)  1.0502
+ MET    General H ( -59.96,  -46.34)  0.6776
+ ALA    General H ( -60.91,  -32.36) -0.8069
+ ARG    General H ( -67.32,  -15.46) -1.1261
+ ARG    General H (-115.56,   16.24) -1.1950
+ TYR    General H ( -71.08,  130.40) -1.1260
+ ASP    General L (-103.05,  120.62) -0.7805
+ HIS    General L ( -65.41,  -41.64) -0.0521
+ ASN    General L ( -65.43,  -41.40) -0.5913
+ SER    General L (-101.71,   -0.95) -0.3661
+ ASP    General L (  56.43,   49.93) -0.4491
+ SER    General L (-150.09,  170.44) -0.2575
+ ILE    Ile/Val L (-108.18,  129.82)  1.6952
+ PHE    General L ( -95.57,  112.02) -0.6323
+ PHE    General L ( -72.50,  172.33) -1.3196
+ ALA    General L ( -69.05,  -16.00)  0.8133
+ ASN    General L ( -92.14,    8.27)  1.2801
+ ASN    General L (  70.59,   11.00) -0.0870
+ ARG    General L ( -87.93,  122.64) -0.4486
+ SER    General L ( -70.54,  126.23) -0.6302
+ TYR    General L (-115.52,  112.55) -0.7164
+ THR    General H ( -93.94, -178.50) -0.9886
+ ARG    General H ( -55.05,  -43.70) -0.3857
+ ASP    General H ( -62.85,  -40.92)  1.6613
+ SER    General H ( -58.27,  -44.15)  0.7487
+ TYR    General H ( -69.25,  -40.10) -0.2947
+ LYS    General H ( -60.58,  -45.68)  0.9270
+ MET    General H ( -60.91,  -39.33)  0.7186
+ ALA    General H ( -64.07,  -20.95) -1.1311
+ GLY        Gly H ( 107.95,   15.63) -0.7682
+ MET    General L (-124.31,   40.40) -1.1716
+ ALA    General L ( -77.40,  -21.66) -0.2004
+ ASP    General L ( -73.16,  -16.27)  1.3319
+ ASN    General H (-126.36,  -19.74) -0.8990
+ ILE    Ile/Val H ( -61.48,  -35.61) -0.8125
+ GLU    General H ( -61.08,  -43.47)  1.1898
+ ASP    General H ( -61.06,  -44.04)  1.2857
+ LEU    General H ( -59.64,  -48.15)  0.0802
+ LEU    General H ( -65.17,  -37.45)  0.6855
+ HIS    General H ( -61.83,  -42.51)  1.7829
+ PHE    General H ( -59.12,  -47.26)  1.3087
+ CYS    General H ( -58.22,  -42.71)  0.5879
+ ARG    General H ( -61.86,  -45.86)  1.0298
+ GLN    General H ( -60.38,  -41.95)  1.1986
+ MET    General H ( -63.88,  -43.25)  1.2348
+ TYR    General H ( -60.81,  -42.58)  0.9329
+ SER    General H ( -59.79,  -34.61) -0.1341
+ MET    General H ( -72.78,  -16.24) -1.1494
+ LYS    General H (  63.67,   44.31) -1.1594
+ VAL    Ile/Val L ( -73.37,  128.27)  1.0685
+ ASP    General H ( -91.61, -177.45) -1.0091
+ ASN    General H ( -62.55,  -43.13)  1.6703
+ VAL    Ile/Val H ( -66.88,  -46.56)  0.2584
+ GLU    General H ( -61.10,  -44.79)  0.9388
+ TYR    General H ( -57.82,  -46.21)  1.3213
+ ALA    General H ( -64.77,  -44.02)  0.5009
+ LEU    General H ( -63.35,  -44.02)  1.1901
+ LEU    General H ( -59.56,  -44.94)  0.7068
+ THR    General H ( -58.47,  -43.67)  0.6892
+ ALA    General H ( -60.77,  -44.50)  0.8588
+ ILE    Ile/Val H ( -61.30,  -42.57)  0.9645
+ VAL    Ile/Val H ( -60.23,  -43.47)  0.8288
+ ILE    Ile/Val H ( -63.52,  -45.90)  1.3434
+ PHE    General H ( -90.43,   32.15) -1.1559
+ SER    General H ( -82.90,  155.62) -0.9387
+ ASP    General L ( -59.63,  128.22) -0.0029
+ ARG    pre-Pro L (-132.51,  142.95) -0.1696
+ PRO  trans-Pro L ( -47.38,  144.51) -1.2603
+ GLY        Gly L (  71.98,   29.73)  0.0201
+ LEU    General L ( -92.21,  136.54)  0.0866
+ GLU    General L ( -79.08,  -55.01) -0.8131
+ GLU    General L (-108.81,   58.56) -0.9099
+ ALA    General H ( -56.46,  -38.53) -0.6262
+ GLU    General H ( -58.19,  -40.56)  0.0347
+ LEU    General H ( -64.77,  -41.63)  1.3464
+ VAL    Ile/Val H ( -59.80,  -44.82)  0.9524
+ GLU    General H ( -59.61,  -46.05)  0.4970
+ ALA    General H ( -60.61,  -40.60)  0.9697
+ ILE    Ile/Val H ( -62.81,  -46.75)  1.2123
+ GLN    General H ( -57.93,  -41.15)  0.0200
+ SER    General H ( -52.19,  -41.74) -0.7234
+ TYR    General H ( -62.51,  -45.79)  1.7413
+ TYR    General H ( -66.32,  -33.27) -0.4934
+ ILE    Ile/Val H ( -62.06,  -49.59)  0.1124
+ ASP    General H ( -65.76,  -40.92)  0.9666
+ THR    General H ( -60.76,  -42.61)  1.2074
+ LEU    General H ( -60.39,  -48.70) -0.0346
+ ARG    General H ( -58.93,  -48.02)  0.1548
+ ILE    Ile/Val H ( -63.67,  -41.11)  0.7015
+ TYR    General H ( -59.94,  -48.44)  1.2249
+ ILE    Ile/Val H ( -60.50,  -42.55)  0.6924
+ LEU    General H ( -60.85,  -41.71)  1.2269
+ ASN    General H ( -93.77,  -13.44) -0.8834
+ ARG    General H (-129.19,   14.54) -1.2010
+ HIS    General L (-119.54,   12.14) -0.1572
+ CYS    General L ( -60.59,  135.22)  1.6044
+ GLY        Gly L ( 104.46,   -9.17) -0.1711
+ ASP    pre-Pro L (-121.80,  162.53) -0.2814
+ PRO  trans-Pro L ( -65.14,   -4.80) -1.2610
+ MET    General L ( -60.67,  -51.64) -0.8551
+ SER    General L ( -52.74,  -28.48) -0.2944
+ LEU    General L ( -60.10,  -72.63) -1.4657
+ VAL    Ile/Val L (-127.21,    9.98) -1.3389
+ PHE    General L ( -65.03,  -28.00)  1.1402
+ PHE    General H ( -57.42,  -50.68)  0.5685
+ ALA    General H ( -66.10,  -37.25)  0.0850
+ LYS    General H ( -64.56,  -30.40) -0.7588
+ LEU    General H ( -76.68,  -31.33) -1.1307
+ LEU    General H ( -78.38,  -16.24) -1.1960
+ SER    General H ( -69.91,  -21.20) -0.7170
+ ILE    Ile/Val H ( -56.83,  -40.74) -0.6479
+ LEU    General H ( -59.60,  -40.90)  0.5345
+ THR    General H ( -62.75,  -46.94)  1.3551
+ GLU    General H ( -65.30,  -36.53)  0.4093
+ LEU    General H ( -58.92,  -35.33) -0.6960
+ ARG    General H ( -60.23,  -44.12)  1.0534
+ THR    General H ( -62.44,  -47.48)  1.1754
+ LEU    General H ( -63.87,  -37.49)  0.5992
+ GLY        Gly H ( -65.90,  -36.45)  0.5387
+ ASN    General H ( -61.93,  -47.05)  0.3990
+ GLN    General H ( -61.60,  -29.28) -0.9147
+ ASN    General H ( -76.64,  -36.21) -0.7499
+ ALA    General H ( -70.53,  -24.28) -1.1524
+ GLU    General H ( -86.34,  -11.02) -1.2575
+ MET    General H ( -60.79, -167.31) -1.2349
+ CYS    General H (  77.37,  -49.39) -1.1137
+ PHE    General H ( -64.69,  -46.77)  0.7746
+ SER    General H ( -60.62,  -39.78)  1.1440
+ LEU    General H ( -66.30,  -44.42)  0.4702
+ LYS    General H ( -60.11,  -37.59)  0.0509
+ LEU    General H ( -66.84,  -24.04) -1.0740
+ LYS    General H ( -95.87,    7.06) -1.1401
+ ASN    General H (  62.64,   34.75) -0.8225
+ ARG    General L (-119.25,  163.86) -0.6400
+ LYS    General L (-141.66,  131.79) -0.5063
+ LEU    pre-Pro L ( -62.94,  145.24)  2.2580
+ PRO  trans-Pro H ( -49.96,  136.14) -1.2259
+ LYS    General H ( -56.16,  -36.57) -0.7810
+ PHE    General H ( -59.23,  -46.49)  1.4375
+ LEU    General H ( -66.97,  -38.92)  0.6769
+ GLU    General H ( -59.14,  -48.97) -0.4200
+ GLU    General H ( -65.42,  -39.87)  1.0367
+ ILE    Ile/Val H ( -64.70,  -35.33) -0.7031
+ TRP    General H (-107.18,   13.66) -1.1872
+ ASP    General H (  53.30,   55.63) -1.0145
+
+Rama-Z (Ramachandran plot Z-score):
+Interpretation: bad |Rama-Z| > 3; suspicious 2 < |Rama-Z| < 3; good |Rama-Z| < 2.
+Scores for whole/helix/sheet/loop are scaled independently;
+therefore, the values are not related in a simple manner.
+  whole:  1.29 (0.52), residues: 236
+  helix:  1.54 (0.36), residues: 182
+  sheet:  None (None), residues: 0
+  loop : -1.50 (0.78), residues: 54
+
+===============================================================================
+Job complete
+usr+sys time: 4.39 seconds
+wall clock time: 4.39 seconds
